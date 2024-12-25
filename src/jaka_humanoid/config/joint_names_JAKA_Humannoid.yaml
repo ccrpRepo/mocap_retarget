@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'JOINT_L1', 'JOINT_L2', 'JOINT_L3', 'JOINT_L4', 'JOINT_L5', 'JOINT_L6', 'JOINT_R1', 'JOINT_R2', 'JOINT_R3', 'JOINT_R4', 'JOINT_R5', 'JOINT_R6', 'BODY_JOINT', 'arm-lj1', 'arm-lj2', 'arm-lj3', 'arm-lj4', 'arm-lj5', 'arm-lj6', 'arm-lj7', 'arm-rj1', 'arm-rj2', 'arm-rj3', 'arm-rj4', 'arm-rj5', 'arm-rj6', 'arm-rj7', ]

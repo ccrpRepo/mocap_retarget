@@ -1,0 +1,31 @@
+# 忽略 node_modules
+/node_modules/
+
+# 忽略日志文件
+*.log
+logs/
+
+# 忽略操作系统生成的临时文件
+.DS_Store
+Thumbs.db
+
+# 忽略编译输出
+/build/
+/dist/
+/devel/
+/.catkin_tools/
+
+# 忽略环境变量配置文件
+.env
+
+# 忽略 IDE 相关文件
+.vscode/
+.idea/
+*.iml
+
+# 忽略特定类型文件
+*.swp
+*.tmp
+
+# 不忽略某个重要配置文件
+!.env.example

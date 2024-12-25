@@ -1,0 +1,1435 @@
+<robot name="bone">
+  <mujoco>
+    <compiler meshdir="meshes" discardvisual="false"/>
+  </mujoco>
+
+  <!-- <link name= "ww">
+  </link> -->
+
+  <link name="root">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- <joint name="wwroot_joint" type="fixed">
+    <origin xyz="0.03072072  0.07805085 -0.11095449" rpy="0 0 0"/>
+    <parent link="ww"/>
+    <child link="lhip"/>
+  </joint> -->
+
+  <link name="lhip">
+    <visual>
+      <origin xyz="-0.01536036  -0.03902543 0.05547724" rpy="2.9188902  -0.61303716  1.57079633"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.13909213"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="lhipjoint_joint" type="fixed">
+    <origin xyz="0.03072072  0.07805085 -0.11095449" rpy="0 0 0"/>
+    <parent link="root"/>
+    <child link="lhip"/>
+  </joint>
+
+  <link name="lhip_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lhip_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lhip"/>
+    <child link="lhip_sphere"/>
+  </joint>
+
+  <link name="rhip">
+    <visual>
+      <origin xyz="-0.01536039 0.04437166 0.05547731" rpy="2.92864682 0.67462893 1.57079633"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.14536192652000002"/> 
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rhipjoint_joint" type="fixed">
+    <origin xyz="0.03072079 -0.08874331 -0.11095461" rpy="0 0 0"/>
+    <parent link="root"/>
+    <child link="rhip"/>
+  </joint>
+
+  <link name="rhip_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rhip_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rhip"/>
+    <child link="rhip_sphere"/>
+  </joint>
+  <!-- *******************left leg******************* -->
+
+  <link name="lfemur_1">
+  </link>
+  <link name="lfemur_2">
+  </link>
+  <link name="lfemur">
+    <visual>
+      <origin xyz="-5.93592863e-08 -2.24521883e-01  0.00000000e+00" rpy="1.57079633e+00 -0.00000000e+00 -2.64380850e-07"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.44904362864"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_hip_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="1.57079633 -0.34906585  1.57079633"/>
+    <parent link="lhip"/>
+    <child link="lfemur_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="0.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_hip_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lfemur_1"/>
+    <child link="lfemur_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.22172944" upper="1.22172944" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_hip_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lfemur_2"/>
+    <child link="lfemur"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.04719667" upper="1.22172944" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="ltiaba">
+    <visual>
+      <origin xyz="-5.95655183e-08 -2.25301940e-01  0.00000000e+00" rpy="1.57079633e+00 -0.00000000e+00 -2.64380850e-07"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.4506037408"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_knee_joint" type="revolute">
+    <origin xyz="-1.18718573e-07 -4.49043767e-01  0.00000000e+00" rpy="0 0 0"/>
+    <parent link="lfemur"/>
+    <child link="ltiaba"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.17453278" upper="2.967" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="ltibia_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="ltibia_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="ltiaba"/>
+    <child link="ltibia_sphere"/>
+  </joint>
+
+  <link name="lfoot_1">
+  </link>
+   <link name="lfoot">
+    <visual>
+      <origin xyz="6.64480645e-09 -6.15325855e-02 -1.33260259e-02" rpy="-2.14448389  1.17017283  2.60484501"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.1259180974"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="lfoot_joint_z" type="revolute">
+    <origin xyz="-1.19131037e-07 -4.50603879e-01  0.00000000e+00" rpy="-1.57079633e+00  1.33142791e-17  0.00000000e+00"/>
+    <parent link="ltiaba"/>
+    <child link="lfoot_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7853975" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lfoot_joint_x" type="revolute">
+    <origin xyz="0.0 0 0" rpy="0 0 0"/>
+    <parent link="lfoot_1"/>
+    <child link="lfoot"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.22172944" upper="0.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="lfoot_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lfoot_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lfoot"/>
+    <child link="lfoot_sphere"/>
+  </joint>
+
+  <link name="ltoe">
+    <visual>
+      <origin xyz="6.98164928e-16 -3.16444819e-02 -1.42131187e-12" rpy="-1.57079633  1.22173048  3.14159265"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.06328896388000001"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="ltoe_joint" type="revolute">
+    <origin xyz="1.32896129e-08 -1.23065171e-01 -2.66520518e-02" rpy="-1.23259516e-32  8.15264464e-34 -1.54074396e-33"/>
+    <parent link="lfoot"/>
+    <child link="ltoe"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.570795" upper="0.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="ltoes_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="ltoes_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="ltoe"/>
+    <child link="ltoes_sphere"/>
+  </joint>
+
+  <link name="ltoe_top">
+    <visual>
+      <origin xyz="0.0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="ltoe_top_joint" type="fixed">
+    <origin xyz="1.39632986e-15 -6.32889639e-02 -2.84262374e-12" rpy="0 0 0"/>
+    <parent link="ltoe"/>
+    <child link="ltoe_top"/>
+  </joint>
+
+  <!-- *******************right leg******************* -->
+
+  <link name="rfemur_1">
+  </link>
+  <link name="rfemur_2">
+  </link>
+  <link name="rfemur">
+    <visual>
+      <origin xyz="6.45599279e-08 -2.44192906e-01  0.00000000e+00" rpy="1.57079633e+00 -0.00000000e+00  2.64380850e-07"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.48838566108000003"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_hip_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="1.57079633 0.34906585 1.57079633"/>
+    <parent link="rhip"/>
+    <child link="rfemur_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="0.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_hip_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rfemur_1"/>
+    <child link="rfemur_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.22172944" upper="1.22172944" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_hip_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rfemur_2"/>
+    <child link="rfemur"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.22172944" upper="1.04719667" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="rtiaba">
+    <visual>
+      <origin xyz="-2.11832793e-07 -2.08223831e-01  0.00000000e+00" rpy="1.57079633e+00 -0.00000000e+00 -1.01733213e-06"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.41644778308"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_knee_joint" type="revolute">
+    <origin xyz="1.29119856e-07 -4.88385811e-01  0.00000000e+00" rpy="0 0 0"/>
+    <parent link="rfemur"/>
+    <child link="rtiaba"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.17453278" upper="2.96705722" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="rtiaba_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rtiaba_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rtiaba"/>
+    <child link="rtiaba_sphere"/>
+  </joint>
+
+  <link name="rfoot_1">
+  </link>
+   <link name="rfoot">
+    <visual>
+      <origin xyz="-0.00020512 -0.05268696 -0.00312934" rpy="1.74309564 1.21768444 0.15796599"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.10556043992"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="rfoot_joint_z" type="revolute">
+    <origin xyz="-4.23665586e-07 -4.16447662e-01  0.00000000e+00" rpy="-1.57079633e+00 -1.33142791e-17  0.00000000e+00"/>
+    <parent link="rtiaba"/>
+    <child link="rfoot_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7853975" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="rfoot_joint_x" type="revolute">
+    <origin xyz="0.0 0 0" rpy="0 0 0"/>
+    <parent link="rfoot_1"/>
+    <child link="rfoot"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.34906556" upper="1.22172944" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="rfoot_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rfoot_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rfoot"/>
+    <child link="rfoot_sphere"/>
+  </joint>
+
+  <link name="rtoe">
+    <visual>
+      <origin xyz="4.14994319e-16 -2.68551521e-02 -1.20706702e-12" rpy="1.57079633e+00 1.22173048e+00 1.23507191e-10"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.053710304192"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="rtoe_joint" type="revolute">
+    <origin xyz="-0.00041025 -0.10537391 -0.00625868" rpy="-1.23259516e-32 -8.15264464e-34  1.54074396e-33"/>
+    <parent link="rfoot"/>
+    <child link="rtoe"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.570795" upper="0.34906556" effort="88" velocity="32"/>
+  </joint>
+
+   <link name="rtoes_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rtoes_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rtoe"/>
+    <child link="rtoes_sphere"/>
+  </joint>
+
+  <link name="rtoe_top">
+    <visual>
+      <origin xyz="0.0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="rtoe_top_joint" type="fixed">
+    <origin xyz="8.29988637e-16 -5.37103042e-02 -2.41413405e-12" rpy="0 0 0"/>
+    <parent link="rtoe"/>
+    <child link="rtoe_top"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.5307" upper="2.8798" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- 腰部 -->
+  <link name="lowerback_1">
+  </link>
+  <link name="lowerback_2">
+  </link>
+  <link name="lowerback">
+    <visual>
+      <origin xyz="0.00018868 0.05852319 0.00256924" rpy="1.52692357 -0.   3.13836866"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.11715968192000001"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="lowerback_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="1.57079633 -0.  1.57079633"/>
+    <parent link="root"/>
+    <child link="lowerback_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.34906556" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lowerback_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lowerback_1"/>
+    <child link="lowerback_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lowerback_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lowerback_2"/>
+    <child link="lowerback"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="upperback_1">
+  </link>
+  <link name="upperback_2">
+  </link>
+  <link name="upperback">
+    <visual>
+      <origin xyz="-0.00018739  0.05819312 -0.00133533" rpy="1.59373863 -0.     -3.13837248"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.11641744332000001"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="upperback_joint_z" type="revolute">
+    <origin xyz="0.00037736 0.11704639 0.00513847" rpy="0 0 0"/>
+    <parent link="lowerback"/>
+    <child link="upperback_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.34906556" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="upperback_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="upperback_1"/>
+    <child link="upperback_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="upperback_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="upperback_2"/>
+    <child link="upperback"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="upperback_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="upperback_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="upperback"/>
+    <child link="upperback_sphere"/>
+  </joint>
+
+  <link name="thorax_1">
+  </link>
+  <link name="thorax_2">
+  </link>
+  <link name="thorax">
+    <visual>
+      <origin xyz="-0.00031399  0.05835144 -0.00265145" rpy="1.61620372 -0.         -3.13621171"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.116824969"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="thorax_joint_z" type="revolute">
+    <origin xyz="-0.00037479  0.11638624 -0.00267065" rpy="0 0 0"/>
+    <parent link="upperback"/>
+    <child link="thorax_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.34906556" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="thorax_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="thorax_1"/>
+    <child link="thorax_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="thorax_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="thorax_2"/>
+    <child link="thorax"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="thorax_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="thorax_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="thorax"/>
+    <child link="thorax_sphere"/>
+  </joint>
+
+  <link name="lowerneck_1">
+  </link>
+  <link name="lowerneck_2">
+  </link>
+  <link name="lowerneck">
+    <visual>
+      <origin xyz="-5.79107804e-06  4.23182475e-02  4.61289760e-03" rpy="1.46222008 -0.         -3.14145581"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.08513787184"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="lowerneck_joint_z" type="revolute">
+    <origin xyz="-0.00062798  0.11670289 -0.0053029 " rpy="0 0 0"/>
+    <parent link="thorax"/>
+    <child link="lowerneck_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.34906556" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lowerneck_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lowerneck_1"/>
+    <child link="lowerneck_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lowerneck_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lowerneck_2"/>
+    <child link="lowerneck"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="lowerneck_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lowerneck_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lowerneck"/>
+    <child link="lowerneck_sphere"/>
+  </joint>
+
+  <link name="upperneck_1">
+  </link>
+  <link name="upperneck_2">
+  </link>
+  <link name="upperneck">
+    <visual>
+      <origin xyz="0.00171578  0.04249297 -0.0075359" rpy="1.74617594 -0.  3.10123664"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.08638020428"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="upperneck_joint_z" type="revolute">
+    <origin xyz="-1.15821561e-05  8.46364949e-02  9.22579521e-03" rpy="0 0 0"/>
+    <parent link="lowerneck"/>
+    <child link="upperneck_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.34906556" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="upperneck_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="upperneck_1"/>
+    <child link="upperneck_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="upperneck_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="upperneck_2"/>
+    <child link="upperneck"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="upperneck_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="upperneck_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="upperneck"/>
+    <child link="upperneck_sphere"/>
+  </joint>
+
+  <link name="head_1">
+  </link>
+  <link name="head_2">
+  </link>
+  <link name="head">
+    <visual>
+      <origin xyz="0.00048713  0.04415899 -0.00334543" rpy="1.64640617 -0.   3.13056181"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.08857644032"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="head_joint_z" type="revolute">
+    <origin xyz="0.00343156  0.08498594 -0.01507179" rpy="0 0 0"/>
+    <parent link="upperneck"/>
+    <child link="head_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.34906556" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="head_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="head_1"/>
+    <child link="head_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="head_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="head_2"/>
+    <child link="head"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.52359833" upper="0.52359833" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="head_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="head_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="head"/>
+    <child link="head_sphere"/>
+  </joint>
+
+  <link name="headtop">
+    <visual>
+      <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.05"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="headtop_joint_x" type="fixed">
+    <origin xyz="0.00097426  0.08831797 -0.00669087" rpy="0 0 0"/>
+    <parent link="head"/>
+    <child link="headtop"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.5307" upper="2.8798" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ***********************left arm************************ -->
+
+  <link name="lclavicle_1">
+  </link>
+  <link name="lclavicle">
+    <visual>
+      <origin xyz="0.08889745  0.023405   -0.00634644" rpy="1.63972489 -0.          1.82823509"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.18429135332"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="lclavicle_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lowerneck"/>
+    <child link="lclavicle_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.34906556" upper="0.17453278" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lclavicle_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lclavicle_1"/>
+    <child link="lclavicle"/>
+    <axis xyz="0 1 0"/>
+    <limit lower=" 0.0" upper="0.34906556" effort="88" velocity="32"/>
+  </joint>
+
+
+  <link name="lhumerus_1">
+  </link>
+  <link name="lhumerus_2">
+  </link>
+  <link name="lhumerus">
+    <visual>
+      <origin xyz="6.23500815e-12 -1.60367564e-01  3.59976400e-12" rpy="-1.57079633  0.52359878 -3.14159265"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.32073512784"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="lshoulder_joint_z" type="revolute">
+    <origin xyz="0.1777949   0.04681  -0.01269288" rpy="3.14159265 -0.52359878 -1.57079633 "/>
+    <parent link="lclavicle"/>
+    <child link="lhumerus_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.04719667" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lshoulder_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lhumerus_1"/>
+    <child link="lhumerus_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.570795" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lshoulder_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lhumerus_2"/>
+    <child link="lhumerus"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.570795" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="lhumerus_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lhumerus_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lhumerus"/>
+    <child link="lhumerus_sphere"/>
+  </joint>
+
+  <link name="lradius">
+    <visual>
+      <origin xyz="3.47964924e-12 -8.94953486e-02  2.00896547e-12" rpy="-1.57079633  0.52359878 -3.14159265"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.17899069728"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_elbow_joint" type="revolute">
+    <origin xyz=" 1.24700163e-11 -3.20735128e-01  7.19952799e-12" rpy="-1.96289465e-33  6.29482353e-17  6.43857640e-33"/>
+    <parent link="lhumerus"/>
+    <child link="lradius"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.17453278" upper="2.96705722" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="lradius_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lradius_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lradius"/>
+    <child link="lradius_sphere"/>
+  </joint>
+
+  <link name="lwrist">
+    <visual>
+      <origin xyz="-8.98144624e-28 -4.47476743e-02 -2.00923866e-12" rpy="3.14159129 -1.57079633 -1.57079496"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.08949534864"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="lwrist_joint" type="revolute">
+    <origin xyz="6.95929849e-12 -1.78990697e-01  4.01793093e-12" rpy="3.14159265 -1.04719755 -3.14159265"/>
+    <parent link="lradius"/>
+    <child link="lwrist"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14159" upper="0.0" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="lwrist_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lwrist_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lwrist"/>
+    <child link="lwrist_sphere"/>
+  </joint>
+
+  <link name="lhand_1">
+  </link>
+  <link name="lhand">
+    <visual>
+      <origin xyz="-8.98144624e-28 -4.47476743e-02 -2.00924775e-12" rpy="3.14159129 -1.57079633 -1.57079496"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.035711610804"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lhand_joint_z" type="revolute">
+    <origin xyz="-1.93659802e-27 -8.94953486e-02 -4.01847733e-12" rpy="-2.03039388e-16 -5.72118873e-18 -8.99620658e-33"/>
+    <parent link="lwrist"/>
+    <child link="lhand_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.570795" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="lhand_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lhand_1"/>
+    <child link="lhand"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.7853975" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="lhand_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lhand_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lhand"/>
+    <child link="lhand_sphere"/>
+  </joint>
+
+  <link name="lfingers">
+    <visual>
+      <origin xyz="-1.03701902e-27 -1.43957882e-02 -6.46228522e-13" rpy="3.14159129 -1.57079633 -1.57079496"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.027452216728000002"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lfingers_joint" type="revolute">
+    <origin xyz="-1.33543707e-27 -3.57116108e-02 -1.60457712e-12" rpy="-3.85817248e-16 -0.00000000e+00 -2.73691106e-48"/>
+    <parent link="lhand"/>
+    <child link="lfingers"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0.0" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="lfingers_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lfingers_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lfingers"/>
+    <child link="lfingers_sphere"/>
+  </joint>
+
+  <link name="lfingers_top">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lfingerstop_joint" type="fixed">
+    <origin xyz="-2.07403804e-27 -2.87915764e-02 -1.29245704e-12" rpy="0 0 0"/>
+    <parent link="lfingers"/>
+    <child link="lfingers_top"/>
+  </joint>
+
+  <link name="lthumb_1">
+  </link>
+  <link name="lthumb">
+    <visual>
+      <origin xyz="1.73472348e-18 -2.06695734e-02 -1.31190722e-12" rpy=" 2.35619401 -1.57079633 -0.78539768"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.041339134048000006"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lthumb_joint_z" type="revolute">
+    <origin xyz="-1.93659802e-27 -8.94953486e-02 -4.01847733e-12" rpy="7.27159665e-17  8.99882495e-17 -7.85398163e-01"/>
+    <parent link="lwrist"/>
+    <child link="lthumb_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7853975" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+  <joint name="lthumb_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lthumb_1"/>
+    <child link="lthumb"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.7853975" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="lthumbtop">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="lthumbtop_joint" type="fixed">
+    <origin xyz="3.46944695e-18 -4.13391468e-02 -2.62381443e-12" rpy="0 0 0"/>
+    <parent link="lthumb"/>
+    <child link="lthumbtop"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.5307" upper="2.8798" effort="88" velocity="32"/>
+  </joint>
+
+  <!--********************* right arm *************************-->
+  <link name="rclavicle_1">
+  </link>
+  <link name="rclavicle">
+    <visual>
+      <origin xyz="-0.08764947  0.02576068 -0.0094076" rpy=" 1.67341128 -0.         -1.85665273"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.18367950036"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="rclavicle_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="lowerneck"/>
+    <child link="rclavicle_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.17453278" upper="0.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="rclavicle_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rclavicle_1"/>
+    <child link="rclavicle"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-0.34906556" upper="0.0" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="rhumerus_1">
+  </link>
+  <link name="rhumerus_2">
+  </link>
+  <link name="rhumerus">
+    <visual>
+      <origin xyz="-6.44297378e-12 -1.65697006e-01  3.71983440e-12" rpy="-1.57079633 -0.52359878  3.14159265"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.3313940128"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rshoulder_joint_z" type="revolute">
+    <origin xyz="-0.17529894  0.05152137 -0.01881521" rpy="3.14159265 0.52359878 1.57079633"/>
+    <parent link="rclavicle"/>
+    <child link="rhumerus_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.570795" upper="1.04719667" effort="88" velocity="32"/>
+  </joint>
+  <joint name="rshoulder_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rhumerus_1"/>
+    <child link="rhumerus_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.570795" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+  <joint name="rshoulder_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rhumerus_2"/>
+    <child link="rhumerus"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.570795" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+   <link name="rhumerus_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rhumerus_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rhumerus"/>
+    <child link="rhumerus_sphere"/>
+  </joint>
+
+
+  <link name="rradius">
+    <visual>
+      <origin xyz="-3.70447404e-12 -9.52743676e-02  2.13876742e-12" rpy="-1.57079633 -0.52359878  3.14159265"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.19054873516"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="right_elbow_joint" type="revolute">
+    <origin xyz="-1.28859476e-11 -3.31394013e-01  7.43966881e-12" rpy="-1.96289465e-33 -6.29482353e-17 -6.43857640e-33"/>
+    <parent link="rhumerus"/>
+    <child link="rradius"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.17453278" upper="2.96705722" effort="88" velocity="32"/>
+  </joint>
+
+   <link name="rradius_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rradius_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rradius"/>
+    <child link="rradius_sphere"/>
+  </joint>
+
+  <link name="rwrist">
+    <visual>
+      <origin xyz="9.56117042e-28 -4.76370427e-02 -2.13863271e-12" rpy="3.14159129 1.57079633 1.57079496"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.09527408536"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rwrist_joint" type="revolute">
+    <origin xyz="-7.40894808e-12 -1.90548735e-01  4.27753483e-12" rpy="3.14159265 1.04719755 3.14159265"/>
+    <parent link="rradius"/>
+    <child link="rwrist"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14159" upper="0.0" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="rwrist_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rwrist_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rwrist"/>
+    <child link="rwrist_sphere"/>
+  </joint>
+
+  <link name="rhand_1">
+  </link>
+  <link name="rhand">
+    <visual>
+      <origin xyz=" 6.36571796e-28 -1.70251191e-02 -7.63605951e-13" rpy="3.14159129 1.57079633 1.57079496"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.034050238108"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rhand_joint_z" type="revolute">
+    <origin xyz="1.91223408e-27 -9.52740854e-02 -4.27726542e-12" rpy="-2.03039388e-16 -0.00000000e+00  0.00000000e+00"/>
+    <parent link="rwrist"/>
+    <child link="rhand_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.570795" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+ <joint name="rhand_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rhand_1"/>
+    <child link="rhand"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.7853975" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="rhand_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rhand_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rhand"/>
+    <child link="rhand_sphere"/>
+  </joint>
+
+  
+  <link name="rfingers">
+    <visual>
+      <origin xyz=" 9.88873086e-28 -1.37261084e-02 -6.17723061e-13" rpy="3.14159129 1.57079633 1.57079497"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.027452216728000002"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rfingers_joint" type="revolute">
+    <origin xyz="1.27314359e-27 -3.40502381e-02 -1.52721190e-12" rpy="-3.85817248e-16 -0.00000000e+00  0.00000000e+00"/>
+    <parent link="rhand"/>
+    <child link="rfingers"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0.0" upper="1.570795" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="rfingers_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rfingers_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rfingers"/>
+    <child link="rfingers_sphere"/>
+  </joint>
+
+  <link name="rfingers_top">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rfingerstop_joint" type="fixed">
+    <origin xyz="1.97774617e-27 -2.74522167e-02 -1.23544612e-12" rpy="0 0 0"/>
+    <parent link="rfingers"/>
+    <child link="rfingers_top"/>
+  </joint>
+
+  <link name="rthumb_1">
+  </link>
+  <link name="rthumb">
+    <visual>
+      <origin xyz="-3.46944695e-18 -1.97080214e-02 -1.25131262e-12" rpy="2.35619401 1.57079633 0.78539768"/>
+        <geometry>
+          <cylinder radius="0.01" length="0.039416030524"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rthumb_joint_z" type="revolute">
+    <origin xyz="1.91223408e-27 -9.52740854e-02 -4.27726542e-12" rpy="6.86704751e-17 -9.40337408e-17  7.85398163e-01"/>
+    <parent link="rwrist"/>
+    <child link="rthumb_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.7853975" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+  <joint name="rthumb_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rthumb_1"/>
+    <child link="rthumb"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.7853975" upper="0.7853975" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="rthumb_sphere">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rthumb_sphere_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="rthumb"/>
+    <child link="rthumb_sphere"/>
+  </joint>
+
+  <link name="rthumb_top">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.02"/>
+        </geometry>
+      <material name="dark">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rthumbtop_joint" type="fixed">
+    <origin xyz="-6.93889390e-18 -3.94160427e-02 -2.50262523e-12" rpy="0 0 0"/>
+    <parent link="rthumb"/>
+    <child link="rthumb_top"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.5307" upper="2.8798" effort="88" velocity="32"/>
+  </joint>
+
+</robot>
