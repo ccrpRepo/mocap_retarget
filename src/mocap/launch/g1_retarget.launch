@@ -12,5 +12,5 @@
     <node name="mocap_visualize" pkg="mocap" type="3Dviewer.py" output="screen"/>
     <node pkg="tf" type="static_transform_publisher" name="world"
       args="0 0 0 0 0 0 map world 100" />
-    <node name="g1_retarget" pkg="g1_description" type="g1_retarget.py" output="screen"/>
+    <node name="g1_retarget" pkg="mocap" type="g1_retarget.py" output="screen"/>
 </launch>
