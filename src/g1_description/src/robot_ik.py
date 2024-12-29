@@ -193,21 +193,17 @@ class G1_29_ArmIK:
                     )
                 )
     # If the robot arm is not the same size as your arm :)
-    def scale_lengths(self, human_lhand_pose, human_rhand_pose, human_lfoot_pose, human_rfoot_pose, robot_root_pose,
-                      human_arm_length=0.784, robot_arm_length=0.54, human_leg_length=0.90, robot_leg_length=0.60):
+    def scale_lengths(self, human_lhand_pose, human_rhand_pose, human_lfoot_pose, human_rfoot_pose, robot_root_pose, robot_head_pose,
+                      human_arm_length=0.784, robot_arm_length=0.50, human_leg_length=0.90, robot_leg_length=0.60):
         arm_scale_factor = robot_arm_length / human_arm_length
         robot_lhand_pose = human_lhand_pose.copy()
         robot_rhand_pose = human_rhand_pose.copy()
-        # robot_lhand_pose[:3, 3] *= arm_scale_factor
-        # robot_rhand_pose[:3, 3] *= arm_scale_factor
-        robot_lhand_pose[:3, 3] = robot_root_pose[:3, 3] + arm_scale_factor * (robot_lhand_pose[:3, 3] - robot_root_pose[:3, 3])
-        robot_rhand_pose[:3, 3] = robot_root_pose[:3, 3] + arm_scale_factor * (robot_rhand_pose[:3, 3] - robot_root_pose[:3, 3])
+        robot_lhand_pose[:3, 3] = robot_head_pose[:3, 3] + arm_scale_factor * (robot_lhand_pose[:3, 3] - robot_head_pose[:3, 3])
+        robot_rhand_pose[:3, 3] = robot_head_pose[:3, 3] + arm_scale_factor * (robot_rhand_pose[:3, 3] - robot_head_pose[:3, 3])
         
         leg_scale_factor = robot_leg_length / human_leg_length
         robot_lfoot_pose = human_lfoot_pose.copy()
         robot_rfoot_pose = human_rfoot_pose.copy()
-        # robot_lfoot_pose[:3, 3] *= leg_scale_factor
-        # robot_rfoot_pose[:3, 3] *= leg_scale_factor
         robot_lfoot_pose[:3, 3] = robot_root_pose[:3, 3] + leg_scale_factor * (robot_lfoot_pose[:3, 3] - robot_root_pose[:3, 3])
         robot_rfoot_pose[:3, 3] = robot_root_pose[:3, 3] + leg_scale_factor * (robot_rfoot_pose[:3, 3] - robot_root_pose[:3, 3])
         
@@ -218,7 +214,7 @@ class G1_29_ArmIK:
             self.init_data = current_lr_arm_motor_q
         self.opti.set_initial(self.var_q, self.init_data)
 
-        left_wrist, right_wrist, left_foot, right_foot = self.scale_lengths(left_wrist, right_wrist, left_foot, right_foot, root)
+        left_wrist, right_wrist, left_foot, right_foot = self.scale_lengths(left_wrist, right_wrist, left_foot, right_foot, root, head)
         if self.Visualization:
             self.vis.viewer['lhand_target'].set_transform(left_wrist)   # for visualization
             self.vis.viewer['rhand_target'].set_transform(right_wrist)  # for visualization
