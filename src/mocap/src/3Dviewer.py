@@ -10,6 +10,7 @@ from std_msgs.msg import Header
 from geometry_msgs.msg import TransformStamped
 import tf
 from scipy.spatial.transform import Rotation as Rot
+from std_msgs.msg import Int32
 
 rr_R_root = np.zeros((3,3))
 rr_R_root[1,0] = 1
@@ -125,6 +126,7 @@ class Viewer:
     
     # 创建一个 Publisher，用于发布 JointState 消息
     self.joint_pub = rospy.Publisher('joint_states', JointState, queue_size=10)
+    self.frameNumpub = rospy.Publisher('/frame_num', Int32, queue_size=10)
     # 定义发布频率
     self.rate = rospy.Rate(self.fps)
     
@@ -263,6 +265,7 @@ class Viewer:
     joint_state_msg.effort = []                     # （可选）关节受力
     
     self.joint_pub.publish(joint_state_msg)
+    self.frameNumpub.publish(self.frame)
     self.br.sendTransformMessage(self.t)
             
 

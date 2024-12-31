@@ -18,10 +18,9 @@ from weighted_moving_filter import WeightedMovingFilter
 
 
 class RobotIK:
-    def __init__(self, Unit_Test = False, Visualization = False):
+    def __init__(self, Visualization = False):
         np.set_printoptions(precision=5, suppress=True, linewidth=200)
 
-        self.Unit_Test = Unit_Test
         self.Visualization = Visualization
         
         self.joint_model = pin.JointModelComposite()
@@ -33,13 +32,9 @@ class RobotIK:
         self.joint_model.addJoint(pin.JointModelRY())  # Pitch
         self.joint_model.addJoint(pin.JointModelRZ())  # Yaw
 
-        if not self.Unit_Test:
-            self.robot = pin.RobotWrapper.BuildFromURDF('../assets/g1/g1_body29_hand14.urdf', '../assets/g1/')
-        else:
-            self.root_joint = pin.JointModelFreeFlyer()
-            self.robot = pin.RobotWrapper.BuildFromURDF('/home/crp/mocap_ws/src/g1_description/urdf/g1.urdf',
-                                                        root_joint = self.joint_model,
-                                                        package_dirs = '/home/crp/mocap_ws/src/g1_description/urdf/') # for test
+        self.robot = pin.RobotWrapper.BuildFromURDF('/home/crp/mocap_ws/src/g1_description/urdf/g1.urdf',
+                                                    root_joint = self.joint_model,
+                                                    package_dirs = '/home/crp/mocap_ws/src/g1_description/urdf/') # for test
 
         self.mixed_jointsToLockIDs =[]
         self.reduced_robot = self.robot.buildReducedRobot(
@@ -279,7 +274,7 @@ class RobotIK:
 
 
 if __name__ == "__main__":
-    arm_ik = G1_29_ArmIK(Unit_Test = True, Visualization = True)
+    arm_ik = RobotIK(Visualization = True)
 
     # initial positon
     lhand_target = pin.SE3(

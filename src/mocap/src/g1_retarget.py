@@ -7,6 +7,9 @@ from sensor_msgs.msg import JointState
 from robot_ik import *
 import pinocchio as pin
 import tf
+import csv
+import os
+from std_msgs.msg import Int32
 
 def rotx(theta):
     theta = np.radians(theta) 
@@ -29,9 +32,12 @@ def rotz(theta):
                [0, 0, 1]])
     return Rz
 
+
 class FramePoseSub:
     def __init__(self):
         # initial positon
+        rospy.init_node('g1_retarget', anonymous=True)
+        self.subscriber = rospy.Subscriber('/frame_num', Int32, self.frameNumcallback)
         self.lhand_target = pin.SE3(
             pin.Quaternion(1, 0, 0, 0),
             np.array([0.25, +0.25, 0.3]),
@@ -67,21 +73,25 @@ class FramePoseSub:
                     'right_elbow_joint', 'right_wrist_roll_joint', 'right_wrist_pitch_joint', 'right_wrist_yaw_joint'
                     ]
         
-        
+        self.frame_num = 0
+    
+    def frameNumcallback(self, data):
+        self.frame_num = data.data
+    
     def joint_publisher(self):
         self.joint_pub = rospy.Publisher('g1_joint_states', JointState, queue_size=10)
         
-
 if __name__ == "__main__":
-    rospy.init_node('g1_retarget', anonymous=True)
     framesub = FramePoseSub()
     framesub.joint_publisher()
     rate = rospy.Rate(1000)  # 1000 Hz
     urdf_path = "../g1_description/urdf/g1.urdf" 
-    listener = tf.TransformListener()
+    human_tf = tf.TransformListener()
+    data = []
+    timestamp = 0.0
     
-    
-    robot_ik = RobotIK(Unit_Test = True, Visualization = True)
+    robot_ik = RobotIK(Visualization = True)
+    last_frame = 0
     sol_q_last = np.zeros(35)
     sol_q_last[7] = -0.1
     sol_q_last[10] = 0.3
@@ -89,52 +99,77 @@ if __name__ == "__main__":
     sol_q_last[13] = -0.1
     sol_q_last[16] = 0.3
     sol_q_last[17] = -0.2
+    start_time = rospy.Time.now().to_sec()
+    
     while not rospy.is_shutdown():
-        (trans, rot) = listener.lookupTransform('/world', '/lhand', rospy.Time(0))
+        
+        (trans, rot) = human_tf.lookupTransform('/world', '/lhand', rospy.Time(0))
         framesub.lhand_target.translation = np.array([trans[0], trans[1], trans[2]])
         quat = np.array([rot[0], rot[1], rot[2], rot[3]])
         rotMat = Rot.from_quat(quat)
         framesub.lhand_target.rotation = rotMat.as_matrix() @ rotx(90) @ roty(-90)
         
-        (trans, rot) = listener.lookupTransform('/world', '/rhand', rospy.Time(0))
+        (trans, rot) = human_tf.lookupTransform('/world', '/rhand', rospy.Time(0))
         framesub.rhand_target.translation = np.array([trans[0], trans[1], trans[2]])
         quat = np.array([rot[0], rot[1], rot[2], rot[3]])
         rotMat = Rot.from_quat(quat)
         framesub.rhand_target.rotation = rotMat.as_matrix() @ rotx(-90) @ roty(90)
         
-        (trans, rot) = listener.lookupTransform('/world', '/lfoot', rospy.Time(0))
+        (trans, rot) = human_tf.lookupTransform('/world', '/lfoot', rospy.Time(0))
         framesub.lfoot_target.translation = np.array([trans[0], trans[1], trans[2]])
         quat = np.array([rot[0], rot[1], rot[2], rot[3]])
         rotMat = Rot.from_quat(quat)
         framesub.lfoot_target.rotation = rotMat.as_matrix() @ rotz(-90)
         
-        (trans, rot) = listener.lookupTransform('/world', '/rfoot', rospy.Time(0))
+        (trans, rot) = human_tf.lookupTransform('/world', '/rfoot', rospy.Time(0))
         framesub.rfoot_target.translation = np.array([trans[0], trans[1], trans[2]])
         quat = np.array([rot[0], rot[1], rot[2], rot[3]])
         rotMat = Rot.from_quat(quat)
         framesub.rfoot_target.rotation = rotMat.as_matrix() @ rotz(-90)
         
-        (trans, rot) = listener.lookupTransform('/world', '/root', rospy.Time(0))
+        (trans, rot) = human_tf.lookupTransform('/world', '/root', rospy.Time(0))
         framesub.root_target.translation = np.array([trans[0], trans[1], trans[2]])
         quat = np.array([rot[0], rot[1], rot[2], rot[3]])
         rotMat = Rot.from_quat(quat)
         framesub.root_target.rotation = rotMat.as_matrix() @ roty(-12)
         
-        (trans, rot) = listener.lookupTransform('/world', '/lowerneck', rospy.Time(0))
+        (trans, rot) = human_tf.lookupTransform('/world', '/lowerneck', rospy.Time(0))
         framesub.head_target.translation = np.array([trans[0], trans[1], trans[2]])
         quat = np.array([rot[0], rot[1], rot[2], rot[3]])
         rotMat = Rot.from_quat(quat)
         framesub.head_target.rotation = rotMat.as_matrix() @ rotz(-90) @ roty(-90)
         
+        timestamp = rospy.Time.now().to_sec() - start_time
+        
         sol_q = robot_ik.solve_ik(framesub.lhand_target.homogeneous, 
                                 framesub.rhand_target.homogeneous, 
                                 framesub.lfoot_target.homogeneous, 
                                 framesub.rfoot_target.homogeneous,
-                                framesub.root_target.homogeneous, 
+                                framesub.root_target.homogeneous,
                                 framesub.head_target.homogeneous,
                                 current_lr_arm_motor_q=sol_q_last
                                 )
         sol_q_last = sol_q
         
-        
+        if(framesub.frame_num != last_frame):
+            time_sol_q = np.insert(sol_q, 0, timestamp)
+            frame_time_sol_q = np.insert(time_sol_q, 0, framesub.frame_num)
+            data.append(frame_time_sol_q)
+            
+        last_frame = framesub.frame_num
         rate.sleep()
+        
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    output_directory = os.path.join(script_directory, 'data')
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
+    file_path = os.path.join(output_directory, 'output.csv')
+    
+    with open(file_path, mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        writer.writerow(['frame','timestamp','posX','posY','posZ','roll','pitch','yaw'] + framesub.g1_joint_names)
+        for arr in data:
+            writer.writerow(arr)
+        
+    
+    print("CSV文件已生成")
