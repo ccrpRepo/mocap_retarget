@@ -3,6 +3,7 @@
     <arg name="model" />
     <arg name="gui" default="False" />
     <param name="robot_description" textfile="$(find bone_description)/urdf/bone.urdf" />
+
     
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
       <param name="publish_frequency" value="1000"/>
@@ -13,4 +14,10 @@
     <node pkg="tf" type="static_transform_publisher" name="world"
       args="0 0 0 0 0 0 map world 100" />
     <node name="g1_retarget" pkg="mocap" type="g1_retarget.py" output="screen"/>
+
+    <param name="motion_fps" value="12" />
+    <param name="amc_file" value="86_01.amc" />
+    <param name="render" value="True" />
+    <param name="OutputData" value="True" />
+
 </launch>

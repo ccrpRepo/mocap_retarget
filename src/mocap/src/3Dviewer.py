@@ -68,7 +68,7 @@ def eulerzyx2mat(axis):
 
 
 class Viewer:
-  def __init__(self, motions=None, pub_frame_name=None):
+  def __init__(self, motions=None, fps=None):
     """
     Display motion sequence in 3D.
 
@@ -84,7 +84,7 @@ class Viewer:
     self.motions = motions
     self.frame = 0 # current frame of the motion sequence
     self.playing = False # whether is playing the motion sequence
-    self.fps = 30 # frame rate
+    self.fps = fps # frame rate
 
     # whether is dragging
     self.rotate_dragging = False
@@ -113,7 +113,7 @@ class Viewer:
     self.translate = np.copy(self.default_translate)
 
     pygame.init()
-    self.screen_size = (480, 480)
+    self.screen_size = (240, 240)
     self.screen = pygame.display.set_mode(
       self.screen_size, pygame.DOUBLEBUF | pygame.OPENGL
     )
@@ -179,7 +179,6 @@ class Viewer:
     self.t.transform.rotation.x=0
     self.t.transform.rotation.y=0
     self.t.transform.rotation.z=0
-
 
   def process_event(self):
     """
@@ -357,8 +356,11 @@ class Viewer:
 
 
 if __name__ == '__main__':
-  amc_path = '../all_asfamc/subjects/86/86_14.amc'
+  fps = rospy.get_param('motion_fps', 12)
+  amcfile = rospy.get_param('amc_file', '86_01.amc')
+  amc_path = '../all_asfamc/subjects/86/'+ str(amcfile)
   urdf_path = "../../bone_description/urdf/bone.urdf"
+  
   motions = parse_amc(amc_path)
-  v = Viewer(motions)
+  v = Viewer(motions, fps=fps)
   v.run()

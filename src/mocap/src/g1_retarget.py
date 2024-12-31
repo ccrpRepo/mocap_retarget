@@ -82,6 +82,9 @@ class FramePoseSub:
         self.joint_pub = rospy.Publisher('g1_joint_states', JointState, queue_size=10)
         
 if __name__ == "__main__":
+    render = rospy.get_param('render', True)
+    outputdata = rospy.get_param('OutputData', True)
+    
     framesub = FramePoseSub()
     framesub.joint_publisher()
     rate = rospy.Rate(1000)  # 1000 Hz
@@ -89,8 +92,7 @@ if __name__ == "__main__":
     human_tf = tf.TransformListener()
     data = []
     timestamp = 0.0
-    
-    robot_ik = RobotIK(Visualization = True)
+    robot_ik = RobotIK(Visualization = render)
     last_frame = 0
     sol_q_last = np.zeros(35)
     sol_q_last[7] = -0.1
@@ -100,7 +102,7 @@ if __name__ == "__main__":
     sol_q_last[16] = 0.3
     sol_q_last[17] = -0.2
     start_time = rospy.Time.now().to_sec()
-    
+    rospy.sleep(1)
     while not rospy.is_shutdown():
         
         (trans, rot) = human_tf.lookupTransform('/world', '/lhand', rospy.Time(0))
@@ -141,9 +143,9 @@ if __name__ == "__main__":
         
         timestamp = rospy.Time.now().to_sec() - start_time
         
-        sol_q = robot_ik.solve_ik(framesub.lhand_target.homogeneous, 
-                                framesub.rhand_target.homogeneous, 
-                                framesub.lfoot_target.homogeneous, 
+        sol_q = robot_ik.solve_ik(framesub.lhand_target.homogeneous,
+                                framesub.rhand_target.homogeneous,
+                                framesub.lfoot_target.homogeneous,
                                 framesub.rfoot_target.homogeneous,
                                 framesub.root_target.homogeneous,
                                 framesub.head_target.homogeneous,
@@ -152,24 +154,27 @@ if __name__ == "__main__":
         sol_q_last = sol_q
         
         if(framesub.frame_num != last_frame):
+            if(framesub.frame_num > last_frame + 1):
+                rospy.loginfo("fps is too high! skip %d frames at %d", framesub.frame_num - last_frame - 1, last_frame)
+
             time_sol_q = np.insert(sol_q, 0, timestamp)
             frame_time_sol_q = np.insert(time_sol_q, 0, framesub.frame_num)
             data.append(frame_time_sol_q)
             
         last_frame = framesub.frame_num
         rate.sleep()
-        
-    script_directory = os.path.dirname(os.path.abspath(__file__))
-    output_directory = os.path.join(script_directory, 'data')
-    if not os.path.exists(output_directory):
-        os.makedirs(output_directory)
-    file_path = os.path.join(output_directory, 'output.csv')
     
-    with open(file_path, mode='w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        writer.writerow(['frame','timestamp','posX','posY','posZ','roll','pitch','yaw'] + framesub.g1_joint_names)
-        for arr in data:
-            writer.writerow(arr)
+    if(outputdata):
+        script_directory = os.path.dirname(os.path.abspath(__file__))
+        output_directory = os.path.join(script_directory, 'data')
+        if not os.path.exists(output_directory):
+            os.makedirs(output_directory)
+        file_path = os.path.join(output_directory, 'output.csv')
         
-    
-    print("CSV文件已生成")
+        with open(file_path, mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(['frame','timestamp','posX','posY','posZ','roll','pitch','yaw'] + framesub.g1_joint_names)
+            for arr in data:
+                writer.writerow(arr)
+            
+        print("CSV FILE OUTPUT COMPLETE!")
