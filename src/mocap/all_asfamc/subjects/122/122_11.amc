@@ -1,0 +1,2973 @@
+#!OML:ASF E:\Steps\Project 1\Capture day 1\Session 2\Subject.ASF
+:FULLY-SPECIFIED
+:DEGREES
+1
+root 9.65722 11.8421 4.34238 19.0347 -1.13351 -0.0700076
+lowerback -0.522022 0.570464 -2.00735
+upperback 2.08576 0.827184 -1.47227
+thorax 2.42574 0.3888 -0.364244
+lowerneck -10.0152 -0.73182 6.11229
+upperneck -14.8351 -1.258 1.77214
+head -3.13109 -0.992216 -0.461787
+rclavicle 3.77691e-015 9.54166e-015
+rhumerus 63.5888 -2.15772 -57.3552
+rradius 18.4348
+rwrist 29.9032
+rhand -11.5284 -36.6158
+rfingers 7.12502
+rthumb 14.5115 -66.0883
+lclavicle 3.77691e-015 9.54166e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9942 -6.44275 13.0378
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0764 3.90327 -10.1146
+ltibia 0
+lfoot 0 0
+ltoes 0
+2
+root 9.65695 11.8398 4.34486 18.9737 -1.12266 -0.0937516
+lowerback -0.536992 0.571381 -2.01119
+upperback 2.1603 0.830579 -1.46351
+thorax 2.51073 0.389437 -0.352561
+lowerneck -8.87998 -0.992405 6.81618
+upperneck -16.2114 -1.6082 1.01453
+head -3.85586 -1.22933 -0.823885
+rclavicle -5.56597e-015 1.86858e-014
+rhumerus 63.6259 -2.15333 -57.1721
+rradius 18.5501
+rwrist 29.6734
+rhand -11.511 -36.9611
+rfingers 7.12502
+rthumb 14.5282 -66.4324
+lclavicle -5.56597e-015 1.86858e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9195 -6.45086 13.0753
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0167 3.87658 -10.073
+ltibia 0
+lfoot 0 0
+ltoes 0
+3
+root 9.65815 11.8373 4.34717 18.9254 -1.08751 -0.132935
+lowerback -0.53559 0.565516 -1.97996
+upperback 2.15321 0.821218 -1.42852
+thorax 2.50255 0.385103 -0.334404
+lowerneck -9.36382 -0.843825 6.74586
+upperneck -15.8538 -1.44207 1.09554
+head -3.63191 -1.13267 -0.788346
+rclavicle -3.97569e-016 -2.0276e-014
+rhumerus 63.5533 -2.04533 -56.8769
+rradius 18.6794
+rwrist 29.4555
+rhand -11.2168 -37.3153
+rfingers 7.12502
+rthumb 14.8116 -66.7659
+lclavicle -3.97569e-016 -2.0276e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8402 -6.47761 13.1161
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9822 3.84414 -10.02
+ltibia 0
+lfoot 0 0
+ltoes 0
+4
+root 9.66033 11.8364 4.34794 18.9 -1.07943 -0.2078
+lowerback -0.502498 0.564221 -1.89732
+upperback 2.11331 0.815285 -1.39379
+thorax 2.44337 0.383973 -0.345664
+lowerneck -10.1133 -0.999743 6.73812
+upperneck -14.7622 -1.75419 0.990604
+head -3.12247 -1.25252 -0.827306
+rclavicle 1.39149e-015 1.74931e-014
+rhumerus 63.5395 -2.04997 -57.0723
+rradius 18.6523
+rwrist 29.7723
+rhand -11.2182 -37.2217
+rfingers 7.12502
+rthumb 14.8102 -66.6725
+lclavicle 1.39149e-015 1.74931e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.7991 -6.45565 13.183
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.949 3.87598 -9.95517
+ltibia 0
+lfoot 0 0
+ltoes 0
+5
+root 9.66036 11.8346 4.3507 18.8437 -1.13662 -0.195117
+lowerback -0.481965 0.59489 -1.91442
+upperback 2.128 0.857041 -1.43587
+thorax 2.44708 0.40483 -0.378363
+lowerneck -9.91679 -0.731763 6.5603
+upperneck -15.145 -1.31255 1.37597
+head -3.27071 -1.0426 -0.667203
+rclavicle -1.78906e-015 -1.15295e-014
+rhumerus 63.5491 -2.18144 -57.3846
+rradius 18.5852
+rwrist 30.0985
+rhand -11.5471 -36.8588
+rfingers 7.12502
+rthumb 14.4934 -66.3326
+lclavicle -1.78906e-015 -1.15295e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.748 -6.43104 13.1601
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.861 3.91302 -9.99266
+ltibia 0
+lfoot 0 0
+ltoes 0
+6
+root 9.66083 11.8305 4.35447 18.7859 -1.20061 -0.0896994
+lowerback -0.513993 0.614617 -2.02314
+upperback 2.17972 0.888955 -1.50178
+thorax 2.51777 0.418597 -0.383772
+lowerneck -10.3101 -0.956271 6.95064
+upperneck -14.5781 -1.73372 0.970403
+head -3.02808 -1.24667 -0.871747
+rclavicle 1.19271e-015 -1.11319e-014
+rhumerus 63.5639 -2.23248 -57.3386
+rradius 18.6305
+rwrist 30.0442
+rhand -11.6129 -36.7745
+rfingers 7.12502
+rthumb 14.43 -66.2528
+lclavicle 1.19271e-015 -1.11319e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.7089 -6.4485 13.0243
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.7949 3.88632 -10.1468
+ltibia 0
+lfoot 0 0
+ltoes 0
+7
+root 9.66217 11.8273 4.3558 18.7635 -1.25376 -0.00746833
+lowerback -0.511873 0.607304 -2.1534
+upperback 2.18063 0.881314 -1.49156
+thorax 2.51565 0.412007 -0.300642
+lowerneck -9.78846 -0.782478 6.57883
+upperneck -15.227 -1.3739 1.33837
+head -3.32454 -1.07636 -0.682165
+rclavicle 0 -5.96354e-015
+rhumerus 63.6631 -2.2283 -57.4609
+rradius 18.5855
+rwrist 30.1723
+rhand -11.5608 -36.8536
+rfingers 7.12502
+rthumb 14.4802 -66.3283
+lclavicle 0 -5.96354e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.7177 -6.45346 12.9147
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.7713 3.86297 -10.2706
+ltibia 0
+lfoot 0 0
+ltoes 0
+8
+root 9.66283 11.8258 4.35739 18.7467 -1.30021 0.0300275
+lowerback -0.471876 0.603991 -2.26238
+upperback 2.12585 0.875178 -1.45047
+thorax 2.43465 0.407183 -0.198388
+lowerneck -5.68187 -0.42399 3.92072
+upperneck -19.3789 0.0261888 4.16127
+head -4.92547 -0.479139 0.643267
+rclavicle 1.59028e-015 -9.14409e-015
+rhumerus 63.7097 -2.17658 -57.5627
+rradius 18.4914
+rwrist 30.257
+rhand -11.6538 -36.6942
+rfingers 7.12502
+rthumb 14.3906 -66.1754
+lclavicle 1.59028e-015 -9.14409e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.7232 -6.4422 12.8671
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.76 3.86287 -10.2952
+ltibia 0
+lfoot 0 0
+ltoes 0
+9
+root 9.66461 11.823 4.35869 18.7064 -1.36901 0.0986354
+lowerback -0.462696 0.623954 -2.35019
+upperback 2.12452 0.903252 -1.46578
+thorax 2.42681 0.419669 -0.164408
+lowerneck -9.49338 -0.629902 5.95235
+upperneck -15.3373 -1.03618 1.93471
+head -3.39068 -0.89399 -0.37734
+rclavicle -1.27222e-014 0
+rhumerus 63.6856 -2.12795 -57.3398
+rradius 18.5234
+rwrist 29.9981
+rhand -11.7272 -36.5072
+rfingers 7.12502
+rthumb 14.3199 -65.9933
+lclavicle -1.27222e-014 0
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.7229 -6.45338 12.7753
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.7042 3.8507 -10.3546
+ltibia 0
+lfoot 0 0
+ltoes 0
+10
+root 9.6658 11.8194 4.35805 18.7121 -1.40416 0.155516
+lowerback -0.492896 0.6277 -2.3907
+upperback 2.133 0.911169 -1.50772
+thorax 2.4526 0.422995 -0.184204
+lowerneck -5.74066 -0.375765 3.90554
+upperneck -19.2978 0.0888677 4.18193
+head -4.89063 -0.444985 0.650119
+rclavicle 1.19271e-015 -7.95139e-016
+rhumerus 63.6658 -2.07959 -57.0987
+rradius 18.5797
+rwrist 29.6822
+rhand -11.8283 -36.5402
+rfingers 7.12502
+rthumb 14.2224 -66.0332
+lclavicle 1.19271e-015 -7.95139e-016
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.764 -6.50242 12.7091
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.7087 3.8434 -10.4184
+ltibia 0
+lfoot 0 0
+ltoes 0
+11
+root 9.66677 11.8157 4.35777 18.7693 -1.37738 0.172564
+lowerback -0.556394 0.590056 -2.3721
+upperback 2.13224 0.863885 -1.54788
+thorax 2.48913 0.39993 -0.236328
+lowerneck -11.3277 -0.747682 7.23874
+upperneck -13.7434 -1.61705 0.611071
+head -2.57292 -1.16856 -1.04417
+rclavicle -3.97569e-016 -1.07344e-014
+rhumerus 63.7565 -2.09768 -57.2895
+rradius 18.5445
+rwrist 29.7733
+rhand -11.9056 -36.5582
+rfingers 7.12502
+rthumb 14.1479 -66.0565
+lclavicle -3.97569e-016 -1.07344e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8301 -6.5625 12.6893
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.8104 3.83023 -10.4361
+ltibia 0
+lfoot 0 0
+ltoes 0
+12
+root 9.6685 11.8121 4.35524 18.8075 -1.34169 0.14203
+lowerback -0.580766 0.555463 -2.3181
+upperback 2.16278 0.818661 -1.55472
+thorax 2.53567 0.378022 -0.27438
+lowerneck -7.14339 -0.231247 4.37275
+upperneck -17.7195 0.0569575 3.74976
+head -4.66126 -0.404639 0.516153
+rclavicle -5.1684e-015 6.75868e-015
+rhumerus 63.9376 -2.16407 -57.5578
+rradius 18.4815
+rwrist 29.9979
+rhand -11.8603 -36.6647
+rfingers 7.12502
+rthumb 14.1916 -66.1599
+lclavicle -5.1684e-015 6.75868e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8774 -6.58707 12.7199
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.8984 3.82626 -10.4055
+ltibia 0
+lfoot 0 0
+ltoes 0
+13
+root 9.67017 11.8095 4.35246 18.8065 -1.29565 0.0512744
+lowerback -0.561075 0.544994 -2.24147
+upperback 2.1909 0.802215 -1.50575
+thorax 2.55391 0.370571 -0.26751
+lowerneck -11.3616 -0.750404 7.53646
+upperneck -13.8366 -1.68589 0.188742
+head -2.61299 -1.21325 -1.23594
+rclavicle 5.1684e-015 -9.54166e-015
+rhumerus 64.0385 -2.16077 -57.486
+rradius 18.4753
+rwrist 29.9549
+rhand -11.7622 -36.9065
+rfingers 7.12502
+rthumb 14.2862 -66.395
+lclavicle 5.1684e-015 -9.54166e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8582 -6.60015 12.8277
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9491 3.83965 -10.3112
+ltibia 0
+lfoot 0 0
+ltoes 0
+14
+root 9.67286 11.8061 4.35237 18.7564 -1.2586 -0.0115351
+lowerback -0.539854 0.533549 -2.20812
+upperback 2.23027 0.785061 -1.43645
+thorax 2.58209 0.361514 -0.215554
+lowerneck -10.1943 -0.396861 6.1401
+upperneck -15.3063 -0.792835 1.90246
+head -3.25617 -0.77686 -0.421544
+rclavicle -7.95139e-016 -7.55382e-015
+rhumerus 64.0796 -2.10745 -57.332
+rradius 18.5453
+rwrist 29.8646
+rhand -11.6089 -37.019
+rfingers 7.12502
+rthumb 14.4338 -66.4971
+lclavicle -7.95139e-016 -7.55382e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.7687 -6.6206 12.8892
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.8992 3.81067 -10.2416
+ltibia 0
+lfoot 0 0
+ltoes 0
+15
+root 9.67512 11.8018 4.35269 18.7384 -1.25533 -0.035109
+lowerback -0.561744 0.513682 -2.20673
+upperback 2.27139 0.759441 -1.39679
+thorax 2.63655 0.347679 -0.175971
+lowerneck -8.88071 -0.917852 5.94129
+upperneck -16.2963 -1.37347 1.75266
+head -3.85459 -1.08795 -0.427173
+rclavicle -9.14409e-015 7.95139e-016
+rhumerus 64.1542 -2.05449 -57.2476
+rradius 18.6055
+rwrist 29.7952
+rhand -11.428 -37.0139
+rfingers 7.12502
+rthumb 14.6082 -66.4794
+lclavicle -9.14409e-015 7.95139e-016
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.7357 -6.62025 12.9032
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.8729 3.78376 -10.2193
+ltibia 0
+lfoot 0 0
+ltoes 0
+16
+root 9.67567 11.7977 4.35246 18.7541 -1.26026 -0.0606964
+lowerback -0.596693 0.505622 -2.19313
+upperback 2.28972 0.750193 -1.40186
+thorax 2.67549 0.343021 -0.188657
+lowerneck -12.0347 -0.375334 6.65349
+upperneck -13.6234 -1.06888 1.25749
+head -2.38163 -0.870285 -0.728009
+rclavicle 7.35503e-015 3.18055e-015
+rhumerus 64.2001 -2.03264 -57.1944
+rradius 18.6315
+rwrist 29.6446
+rhand -11.2958 -37.1018
+rfingers 7.12502
+rthumb 14.7355 -66.5581
+lclavicle 7.35503e-015 3.18055e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.7699 -6.60833 12.931
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9241 3.78662 -10.2037
+ltibia 0
+lfoot 0 0
+ltoes 0
+17
+root 9.67633 11.7953 4.3515 18.7746 -1.23874 -0.0656701
+lowerback -0.599254 0.491782 -2.19718
+upperback 2.26134 0.731437 -1.41103
+thorax 2.64799 0.33405 -0.196408
+lowerneck -11.3357 -1.0097 7.15106
+upperneck -14.0771 -1.96545 0.524095
+head -2.69883 -1.34815 -1.0607
+rclavicle -5.96354e-016 1.86858e-014
+rhumerus 64.0905 -1.92713 -56.966
+rradius 18.7829
+rwrist 29.3069
+rhand -11.2481 -37.213
+rfingers 7.12502
+rthumb 14.7815 -66.6659
+lclavicle -5.96354e-016 1.86858e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8077 -6.63667 12.9455
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9682 3.75538 -10.1891
+ltibia 0
+lfoot 0 0
+ltoes 0
+18
+root 9.67646 11.7938 4.35166 18.7819 -1.22459 -0.119746
+lowerback -0.559657 0.470773 -2.18829
+upperback 2.17054 0.699039 -1.38205
+thorax 2.5322 0.319107 -0.173153
+lowerneck -13.0953 -0.494162 7.62376
+upperneck -12.3589 -1.54045 0.146604
+head -1.82566 -1.09937 -1.27024
+rclavicle 0 -6.75868e-015
+rhumerus 63.9745 -1.8386 -57.181
+rradius 18.807
+rwrist 29.4243
+rhand -11.3044 -36.8834
+rfingers 7.12502
+rthumb 14.7273 -66.3402
+lclavicle 0 -6.75868e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8085 -6.62496 13.0077
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9802 3.75189 -10.118
+ltibia 0
+lfoot 0 0
+ltoes 0
+19
+root 9.67606 11.7902 4.35172 18.7716 -1.27404 -0.145181
+lowerback -0.514915 0.462534 -2.22136
+upperback 2.05137 0.683937 -1.36936
+thorax 2.38398 0.312544 -0.142775
+lowerneck -12.3953 -0.903419 8.27647
+upperneck -13.0984 -2.14912 -0.733317
+head -2.23846 -1.44736 -1.68461
+rclavicle -1.78906e-015 1.94809e-014
+rhumerus 63.8793 -1.75795 -57.5889
+rradius 18.7118
+rwrist 29.7351
+rhand -11.3165 -36.5127
+rfingers 7.12502
+rthumb 14.7156 -65.9704
+lclavicle -1.78906e-015 1.94809e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8313 -6.56164 13.0202
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9947 3.79895 -10.1078
+ltibia 0
+lfoot 0 0
+ltoes 0
+20
+root 9.67668 11.7835 4.34829 18.8717 -1.2676 -0.0887329
+lowerback -0.592976 0.441905 -2.27634
+upperback 1.9464 0.658053 -1.39549
+thorax 2.32 0.299917 -0.139159
+lowerneck -13.6372 -0.759361 8.12702
+upperneck -11.4672 -2.07235 -0.638655
+head -1.48209 -1.35829 -1.63665
+rclavicle -2.78299e-015 -2.54444e-014
+rhumerus 63.7569 -1.73459 -57.8507
+rradius 18.7394
+rwrist 29.9876
+rhand -11.1323 -36.5061
+rfingers 7.12502
+rthumb 14.8931 -65.9507
+lclavicle -2.78299e-015 -2.54444e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.012 -6.61566 12.9679
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.1865 3.77058 -10.1638
+ltibia 0
+lfoot 0 0
+ltoes 0
+21
+root 9.6778 11.7823 4.3492 18.7572 -1.29249 -0.0883921
+lowerback -0.453144 0.448285 -2.30462
+upperback 1.95683 0.662653 -1.40816
+thorax 2.25187 0.30233 -0.137345
+lowerneck -12.143 -1.01201 8.01906
+upperneck -12.7472 -2.24064 -0.604444
+head -2.15728 -1.47315 -1.59596
+rclavicle 0 -2.06736e-014
+rhumerus 63.7088 -1.73167 -57.9224
+rradius 18.8017
+rwrist 30.0677
+rhand -11.0108 -36.5336
+rfingers 7.12502
+rthumb 15.0101 -65.9695
+lclavicle 0 -2.06736e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8981 -6.57196 12.9395
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0454 3.76101 -10.155
+ltibia 0
+lfoot 0 0
+ltoes 0
+22
+root 9.67708 11.7795 4.34898 18.7343 -1.32397 -0.104071
+lowerback -0.379451 0.445344 -2.34984
+upperback 1.95243 0.656647 -1.40435
+thorax 2.20549 0.298885 -0.108908
+lowerneck -10.2306 -0.810149 6.11639
+upperneck -14.0713 -1.42309 1.61191
+head -2.8325 -1.05022 -0.518998
+rclavicle -4.96962e-015 1.63003e-014
+rhumerus 63.6975 -1.54199 -57.4278
+rradius 18.8939
+rwrist 29.5516
+rhand -11.0143 -36.4691
+rfingers 7.12502
+rthumb 15.0068 -65.9053
+lclavicle -4.96962e-015 1.63003e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9253 -6.50441 12.9441
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0318 3.80676 -10.1426
+ltibia 0
+lfoot 0 0
+ltoes 0
+23
+root 9.67664 11.7774 4.34989 18.6908 -1.37658 -0.0782498
+lowerback -0.342477 0.452063 -2.38613
+upperback 1.97762 0.666437 -1.45541
+thorax 2.21076 0.303431 -0.141003
+lowerneck -9.52805 -0.888429 7.01149
+upperneck -15.156 -1.58813 0.787175
+head -3.36589 -1.19281 -0.938587
+rclavicle -2.78299e-015 8.34896e-015
+rhumerus 63.7633 -1.5503 -57.4981
+rradius 18.8223
+rwrist 29.6246
+rhand -11.0193 -36.375
+rfingers 7.12502
+rthumb 15.0019 -65.8116
+lclavicle -2.78299e-015 8.34896e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9095 -6.4488 12.8969
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9519 3.83699 -10.1809
+ltibia 0
+lfoot 0 0
+ltoes 0
+24
+root 9.67846 11.7745 4.34885 18.6588 -1.39652 -0.0192018
+lowerback -0.307808 0.468979 -2.39535
+upperback 1.96552 0.689403 -1.55527
+thorax 2.17967 0.316044 -0.238115
+lowerneck -10.2419 -0.722426 6.90504
+upperneck -14.3785 -1.40288 1.11846
+head -2.95623 -1.07729 -0.813962
+rclavicle -1.21259e-014 7.15625e-015
+rhumerus 63.7403 -1.68488 -57.8665
+rradius 18.6939
+rwrist 29.9607
+rhand -11.1257 -36.3051
+rfingers 7.12502
+rthumb 14.8994 -65.7493
+lclavicle -1.21259e-014 7.15625e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9311 -6.45929 12.8181
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9112 3.79928 -10.2543
+ltibia 0
+lfoot 0 0
+ltoes 0
+25
+root 9.68065 11.7703 4.34586 18.7187 -1.35411 -0.0142619
+lowerback -0.363168 0.470017 -2.37944
+upperback 1.92839 0.69221 -1.58746
+thorax 2.17316 0.318296 -0.279614
+lowerneck -8.81761 -0.740518 6.42166
+upperneck -15.9401 -1.15907 1.80737
+head -3.73883 -1.00017 -0.494304
+rclavicle 8.15017e-015 -8.34896e-015
+rhumerus 63.59 -1.58132 -57.422
+rradius 18.8099
+rwrist 29.5393
+rhand -11.2304 -36.3254
+rfingers 7.12502
+rthumb 14.7985 -65.7771
+lclavicle 8.15017e-015 -8.34896e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.0588 -6.52177 12.8258
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0675 3.75002 -10.2586
+ltibia 0
+lfoot 0 0
+ltoes 0
+26
+root 9.68169 11.7676 4.34309 18.7451 -1.31576 -0.0621853
+lowerback -0.423905 0.444711 -2.35458
+upperback 2.02921 0.662476 -1.55574
+thorax 2.31129 0.301953 -0.260859
+lowerneck -8.15578 -0.919275 6.14764
+upperneck -16.5371 -1.30776 1.89306
+head -4.07471 -1.08288 -0.411471
+rclavicle -8.15017e-015 7.15625e-015
+rhumerus 63.6965 -1.50123 -56.9473
+rradius 18.9608
+rwrist 29.1831
+rhand -11.1482 -36.5051
+rfingers 7.12502
+rthumb 14.8778 -65.9509
+lclavicle -8.15017e-015 7.15625e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.0979 -6.54688 12.8913
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.1743 3.74822 -10.2043
+ltibia 0
+lfoot 0 0
+ltoes 0
+27
+root 9.68306 11.7656 4.34103 18.6678 -1.34203 -0.0950393
+lowerback -0.390274 0.43424 -2.32337
+upperback 2.22351 0.651611 -1.53819
+thorax 2.49268 0.294503 -0.260362
+lowerneck -9.29169 -0.733229 6.40955
+upperneck -16.1226 -1.1949 1.69798
+head -3.72289 -1.01748 -0.529222
+rclavicle 4.57205e-015 6.36111e-015
+rhumerus 63.9977 -1.57248 -56.8364
+rradius 18.98
+rwrist 29.1511
+rhand -10.9427 -36.746
+rfingers 7.12502
+rthumb 15.0757 -66.1771
+lclavicle 4.57205e-015 6.36111e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.0108 -6.50595 12.9099
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.1098 3.79191 -10.1864
+ltibia 0
+lfoot 0 0
+ltoes 0
+28
+root 9.68398 11.7639 4.33931 18.6122 -1.37856 -0.0888426
+lowerback -0.219536 0.443169 -2.33298
+upperback 1.88074 0.647927 -1.51537
+thorax 2.04346 0.297637 -0.2339
+lowerneck -7.78019 -0.952349 5.95849
+upperneck -16.341 -1.31775 1.93035
+head -4.06675 -1.07472 -0.365791
+rclavicle -3.18055e-015 -7.55382e-015
+rhumerus 63.3854 -1.04351 -56.3571
+rradius 19.0786
+rwrist 28.715
+rhand -10.7886 -36.9127
+rfingers 7.12502
+rthumb 15.2241 -66.3326
+lclavicle -3.18055e-015 -7.55382e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9709 -6.47894 12.8938
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0502 3.81962 -10.2067
+ltibia 0
+lfoot 0 0
+ltoes 0
+29
+root 9.68514 11.763 4.3398 18.623 -1.40405 -0.108108
+lowerback -0.44226 0.434985 -2.31379
+upperback 2.31381 0.656444 -1.52696
+thorax 2.61492 0.295533 -0.25346
+lowerneck -6.30149 -0.471512 4.25621
+upperneck -19.3114 -0.125879 3.92852
+head -4.80755 -0.558236 0.517197
+rclavicle 5.96354e-016 4.77083e-015
+rhumerus 64.0808 -1.49102 -56.6064
+rradius 19.006
+rwrist 28.9225
+rhand -10.7681 -36.8218
+rfingers 7.12502
+rthumb 15.2439 -66.2402
+lclavicle 5.96354e-016 4.77083e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9909 -6.44251 12.899
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0287 3.84577 -10.2043
+ltibia 0
+lfoot 0 0
+ltoes 0
+30
+root 9.68756 11.7613 4.34066 18.6437 -1.42961 -0.132255
+lowerback -0.437478 0.489598 -2.2882
+upperback 1.97262 0.719491 -1.52317
+thorax 2.26023 0.331974 -0.263271
+lowerneck -7.66268 -1.00168 5.98589
+upperneck -16.508 -1.37227 1.92424
+head -4.15185 -1.10855 -0.370194
+rclavicle 2.18663e-015 -3.22031e-014
+rhumerus 63.4678 -1.27035 -56.6939
+rradius 18.9672
+rwrist 29.1645
+rhand -10.6771 -36.6773
+rfingers 7.12502
+rthumb 15.3315 -66.0889
+lclavicle 2.18663e-015 -3.22031e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.0307 -6.42715 12.9028
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0457 3.87425 -10.2012
+ltibia 0
+lfoot 0 0
+ltoes 0
+31
+root 9.68831 11.7589 4.3385 18.5972 -1.46334 -0.0636117
+lowerback -0.394259 0.479414 -2.37205
+upperback 2.28646 0.715372 -1.58094
+thorax 2.55911 0.324889 -0.275224
+lowerneck -5.8584 -0.599005 4.50027
+upperneck -19.7375 -0.288286 3.72243
+head -5.01545 -0.661681 0.419416
+rclavicle -5.1684e-015 -1.47101e-014
+rhumerus 64.0303 -1.72569 -57.3245
+rradius 18.8455
+rwrist 29.8559
+rhand -10.7215 -36.4452
+rfingers 7.12502
+rthumb 15.2887 -65.8601
+lclavicle -5.1684e-015 -1.47101e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.0257 -6.41618 12.8159
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0336 3.86168 -10.273
+ltibia 0
+lfoot 0 0
+ltoes 0
+32
+root 9.68821 11.7564 4.33766 18.5183 -1.47929 -0.044644
+lowerback -0.167082 0.49884 -2.43735
+upperback 2.09888 0.727974 -1.5475
+thorax 2.23668 0.333226 -0.206679
+lowerneck -5.11084 -0.757424 3.9799
+upperneck -19.7665 -0.377903 4.2195
+head -5.13951 -0.705909 0.666817
+rclavicle 7.7526e-015 6.36111e-015
+rhumerus 63.6557 -1.56387 -57.2889
+rradius 18.9188
+rwrist 30.1514
+rhand -10.7905 -36.34
+rfingers 7.12502
+rthumb 15.2223 -65.7599
+lclavicle 7.7526e-015 6.36111e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9501 -6.37702 12.7818
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9702 3.85481 -10.286
+ltibia 0
+lfoot 0 0
+ltoes 0
+33
+root 9.68886 11.7537 4.33869 18.4702 -1.48307 -0.0799225
+lowerback -0.251354 0.482513 -2.40827
+upperback 2.26552 0.713798 -1.56196
+thorax 2.45644 0.324108 -0.236828
+lowerneck -5.76627 -0.550542 4.33269
+upperneck -19.754 -0.177247 3.95296
+head -5.03345 -0.608961 0.516964
+rclavicle -4.17448e-015 -8.74653e-015
+rhumerus 63.8726 -1.67434 -57.3527
+rradius 18.9319
+rwrist 30.3319
+rhand -10.7181 -36.3759
+rfingers 7.12502
+rthumb 15.292 -65.7906
+lclavicle -4.17448e-015 -8.74653e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8983 -6.37012 12.8094
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9233 3.8791 -10.252
+ltibia 0
+lfoot 0 0
+ltoes 0
+34
+root 9.6899 11.7507 4.33895 18.4347 -1.49526 -0.0718117
+lowerback -0.281956 0.47993 -2.39211
+upperback 2.13118 0.708133 -1.58912
+thorax 2.33589 0.323616 -0.273981
+lowerneck -7.26992 -0.910975 5.65181
+upperneck -17.2287 -1.10978 2.51278
+head -4.47835 -1.00284 -0.110124
+rclavicle 7.35503e-015 1.94809e-014
+rhumerus 63.531 -1.32354 -56.7936
+rradius 19.0396
+rwrist 29.7823
+rhand -10.6336 -36.5176
+rfingers 7.12502
+rthumb 15.3734 -65.9261
+lclavicle 7.35503e-015 1.94809e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8639 -6.3455 12.7706
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.8888 3.89386 -10.2784
+ltibia 0
+lfoot 0 0
+ltoes 0
+35
+root 9.69095 11.7468 4.3379 18.4538 -1.45017 -0.105199
+lowerback -0.220228 0.47078 -2.33685
+upperback 1.98585 0.688768 -1.58166
+thorax 2.15226 0.317162 -0.298608
+lowerneck -8.94642 -0.936211 6.70419
+upperneck -15.597 -1.50146 1.46291
+head -3.6096 -1.16645 -0.657467
+rclavicle -1.0138e-014 -2.38542e-015
+rhumerus 63.2266 -1.02904 -56.2989
+rradius 19.1598
+rwrist 29.3999
+rhand -10.507 -36.6225
+rfingers 7.12502
+rthumb 15.4954 -66.0215
+lclavicle -1.0138e-014 -2.38542e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8679 -6.33598 12.7893
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -68.9597 3.87793 -10.2496
+ltibia 0
+lfoot 0 0
+ltoes 0
+36
+root 9.68906 11.7441 4.33272 18.5589 -1.33913 -0.15285
+lowerback -0.19677 0.447634 -2.30116
+upperback 1.89671 0.653829 -1.55879
+thorax 2.04784 0.301422 -0.296256
+lowerneck -9.28817 -0.760026 7.19005
+upperneck -15.5679 -1.37646 0.948555
+head -3.55019 -1.11338 -0.914764
+rclavicle -1.19271e-015 -1.23246e-014
+rhumerus 63.0633 -0.88714 -56.0047
+rradius 19.2655
+rwrist 29.2062
+rhand -10.2933 -36.7079
+rfingers 7.12502
+rthumb 15.7012 -66.0909
+lclavicle -1.19271e-015 -1.23246e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9882 -6.40964 12.8936
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.1649 3.83376 -10.1576
+ltibia 0
+lfoot 0 0
+ltoes 0
+37
+root 9.6875 11.7423 4.33375 18.5652 -1.35745 -0.235249
+lowerback -0.24807 0.46113 -2.25327
+upperback 1.91475 0.673168 -1.54229
+thorax 2.09529 0.311275 -0.305253
+lowerneck -9.69124 -0.643493 7.36345
+upperneck -15.24 -1.28482 0.845851
+head -3.3632 -1.06298 -0.980591
+rclavicle 3.97569e-015 -3.57812e-015
+rhumerus 62.9971 -0.740918 -55.6551
+rradius 19.3805
+rwrist 28.7914
+rhand -10.3048 -36.8522
+rfingers 7.12502
+rthumb 15.6901 -66.236
+lclavicle 3.97569e-015 -3.57812e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.9913 -6.32855 12.9842
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.1623 3.91105 -10.0646
+ltibia 0
+lfoot 0 0
+ltoes 0
+38
+root 9.68621 11.7406 4.33044 18.6007 -1.28076 -0.32257
+lowerback -0.248906 0.455561 -2.16175
+upperback 1.9137 0.664151 -1.52251
+thorax 2.09543 0.308194 -0.336338
+lowerneck -10.6227 -0.708348 7.90824
+upperneck -14.44 -1.57416 0.276083
+head -2.9491 -1.19664 -1.26841
+rclavicle -5.96354e-016 1.03368e-014
+rhumerus 62.936 -0.651132 -55.3306
+rradius 19.487
+rwrist 28.456
+rhand -10.5175 -37.1071
+rfingers 7.12502
+rthumb 15.4852 -66.5069
+lclavicle -5.96354e-016 1.03368e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.031 -6.33107 13.1019
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2628 3.89622 -9.95498
+ltibia 0
+lfoot 0 0
+ltoes 0
+39
+root 9.68799 11.7413 4.33682 18.4172 -1.39578 -0.405036
+lowerback -0.137599 0.532841 -2.11629
+upperback 1.98414 0.764341 -1.51603
+thorax 2.10474 0.358523 -0.353911
+lowerneck -10.5707 -0.706985 7.67166
+upperneck -14.4887 -1.5238 0.519821
+head -2.96507 -1.16579 -1.14562
+rclavicle -6.16232e-015 1.19271e-015
+rhumerus 62.8506 -0.616072 -54.9855
+rradius 19.5701
+rwrist 28.2504
+rhand -10.6126 -37.3237
+rfingers 7.12502
+rthumb 15.3937 -66.7306
+lclavicle -6.16232e-015 1.19271e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -65.8104 -6.17267 13.1326
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.0028 3.98373 -9.90962
+ltibia 0
+lfoot 0 0
+ltoes 0
+40
+root 9.68528 11.735 4.33118 18.6168 -1.32663 -0.413586
+lowerback -0.367205 0.515535 -2.1267
+upperback 1.98635 0.749023 -1.50419
+thorax 2.23601 0.349614 -0.334045
+lowerneck -10.4328 -0.751159 7.21374
+upperneck -14.7113 -1.48545 0.977857
+head -3.05084 -1.14011 -0.913776
+rclavicle -2.98177e-015 1.31198e-014
+rhumerus 62.8633 -0.58724 -54.6427
+rradius 19.651
+rwrist 28.004
+rhand -10.6145 -37.2705
+rfingers 7.12502
+rthumb 15.3919 -66.6776
+lclavicle -2.98177e-015 1.31198e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1129 -6.23512 13.2038
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3177 3.99556 -9.88605
+ltibia 0
+lfoot 0 0
+ltoes 0
+41
+root 9.6838 11.7323 4.3287 18.667 -1.30825 -0.447463
+lowerback -0.413527 0.510208 -2.08339
+upperback 1.96076 0.74227 -1.5099
+thorax 2.23637 0.347204 -0.363941
+lowerneck -10.2851 -0.761041 7.33454
+upperneck -14.8797 -1.49767 0.904676
+head -3.13922 -1.15642 -0.958181
+rclavicle -2.98177e-015 -7.95139e-016
+rhumerus 62.7889 -0.533914 -54.5485
+rradius 19.7217
+rwrist 27.9329
+rhand -10.5683 -37.1606
+rfingers 7.12502
+rthumb 15.4363 -66.5642
+lclavicle -2.98177e-015 -7.95139e-016
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1925 -6.20912 13.251
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4006 4.035 -9.83826
+ltibia 0
+lfoot 0 0
+ltoes 0
+42
+root 9.68528 11.7312 4.32782 18.5898 -1.28457 -0.486229
+lowerback -0.275172 0.513575 -2.01935
+upperback 1.90573 0.739768 -1.50302
+thorax 2.10259 0.348188 -0.394263
+lowerneck -10.5222 -0.632259 7.47751
+upperneck -14.7177 -1.36818 0.81706
+head -3.04066 -1.09108 -1.01229
+rclavicle 1.05356e-014 -1.43125e-014
+rhumerus 62.6408 -0.463582 -54.5751
+rradius 19.7685
+rwrist 27.9927
+rhand -10.4171 -37.146
+rfingers 7.12502
+rthumb 15.5819 -66.5384
+lclavicle 1.05356e-014 -1.43125e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1012 -6.21276 13.2832
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3204 4.01354 -9.78961
+ltibia 0
+lfoot 0 0
+ltoes 0
+43
+root 9.68681 11.7274 4.3257 18.584 -1.26582 -0.465675
+lowerback -0.279003 0.489379 -2.07256
+upperback 1.92433 0.708047 -1.45788
+thorax 2.12295 0.330782 -0.318748
+lowerneck -11.1831 -0.704049 7.62406
+upperneck -13.8445 -1.58617 0.535466
+head -2.6391 -1.17425 -1.13475
+rclavicle 4.77083e-015 8.74653e-015
+rhumerus 62.6854 -0.354017 -54.3762
+rradius 19.8104
+rwrist 27.8388
+rhand -10.149 -37.041
+rfingers 7.12502
+rthumb 15.8402 -66.413
+lclavicle 4.77083e-015 8.74653e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1371 -6.28932 13.2719
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3291 3.96983 -9.81396
+ltibia 0
+lfoot 0 0
+ltoes 0
+44
+root 9.68695 11.7241 4.32327 18.6276 -1.27562 -0.396574
+lowerback -0.371512 0.467414 -2.20284
+upperback 1.96365 0.684125 -1.4228
+thorax 2.21386 0.315312 -0.209465
+lowerneck -10.8038 -0.576784 7.39139
+upperneck -14.1921 -1.33977 0.672705
+head -2.8077 -1.05321 -1.04588
+rclavicle -1.98785e-016 -1.03368e-014
+rhumerus 62.7976 -0.335691 -54.3177
+rradius 19.7992
+rwrist 27.8037
+rhand -9.79523 -36.8303
+rfingers 7.12502
+rthumb 16.1808 -66.175
+lclavicle -1.98785e-016 -1.03368e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2285 -6.35044 13.21
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3983 3.93316 -9.88244
+ltibia 0
+lfoot 0 0
+ltoes 0
+45
+root 9.687 11.7224 4.32315 18.6295 -1.29714 -0.324086
+lowerback -0.370379 0.466126 -2.31468
+upperback 1.95995 0.68404 -1.42492
+thorax 2.20832 0.313321 -0.149113
+lowerneck -10.7051 -0.630965 7.13205
+upperneck -14.2636 -1.35492 0.957158
+head -2.84202 -1.05606 -0.907209
+rclavicle 1.78906e-015 1.51076e-014
+rhumerus 62.8309 -0.419421 -54.614
+rradius 19.7265
+rwrist 28.12
+rhand -9.57906 -36.5964
+rfingers 7.12502
+rthumb 16.389 -65.924
+lclavicle 1.78906e-015 1.51076e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2285 -6.36344 13.125
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4128 3.91271 -9.95972
+ltibia 0
+lfoot 0 0
+ltoes 0
+46
+root 9.68698 11.7208 4.32324 18.5789 -1.34243 -0.256227
+lowerback -0.296209 0.478719 -2.42623
+upperback 1.95043 0.699708 -1.43336
+thorax 2.15556 0.319714 -0.0957255
+lowerneck -10.785 -0.604259 7.36682
+upperneck -14.1753 -1.3722 0.687375
+head -2.80559 -1.0681 -1.03699
+rclavicle -8.34896e-015 2.78299e-014
+rhumerus 62.8612 -0.511726 -55.0233
+rradius 19.5967
+rwrist 28.5688
+rhand -9.53918 -36.3055
+rfingers 7.12502
+rthumb 16.4274 -65.6299
+lclavicle -8.34896e-015 2.78299e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1859 -6.34383 13.0328
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3555 3.92346 -10.0522
+ltibia 0
+lfoot 0 0
+ltoes 0
+47
+root 9.68713 11.7185 4.32187 18.5254 -1.39218 -0.194083
+lowerback -0.26606 0.483547 -2.5334
+upperback 1.96815 0.706947 -1.42992
+thorax 2.15557 0.321266 -0.0323365
+lowerneck -11.2259 -0.778351 7.78135
+upperneck -13.7798 -1.73577 0.197207
+head -2.62299 -1.24943 -1.27574
+rclavicle -6.95746e-015 -5.1684e-015
+rhumerus 62.9139 -0.534017 -55.2206
+rradius 19.5196
+rwrist 28.7885
+rhand -9.70779 -36.1614
+rfingers 7.12502
+rthumb 16.265 -65.4992
+lclavicle -6.95746e-015 -5.1684e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1788 -6.32386 12.9412
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2729 3.91087 -10.1257
+ltibia 0
+lfoot 0 0
+ltoes 0
+48
+root 9.68751 11.7165 4.32093 18.504 -1.41357 -0.180507
+lowerback -0.197472 0.47406 -2.59204
+upperback 1.91103 0.690408 -1.40006
+thorax 2.05756 0.31299 0.0299411
+lowerneck -10.1234 -0.67617 7.36763
+upperneck -14.5646 -1.42295 0.464701
+head -3.05838 -1.10205 -1.10956
+rclavicle -8.74653e-015 1.23246e-014
+rhumerus 62.8707 -0.379914 -55.0763
+rradius 19.5166
+rwrist 28.6644
+rhand -9.84943 -36.168
+rfingers 7.12502
+rthumb 16.1286 -65.5169
+lclavicle -8.74653e-015 1.23246e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1875 -6.30654 12.9089
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2369 3.89392 -10.1335
+ltibia 0
+lfoot 0 0
+ltoes 0
+49
+root 9.68953 11.7166 4.31973 18.4936 -1.38484 -0.184756
+lowerback -0.122601 0.47296 -2.55749
+upperback 1.87543 0.684905 -1.41257
+thorax 1.97945 0.31193 -0.00309871
+lowerneck -11.1022 -0.705369 7.73127
+upperneck -13.7353 -1.62629 0.15367
+head -2.62313 -1.19006 -1.27993
+rclavicle 5.96354e-015 -1.90833e-014
+rhumerus 62.8332 -0.412094 -55.2337
+rradius 19.4657
+rwrist 28.7973
+rhand -9.70387 -36.1208
+rfingers 7.12502
+rthumb 16.2688 -65.4582
+lclavicle 5.96354e-015 -1.90833e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1769 -6.37243 12.9264
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2399 3.8548 -10.1285
+ltibia 0
+lfoot 0 0
+ltoes 0
+50
+root 9.69269 11.7154 4.31933 18.4786 -1.36378 -0.171576
+lowerback -0.141353 0.477568 -2.50553
+upperback 1.91761 0.693046 -1.45834
+thorax 2.03434 0.316532 -0.0786238
+lowerneck -11.5377 -0.636793 7.83979
+upperneck -13.202 -1.60274 0.057444
+head -2.37017 -1.16558 -1.33184
+rclavicle 1.39149e-015 -7.95139e-015
+rhumerus 62.8809 -0.636336 -55.7682
+rradius 19.3923
+rwrist 29.2655
+rhand -9.55712 -36.0609
+rfingers 7.12502
+rthumb 16.4101 -65.3868
+lclavicle 1.39149e-015 -7.95139e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1759 -6.46571 12.9199
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2171 3.80089 -10.1411
+ltibia 0
+lfoot 0 0
+ltoes 0
+51
+root 9.69568 11.7136 4.31862 18.4891 -1.36581 -0.219552
+lowerback -0.170294 0.487071 -2.4229
+upperback 1.92879 0.706056 -1.45975
+thorax 2.06276 0.324138 -0.125725
+lowerneck -10.5599 -0.637656 7.53334
+upperneck -14.2795 -1.42216 0.535109
+head -2.88663 -1.10206 -1.11595
+rclavicle -3.57812e-015 -4.77083e-015
+rhumerus 62.9115 -0.739221 -56.0676
+rradius 19.3412
+rwrist 29.5179
+rhand -9.49311 -35.9372
+rfingers 7.12502
+rthumb 16.4717 -65.258
+lclavicle -3.57812e-015 -4.77083e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1927 -6.45452 12.9511
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2567 3.81358 -10.1003
+ltibia 0
+lfoot 0 0
+ltoes 0
+52
+root 9.69743 11.714 4.31457 18.5181 -1.37982 -0.269021
+lowerback -0.202588 0.502523 -2.36294
+upperback 1.9489 0.72733 -1.44762
+thorax 2.10176 0.335229 -0.146039
+lowerneck -11.4947 -0.7401 8.31529
+upperneck -13.3686 -1.81043 -0.326184
+head -2.45804 -1.29145 -1.54554
+rclavicle -6.95746e-015 -1.51076e-014
+rhumerus 62.9415 -0.774694 -56.0824
+rradius 19.3247
+rwrist 29.4829
+rhand -9.54828 -35.8274
+rfingers 7.12502
+rthumb 16.4186 -65.1525
+lclavicle -6.95746e-015 -1.51076e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2393 -6.40433 12.9954
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.351 3.87273 -10.0782
+ltibia 0
+lfoot 0 0
+ltoes 0
+53
+root 9.69827 11.7149 4.31016 18.5254 -1.40996 -0.217428
+lowerback -0.22329 0.507333 -2.42755
+upperback 1.9657 0.736026 -1.45982
+thorax 2.13003 0.338201 -0.121996
+lowerneck -11.2115 -0.675932 7.89822
+upperneck -13.6444 -1.61256 0.161224
+head -2.57629 -1.18844 -1.30674
+rclavicle 1.59028e-015 -4.77083e-015
+rhumerus 62.9445 -0.772284 -56.0326
+rradius 19.3447
+rwrist 29.4432
+rhand -9.53453 -35.8414
+rfingers 7.12502
+rthumb 16.4318 -65.1654
+lclavicle 1.59028e-015 -4.77083e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2873 -6.4027 12.9393
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3823 3.89255 -10.1627
+ltibia 0
+lfoot 0 0
+ltoes 0
+54
+root 9.70118 11.7156 4.30604 18.5316 -1.37177 -0.136165
+lowerback -0.201723 0.493653 -2.47673
+upperback 1.95347 0.717672 -1.47707
+thorax 2.10531 0.32864 -0.112792
+lowerneck -11.7347 -0.652853 7.97315
+upperneck -12.9693 -1.66274 0.0256166
+head -2.26405 -1.19434 -1.36724
+rclavicle 5.56597e-015 -9.93923e-015
+rhumerus 62.9073 -0.682631 -55.7561
+rradius 19.389
+rwrist 29.1805
+rhand -9.28904 -35.9524
+rfingers 7.12502
+rthumb 16.6682 -65.2567
+lclavicle 5.56597e-015 -9.93923e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2862 -6.48691 12.8224
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4332 3.78497 -10.2447
+ltibia 0
+lfoot 0 0
+ltoes 0
+55
+root 9.70443 11.7163 4.30282 18.5273 -1.33336 -0.0838388
+lowerback -0.176157 0.483366 -2.50384
+upperback 1.95899 0.703458 -1.47312
+thorax 2.09652 0.32109 -0.0940713
+lowerneck -11.6997 -0.699931 7.94579
+upperneck -13.2403 -1.7058 0.132361
+head -2.36215 -1.2243 -1.32753
+rclavicle -2.98177e-015 -2.78299e-015
+rhumerus 62.8899 -0.580342 -55.4065
+rradius 19.4358
+rwrist 28.8414
+rhand -9.15016 -36.0366
+rfingers 7.12502
+rthumb 16.8019 -65.3296
+lclavicle -2.98177e-015 -2.78299e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.264 -6.56052 12.7306
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4735 3.67727 -10.2914
+ltibia 0
+lfoot 0 0
+ltoes 0
+56
+root 9.70615 11.7166 4.3024 18.4803 -1.36426 -0.0376062
+lowerback -0.105443 0.476003 -2.57236
+upperback 1.94321 0.691146 -1.45993
+thorax 2.03987 0.31425 -0.0431515
+lowerneck -10.2351 -0.82508 7.21189
+upperneck -14.1324 -1.60177 0.789887
+head -2.88775 -1.17819 -0.976163
+rclavicle -7.95139e-015 -6.75868e-015
+rhumerus 62.8334 -0.441147 -55.1944
+rradius 19.5024
+rwrist 28.6236
+rhand -9.17215 -36.0004
+rfingers 7.12502
+rthumb 16.7807 -65.2952
+lclavicle -7.95139e-015 -6.75868e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2418 -6.59808 12.6934
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4112 3.6712 -10.3632
+ltibia 0
+lfoot 0 0
+ltoes 0
+57
+root 9.70796 11.7169 4.30104 18.4625 -1.36122 -0.0309129
+lowerback -0.0519024 0.469098 -2.56402
+upperback 1.93055 0.679443 -1.45993
+thorax 1.99703 0.309041 -0.048536
+lowerneck -11.2066 -0.689649 8.00242
+upperneck -13.4678 -1.65462 0.0355008
+head -2.52178 -1.20735 -1.36708
+rclavicle 7.95139e-016 -6.36111e-015
+rhumerus 62.7977 -0.358312 -55.0732
+rradius 19.5455
+rwrist 28.4632
+rhand -9.15939 -35.9994
+rfingers 7.12502
+rthumb 16.793 -65.2932
+lclavicle 7.95139e-016 -6.36111e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2382 -6.66527 12.7186
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3708 3.65635 -10.3772
+ltibia 0
+lfoot 0 0
+ltoes 0
+58
+root 9.70927 11.7175 4.29787 18.487 -1.35236 -0.0587123
+lowerback -0.124532 0.481024 -2.50807
+upperback 2.01108 0.699746 -1.46789
+thorax 2.12102 0.318585 -0.0867048
+lowerneck -7.03633 -0.554775 4.90581
+upperneck -17.2066 -0.477047 3.32265
+head -4.49266 -0.674297 0.282879
+rclavicle 5.96354e-015 1.63003e-014
+rhumerus 62.8713 -0.461198 -55.0386
+rradius 19.5952
+rwrist 28.4291
+rhand -9.01892 -35.9575
+rfingers 7.12502
+rthumb 16.9282 -65.2398
+lclavicle 5.96354e-015 1.63003e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2537 -6.65512 12.7457
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.384 3.64971 -10.3406
+ltibia 0
+lfoot 0 0
+ltoes 0
+59
+root 9.7093 11.7184 4.29518 18.4815 -1.38231 -0.0758548
+lowerback -0.155242 0.496216 -2.5027
+upperback 2.05271 0.722116 -1.46402
+thorax 2.18077 0.329003 -0.0848864
+lowerneck -11.6804 -0.649454 7.97732
+upperneck -13.2211 -1.64318 0.0905043
+head -2.35721 -1.19333 -1.34597
+rclavicle 6.16232e-015 -1.66979e-014
+rhumerus 62.8698 -0.491108 -54.9615
+rradius 19.687
+rwrist 28.3524
+rhand -8.85034 -35.8119
+rfingers 7.12502
+rthumb 17.0905 -65.0802
+lclavicle 6.16232e-015 -1.66979e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.237 -6.54581 12.7347
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3937 3.68302 -10.3359
+ltibia 0
+lfoot 0 0
+ltoes 0
+60
+root 9.70936 11.7197 4.29358 18.4685 -1.40723 -0.0746667
+lowerback -0.0920837 0.497693 -2.52865
+upperback 1.9993 0.720361 -1.45262
+thorax 2.08989 0.328701 -0.0594828
+lowerneck -6.03656 -0.459652 4.27535
+upperneck -18.0543 -0.144926 3.94301
+head -4.99964 -0.529587 0.612943
+rclavicle -4.17448e-015 5.56597e-015
+rhumerus 62.7733 -0.349493 -54.734
+rradius 19.7638
+rwrist 28.1453
+rhand -8.85149 -35.843
+rfingers 7.12502
+rthumb 17.0894 -65.1114
+lclavicle -4.17448e-015 5.56597e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2266 -6.50337 12.7215
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4002 3.68969 -10.3451
+ltibia 0
+lfoot 0 0
+ltoes 0
+61
+root 9.70994 11.7209 4.29185 18.4614 -1.42436 -0.0641148
+lowerback -0.0696429 0.500349 -2.555
+upperback 2.00302 0.723415 -1.45013
+thorax 2.08073 0.329795 -0.0423326
+lowerneck -11.4997 -0.655444 7.98393
+upperneck -13.296 -1.63535 0.0674933
+head -2.41265 -1.19187 -1.354
+rclavicle -6.36111e-015 1.03368e-014
+rhumerus 62.7683 -0.28852 -54.5504
+rradius 19.7994
+rwrist 27.9761
+rhand -8.86267 -35.8919
+rfingers 7.12502
+rthumb 17.0786 -65.1612
+lclavicle -6.36111e-015 1.03368e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.255 -6.5387 12.7252
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3745 3.68248 -10.3485
+ltibia 0
+lfoot 0 0
+ltoes 0
+62
+root 9.71098 11.7213 4.29047 18.4495 -1.44591 -0.0689336
+lowerback -0.132225 0.505932 -2.55052
+upperback 2.07525 0.7351 -1.44764
+thorax 2.19006 0.334203 -0.0412265
+lowerneck -6.799 -0.538169 4.77037
+upperneck -17.4265 -0.412185 3.42246
+head -4.61841 -0.646316 0.342575
+rclavicle -5.96354e-015 -1.63003e-014
+rhumerus 62.8722 -0.373424 -54.7083
+rradius 19.7492
+rwrist 28.1037
+rhand -8.79495 -35.7535
+rfingers 7.12502
+rthumb 17.1438 -65.0172
+lclavicle -5.96354e-015 -1.63003e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2671 -6.52374 12.7262
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3454 3.70187 -10.3504
+ltibia 0
+lfoot 0 0
+ltoes 0
+63
+root 9.71251 11.7213 4.29098 18.4447 -1.46057 -0.102849
+lowerback -0.213896 0.513062 -2.48207
+upperback 2.13789 0.748596 -1.45642
+thorax 2.30113 0.340908 -0.0872243
+lowerneck -10.158 -0.634886 7.50168
+upperneck -14.2902 -1.37007 0.642745
+head -2.95482 -1.07846 -1.07352
+rclavicle -3.18055e-015 -4.37326e-015
+rhumerus 62.9215 -0.425829 -54.8058
+rradius 19.7519
+rwrist 28.1243
+rhand -8.72645 -35.672
+rfingers 7.12502
+rthumb 17.2097 -64.9299
+lclavicle -3.18055e-015 -4.37326e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2386 -6.47816 12.733
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3356 3.72326 -10.3152
+ltibia 0
+lfoot 0 0
+ltoes 0
+64
+root 9.71485 11.7221 4.29058 18.4613 -1.45979 -0.0802099
+lowerback -0.197374 0.514376 -2.45464
+upperback 2.1047 0.749122 -1.49116
+thorax 2.25844 0.342636 -0.138465
+lowerneck -6.65765 -0.384527 5.03105
+upperneck -17.542 -0.204068 3.34232
+head -4.69028 -0.560526 0.268038
+rclavicle 3.77691e-015 -1.03368e-014
+rhumerus 62.8055 -0.303922 -54.468
+rradius 19.8618
+rwrist 27.6883
+rhand -8.67505 -35.8317
+rfingers 7.12502
+rthumb 17.2592 -65.0852
+lclavicle 3.77691e-015 -1.03368e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2668 -6.50965 12.694
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3659 3.69796 -10.3318
+ltibia 0
+lfoot 0 0
+ltoes 0
+65
+root 9.71593 11.7234 4.28892 18.4732 -1.47886 -0.0161092
+lowerback -0.144158 0.517024 -2.51665
+upperback 2.0208 0.749581 -1.51151
+thorax 2.14175 0.343457 -0.125475
+lowerneck -9.86215 -1.01718 7.21418
+upperneck -13.8443 -1.84291 0.723405
+head -2.86039 -1.29073 -0.998366
+rclavicle 0 3.89618e-014
+rhumerus 62.6398 -0.108667 -54.09
+rradius 19.937
+rwrist 27.2191
+rhand -8.7497 -36.0131
+rfingers 7.12502
+rthumb 17.1874 -65.273
+lclavicle 0 3.89618e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3389 -6.53866 12.6235
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3729 3.68853 -10.4261
+ltibia 0
+lfoot 0 0
+ltoes 0
+66
+root 9.7154 11.7235 4.28731 18.5018 -1.51112 -0.042228
+lowerback -0.219911 0.540584 -2.50456
+upperback 2.03616 0.78401 -1.50666
+thorax 2.1997 0.360173 -0.125772
+lowerneck -6.30532 -0.552284 5.003
+upperneck -17.3863 -0.42007 3.30517
+head -4.69875 -0.663428 0.264302
+rclavicle 1.59028e-015 3.57812e-015
+rhumerus 62.5861 -0.0615064 -53.9179
+rradius 19.984
+rwrist 26.9066
+rhand -8.77375 -36.0296
+rfingers 7.12502
+rthumb 17.1642 -65.2915
+lclavicle 1.59028e-015 3.57812e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.4105 -6.50225 12.6512
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3942 3.75126 -10.4307
+ltibia 0
+lfoot 0 0
+ltoes 0
+67
+root 9.71626 11.7232 4.28594 18.5404 -1.51097 -0.0800442
+lowerback -0.311911 0.542823 -2.44567
+upperback 2.07555 0.790583 -1.50214
+thorax 2.29251 0.363443 -0.152836
+lowerneck -9.2072 -0.940511 6.88708
+upperneck -14.454 -1.60171 1.17993
+head -3.16569 -1.184 -0.787157
+rclavicle -1.98785e-016 -1.35174e-014
+rhumerus 62.6176 -0.059685 -53.8719
+rradius 20.0056
+rwrist 26.7676
+rhand -8.51164 -35.9853
+rfingers 7.12502
+rthumb 17.4165 -65.2251
+lclavicle -1.98785e-016 -1.35174e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.4627 -6.50897 12.6949
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4905 3.79362 -10.4112
+ltibia 0
+lfoot 0 0
+ltoes 0
+68
+root 9.71726 11.7244 4.28577 18.5028 -1.50175 -0.0741317
+lowerback -0.284301 0.531483 -2.44327
+upperback 2.08157 0.774393 -1.49285
+thorax 2.28331 0.35537 -0.145259
+lowerneck -5.86069 -0.487564 4.82524
+upperneck -17.7943 -0.248761 3.53401
+head -4.93705 -0.593216 0.376396
+rclavicle 5.96354e-016 7.95139e-015
+rhumerus 62.6053 0.00415377 -53.7687
+rradius 20.0201
+rwrist 26.7057
+rhand -8.18233 -36.0065
+rfingers 7.12502
+rthumb 17.7334 -65.2179
+lclavicle 5.96354e-016 7.95139e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.4027 -6.53284 12.6851
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4576 3.79658 -10.4362
+ltibia 0
+lfoot 0 0
+ltoes 0
+69
+root 9.71583 11.7261 4.28624 18.4231 -1.52028 -0.0747376
+lowerback -0.253561 0.549478 -2.47695
+upperback 2.15938 0.799603 -1.48262
+thorax 2.3452 0.366189 -0.115392
+lowerneck -9.77518 -0.996531 7.32713
+upperneck -13.9976 -1.81571 0.682601
+head -2.93061 -1.28656 -1.03063
+rclavicle 6.95746e-015 9.93923e-015
+rhumerus 62.6098 0.00610354 -53.478
+rradius 20.1001
+rwrist 26.4891
+rhand -8.01178 -36.1835
+rfingers 7.12502
+rthumb 17.8975 -65.38
+lclavicle 6.95746e-015 9.93923e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3076 -6.52552 12.6881
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.316 3.81791 -10.441
+ltibia 0
+lfoot 0 0
+ltoes 0
+70
+root 9.71469 11.7277 4.28703 18.3825 -1.53049 -0.0633901
+lowerback -0.284325 0.566834 -2.51022
+upperback 2.24415 0.826682 -1.48176
+thorax 2.449 0.377571 -0.0946376
+lowerneck -5.91118 -0.487673 4.70779
+upperneck -17.9323 -0.225749 3.66566
+head -4.9797 -0.583468 0.443093
+rclavicle -1.39149e-015 3.97569e-015
+rhumerus 62.6894 -0.114271 -53.5591
+rradius 20.0686
+rwrist 26.6556
+rhand -8.03119 -36.2914
+rfingers 7.12502
+rthumb 17.8788 -65.4896
+lclavicle -1.39149e-015 3.97569e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2814 -6.56238 12.6921
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2306 3.81726 -10.4441
+ltibia 0
+lfoot 0 0
+ltoes 0
+71
+root 9.71577 11.7291 4.28756 18.38 -1.51101 -0.0787108
+lowerback -0.320185 0.561684 -2.46962
+upperback 2.23953 0.82027 -1.47536
+thorax 2.46491 0.375014 -0.110557
+lowerneck -10.3245 -1.04136 7.60507
+upperneck -13.5436 -1.98947 0.313537
+head -2.6977 -1.36523 -1.20469
+rclavicle -3.18055e-015 -1.59028e-014
+rhumerus 62.6994 -0.119948 -53.7517
+rradius 19.991
+rwrist 26.8979
+rhand -8.26743 -36.2791
+rfingers 7.12502
+rthumb 17.6515 -65.4978
+lclavicle -3.18055e-015 -1.59028e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2725 -6.60774 12.7172
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2047 3.7938 -10.4227
+ltibia 0
+lfoot 0 0
+ltoes 0
+72
+root 9.71582 11.7304 4.28664 18.379 -1.50979 -0.130246
+lowerback -0.319319 0.554264 -2.40994
+upperback 2.20755 0.808282 -1.46379
+thorax 2.43221 0.370591 -0.132465
+lowerneck -6.50735 -0.342637 5.46015
+upperneck -17.5159 -0.196243 2.97298
+head -4.71269 -0.568918 0.067755
+rclavicle 2.78299e-015 -2.78299e-015
+rhumerus 62.6273 0.0197694 -53.5709
+rradius 20.051
+rwrist 26.7481
+rhand -8.32579 -36.3683
+rfingers 7.12502
+rthumb 17.5953 -65.5921
+lclavicle 2.78299e-015 -2.78299e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.258 -6.58212 12.7716
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2193 3.82335 -10.379
+ltibia 0
+lfoot 0 0
+ltoes 0
+73
+root 9.71678 11.7309 4.28436 18.4221 -1.51225 -0.153257
+lowerback -0.435445 0.561586 -2.36191
+upperback 2.26527 0.823175 -1.47249
+thorax 2.55756 0.377694 -0.166464
+lowerneck -8.84175 -0.899248 6.95287
+upperneck -14.7961 -1.51897 1.08739
+head -3.35035 -1.15506 -0.827087
+rclavicle 5.56597e-015 -1.90833e-014
+rhumerus 62.6996 -0.105672 -53.7095
+rradius 20.0346
+rwrist 26.9261
+rhand -8.13706 -36.4947
+rfingers 7.12502
+rthumb 17.777 -65.7021
+lclavicle 5.56597e-015 -1.90833e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3237 -6.54358 12.7868
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.305 3.83738 -10.3538
+ltibia 0
+lfoot 0 0
+ltoes 0
+74
+root 9.71897 11.7316 4.28322 18.4675 -1.51471 -0.137039
+lowerback -0.758646 0.588688 -2.30175
+upperback 2.49688 0.876838 -1.51369
+thorax 2.97945 0.401526 -0.236552
+lowerneck -9.77063 -0.976333 7.26734
+upperneck -14.3447 -1.76113 0.828935
+head -3.04772 -1.26974 -0.971192
+rclavicle 4.96962e-015 -1.19271e-015
+rhumerus 62.9642 -0.488534 -54.0272
+rradius 19.9423
+rwrist 27.2085
+rhand -8.1261 -36.4554
+rfingers 7.12502
+rthumb 17.7875 -65.6619
+lclavicle 4.96962e-015 -1.19271e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3699 -6.52005 12.7479
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3506 3.80925 -10.3601
+ltibia 0
+lfoot 0 0
+ltoes 0
+75
+root 9.71867 11.7332 4.28401 18.4423 -1.52836 -0.155366
+lowerback -0.587687 0.601992 -2.31119
+upperback 2.39315 0.885614 -1.50343
+thorax 2.77554 0.407771 -0.222726
+lowerneck -8.95716 -0.920078 6.70406
+upperneck -14.9634 -1.5003 1.44265
+head -3.38032 -1.14654 -0.666588
+rclavicle -2.5842e-015 -4.77083e-015
+rhumerus 62.7925 -0.335471 -53.8646
+rradius 19.9519
+rwrist 26.9838
+rhand -8.28803 -36.3583
+rfingers 7.12502
+rthumb 17.6317 -65.5788
+lclavicle -2.5842e-015 -4.77083e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3121 -6.4685 12.7453
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2694 3.82391 -10.3503
+ltibia 0
+lfoot 0 0
+ltoes 0
+76
+root 9.71714 11.7348 4.28352 18.4351 -1.5266 -0.194698
+lowerback -0.777633 0.61347 -2.22806
+upperback 2.55487 0.910927 -1.53606
+thorax 3.05103 0.419727 -0.299184
+lowerneck -9.92305 -0.97588 7.16174
+upperneck -14.2702 -1.75097 1.00683
+head -2.99061 -1.26057 -0.894993
+rclavicle 4.96962e-015 -2.78299e-014
+rhumerus 62.942 -0.476923 -53.9016
+rradius 19.9251
+rwrist 26.9031
+rhand -8.41375 -36.2937
+rfingers 7.12502
+rthumb 17.5107 -65.5251
+lclavicle 4.96962e-015 -2.78299e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2942 -6.41597 12.78
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2458 3.86171 -10.3234
+ltibia 0
+lfoot 0 0
+ltoes 0
+77
+root 9.71511 11.7372 4.28099 18.4609 -1.53315 -0.189199
+lowerback -0.539209 0.590936 -2.34745
+upperback 2.35764 0.868171 -1.47205
+thorax 2.71082 0.398613 -0.171408
+lowerneck -5.68443 -0.593032 4.63311
+upperneck -17.9256 -0.358961 3.63425
+head -5.02031 -0.645496 0.449631
+rclavicle -6.55989e-015 1.74931e-014
+rhumerus 62.7254 -0.146809 -53.6291
+rradius 20.0195
+rwrist 26.5557
+rhand -8.45392 -36.3619
+rfingers 7.12502
+rthumb 17.472 -65.5967
+lclavicle -6.55989e-015 1.74931e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.318 -6.36374 12.7768
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3032 3.90337 -10.3357
+ltibia 0
+lfoot 0 0
+ltoes 0
+78
+root 9.71297 11.7399 4.27833 18.4543 -1.52953 -0.212972
+lowerback -0.429012 0.576552 -2.37791
+upperback 2.27808 0.843 -1.45072
+thorax 2.56632 0.386836 -0.134674
+lowerneck -8.97444 -0.716457 7.02547
+upperneck -15.0635 -1.25964 1.27414
+head -3.41355 -1.04158 -0.778256
+rclavicle 5.1684e-015 -8.34896e-015
+rhumerus 62.6457 -0.0565852 -53.7574
+rradius 20.0201
+rwrist 26.6038
+rhand -8.50887 -36.3867
+rfingers 7.12502
+rthumb 17.4192 -65.6262
+lclavicle 5.1684e-015 -8.34896e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2977 -6.30972 12.8109
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3089 3.92658 -10.2979
+ltibia 0
+lfoot 0 0
+ltoes 0
+79
+root 9.71273 11.7431 4.27619 18.4308 -1.48822 -0.270207
+lowerback -0.389269 0.547524 -2.28755
+upperback 2.29869 0.801828 -1.44967
+thorax 2.56683 0.368107 -0.185519
+lowerneck -4.39846 -0.475533 4.10426
+upperneck -19.4468 0.0569016 4.31919
+head -5.15799 -0.504674 0.664095
+rclavicle 1.98785e-016 3.18055e-015
+rhumerus 62.7406 -0.121498 -54.1397
+rradius 19.9197
+rwrist 26.97
+rhand -8.50097 -36.338
+rfingers 7.12502
+rthumb 17.4268 -65.5768
+lclavicle 1.98785e-016 3.18055e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.235 -6.3028 12.8777
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2765 3.88936 -10.2105
+ltibia 0
+lfoot 0 0
+ltoes 0
+80
+root 9.71213 11.7466 4.27339 18.405 -1.46453 -0.270255
+lowerback -0.369772 0.536915 -2.30091
+upperback 2.38415 0.788861 -1.42406
+thorax 2.64359 0.35998 -0.151972
+lowerneck -9.33098 -0.835393 6.80025
+upperneck -14.5266 -1.45241 1.28661
+head -3.16227 -1.10946 -0.737412
+rclavicle -5.76476e-015 1.03368e-014
+rhumerus 62.8456 -0.112218 -53.8953
+rradius 19.9687
+rwrist 26.7358
+rhand -8.54914 -36.3915
+rfingers 7.12502
+rthumb 17.3804 -65.6344
+lclavicle -5.76476e-015 1.03368e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1809 -6.30249 12.8743
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2453 3.83921 -10.1867
+ltibia 0
+lfoot 0 0
+ltoes 0
+81
+root 9.71067 11.749 4.26973 18.4032 -1.47417 -0.218621
+lowerback -0.365585 0.531027 -2.40161
+upperback 2.43276 0.783531 -1.40694
+thorax 2.69004 0.354229 -0.078092
+lowerneck -6.01954 -0.514333 4.40019
+upperneck -17.6842 -0.244338 3.90392
+head -4.86111 -0.575707 0.574972
+rclavicle -1.19271e-015 1.90833e-014
+rhumerus 62.9153 -0.11295 -53.7812
+rradius 19.9932
+rwrist 26.6218
+rhand -8.64585 -36.3452
+rfingers 7.12502
+rthumb 17.2873 -65.5964
+lclavicle -1.19271e-015 1.90833e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1902 -6.29535 12.8238
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2457 3.80909 -10.2227
+ltibia 0
+lfoot 0 0
+ltoes 0
+82
+root 9.7108 11.751 4.26636 18.407 -1.4689 -0.190524
+lowerback -0.319261 0.519675 -2.41674
+upperback 2.42136 0.766853 -1.41393
+thorax 2.65238 0.346073 -0.0777347
+lowerneck -9.88094 -0.700079 7.09647
+upperneck -14.3497 -1.36372 1.05898
+head -3.01059 -1.06733 -0.865234
+rclavicle -5.36719e-015 -1.11319e-014
+rhumerus 62.9722 -0.195664 -54.1072
+rradius 19.8954
+rwrist 26.9902
+rhand -8.57517 -36.2214
+rfingers 7.12502
+rthumb 17.3553 -65.4665
+lclavicle -5.36719e-015 -1.11319e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.1948 -6.31108 12.8111
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2553 3.772 -10.2393
+ltibia 0
+lfoot 0 0
+ltoes 0
+83
+root 9.7099 11.7522 4.26295 18.4131 -1.43283 -0.230997
+lowerback -0.261061 0.513587 -2.38166
+upperback 2.38212 0.75457 -1.39392
+thorax 2.57942 0.341349 -0.0777986
+lowerneck -5.90157 -0.369449 4.51351
+upperneck -17.9444 -0.040439 3.80871
+head -4.98442 -0.486159 0.521809
+rclavicle 3.37934e-015 1.59028e-015
+rhumerus 62.9151 -0.102219 -53.9118
+rradius 19.954
+rwrist 26.8107
+rhand -8.45663 -36.3974
+rfingers 7.12502
+rthumb 17.4694 -65.6324
+lclavicle 3.37934e-015 1.59028e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2079 -6.33749 12.8895
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2891 3.76362 -10.1793
+ltibia 0
+lfoot 0 0
+ltoes 0
+84
+root 9.70826 11.7521 4.25924 18.4399 -1.3843 -0.252657
+lowerback -0.243679 0.504517 -2.39083
+upperback 2.34411 0.740398 -1.36416
+thorax 2.53016 0.334395 -0.042757
+lowerneck -10.349 -0.731006 7.36596
+upperneck -13.7502 -1.51643 0.692406
+head -2.73676 -1.13005 -1.03509
+rclavicle 6.55989e-015 1.63003e-014
+rhumerus 62.8501 -0.000859118 -53.6933
+rradius 20.0175
+rwrist 26.6162
+rhand -8.4299 -36.535
+rfingers 7.12502
+rthumb 17.4952 -65.7677
+lclavicle 6.55989e-015 1.63003e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2563 -6.39601 12.9484
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3559 3.75644 -10.1366
+ltibia 0
+lfoot 0 0
+ltoes 0
+85
+root 9.70739 11.7522 4.25696 18.4743 -1.36966 -0.226495
+lowerback -0.24618 0.495517 -2.41673
+upperback 2.30413 0.72808 -1.3726
+thorax 2.49041 0.328395 -0.0373424
+lowerneck -5.69857 -0.370285 4.58075
+upperneck -17.9963 -0.0379585 3.72707
+head -5.04378 -0.489232 0.483409
+rclavicle 7.95139e-016 -1.74931e-014
+rhumerus 62.8533 -0.0740468 -54.1148
+rradius 19.8997
+rwrist 27.06
+rhand -8.43601 -36.2758
+rfingers 7.12502
+rthumb 17.4893 -65.5091
+lclavicle 7.95139e-016 -1.74931e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3129 -6.43257 12.9346
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3984 3.73968 -10.1537
+ltibia 0
+lfoot 0 0
+ltoes 0
+86
+root 9.70671 11.7527 4.25619 18.4893 -1.39933 -0.235242
+lowerback -0.268864 0.490675 -2.41222
+upperback 2.2986 0.722484 -1.38441
+thorax 2.49779 0.325795 -0.0519291
+lowerneck -9.69687 -0.875654 7.29093
+upperneck -14.02 -1.64028 0.717217
+head -2.9441 -1.19897 -1.01212
+rclavicle -7.95139e-016 -1.35174e-014
+rhumerus 62.8742 -0.0804479 -54.3391
+rradius 19.8537
+rwrist 27.1949
+rhand -8.37817 -36.1522
+rfingers 7.12502
+rthumb 17.5449 -65.3805
+lclavicle -7.95139e-016 -1.35174e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3428 -6.41458 12.9475
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3925 3.76907 -10.1501
+ltibia 0
+lfoot 0 0
+ltoes 0
+87
+root 9.70641 11.7534 4.25445 18.4756 -1.40704 -0.277526
+lowerback -0.245742 0.499114 -2.37563
+upperback 2.28285 0.731447 -1.36338
+thorax 2.46848 0.331129 -0.0508558
+lowerneck -5.67608 -0.329174 4.49003
+upperneck -17.9335 0.0277957 3.79695
+head -5.02321 -0.452334 0.520881
+rclavicle 4.17448e-015 4.37326e-015
+rhumerus 62.7479 0.119105 -53.7481
+rradius 20.0307
+rwrist 26.58
+rhand -8.32339 -36.4109
+rfingers 7.12502
+rthumb 17.5977 -65.6345
+lclavicle 4.17448e-015 4.37326e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3233 -6.40361 13.0006
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3739 3.76554 -10.0617
+ltibia 0
+lfoot 0 0
+ltoes 0
+88
+root 9.70609 11.7541 4.25245 18.5061 -1.41224 -0.249116
+lowerback -0.244948 0.505266 -2.39706
+upperback 2.21839 0.738465 -1.37111
+thorax 2.40139 0.335238 -0.0468782
+lowerneck -5.9544 -0.47524 4.54353
+upperneck -17.2754 -0.238914 3.67126
+head -4.71776 -0.560919 0.465063
+rclavicle -2.98177e-015 1.82882e-014
+rhumerus 62.5728 0.31911 -53.1948
+rradius 20.195
+rwrist 26.0376
+rhand -8.27931 -36.6226
+rfingers 7.12502
+rthumb 17.6401 -65.8424
+lclavicle -2.98177e-015 1.82882e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3897 -6.43087 12.9785
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.407 3.72375 -10.0377
+ltibia 0
+lfoot 0 0
+ltoes 0
+89
+root 9.70511 11.7552 4.25189 18.5418 -1.46453 -0.180719
+lowerback -0.276883 0.509203 -2.45107
+upperback 2.20433 0.746423 -1.42339
+thorax 2.40491 0.338741 -0.0698849
+lowerneck -6.28489 -0.379529 4.85193
+upperneck -17.1787 -0.16854 3.45694
+head -4.62052 -0.52985 0.33463
+rclavicle -9.34288e-015 3.26007e-014
+rhumerus 62.6026 0.304324 -53.2904
+rradius 20.1478
+rwrist 26.0347
+rhand -8.20898 -36.5349
+rfingers 7.12502
+rthumb 17.7077 -65.7486
+lclavicle -9.34288e-015 3.26007e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.4535 -6.44121 12.9035
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4226 3.75572 -10.1432
+ltibia 0
+lfoot 0 0
+ltoes 0
+90
+root 9.70546 11.7572 4.25182 18.5101 -1.50125 -0.165085
+lowerback -0.237403 0.515612 -2.43464
+upperback 2.21425 0.754174 -1.45636
+thorax 2.39342 0.343344 -0.113074
+lowerneck -5.908 -0.499109 4.72974
+upperneck -17.3374 -0.281353 3.57961
+head -4.75198 -0.592057 0.403475
+rclavicle -1.78906e-015 8.34896e-015
+rhumerus 62.7224 0.129477 -53.8924
+rradius 19.9188
+rwrist 26.6219
+rhand -8.27611 -36.203
+rfingers 7.12502
+rthumb 17.6431 -65.4225
+lclavicle -1.78906e-015 8.34896e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3805 -6.43963 12.8745
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3746 3.76281 -10.1954
+ltibia 0
+lfoot 0 0
+ltoes 0
+91
+root 9.70691 11.759 4.25115 18.4508 -1.48236 -0.177207
+lowerback -0.16869 0.51707 -2.38355
+upperback 2.21703 0.752891 -1.45553
+thorax 2.35818 0.344013 -0.141457
+lowerneck -5.16724 -0.610747 4.22531
+upperneck -17.6491 -0.313575 3.96699
+head -5.00992 -0.609951 0.633164
+rclavicle 5.1684e-015 -1.23246e-014
+rhumerus 62.7538 -0.0092437 -54.3606
+rradius 19.7764
+rwrist 27.164
+rhand -8.2791 -35.9482
+rfingers 7.12502
+rthumb 17.6403 -65.168
+lclavicle 5.1684e-015 -1.23246e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2834 -6.48402 12.8834
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3112 3.69854 -10.173
+ltibia 0
+lfoot 0 0
+ltoes 0
+92
+root 9.70586 11.7602 4.24952 18.4339 -1.45657 -0.180422
+lowerback -0.194544 0.503864 -2.39612
+upperback 2.31303 0.738468 -1.43203
+thorax 2.47138 0.334795 -0.110064
+lowerneck -5.50455 -0.433404 4.02452
+upperneck -17.8363 -0.0473056 4.20323
+head -5.01703 -0.477058 0.743574
+rclavicle 2.5842e-015 -2.3059e-014
+rhumerus 62.8353 0.0350196 -53.9863
+rradius 19.9111
+rwrist 26.7645
+rhand -8.09712 -36.0696
+rfingers 7.12502
+rthumb 17.8154 -65.2736
+lclavicle 2.5842e-015 -2.3059e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2711 -6.52211 12.9047
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2909 3.67562 -10.1542
+ltibia 0
+lfoot 0 0
+ltoes 0
+93
+root 9.70305 11.7612 4.24865 18.4709 -1.46116 -0.186041
+lowerback -0.250102 0.493103 -2.42651
+upperback 2.37016 0.727864 -1.41912
+thorax 2.56122 0.327599 -0.0793786
+lowerneck -4.97501 -0.535234 3.83382
+upperneck -18.5424 -0.100592 4.35852
+head -4.77769 -0.533241 0.719125
+rclavicle -1.78906e-015 -1.74931e-014
+rhumerus 62.9231 0.0744343 -53.7433
+rradius 19.9988
+rwrist 26.46
+rhand -7.95231 -36.1922
+rfingers 7.12502
+rthumb 17.9547 -65.3834
+lclavicle -1.78906e-015 -1.74931e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3019 -6.51434 12.9283
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3208 3.70532 -10.1349
+ltibia 0
+lfoot 0 0
+ltoes 0
+94
+root 9.70079 11.7623 4.24977 18.5088 -1.48906 -0.180974
+lowerback -0.210319 0.502279 -2.41749
+upperback 2.27766 0.736785 -1.45408
+thorax 2.44392 0.334197 -0.120755
+lowerneck -5.58595 -0.429353 4.3955
+upperneck -17.7939 -0.103823 3.83919
+head -4.98611 -0.510533 0.553766
+rclavicle -7.95139e-015 1.39149e-014
+rhumerus 62.8756 -0.0118851 -54.2715
+rradius 19.8729
+rwrist 26.9394
+rhand -7.91498 -36.0351
+rfingers 7.12502
+rthumb 17.9906 -65.223
+lclavicle -7.95139e-015 1.39149e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.322 -6.49941 12.9306
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3509 3.7294 -10.1298
+ltibia 0
+lfoot 0 0
+ltoes 0
+95
+root 9.70093 11.7643 4.25075 18.5336 -1.48884 -0.164637
+lowerback -0.204789 0.501438 -2.39852
+upperback 2.2413 0.734847 -1.48469
+thorax 2.40401 0.334508 -0.162978
+lowerneck -4.93248 -0.650664 4.04634
+upperneck -18.3631 -0.29433 4.16598
+head -4.73062 -0.628391 0.62805
+rclavicle -4.17448e-015 -8.74653e-015
+rhumerus 62.8761 -0.0902507 -54.6155
+rradius 19.7943
+rwrist 27.2052
+rhand -8.00076 -35.951
+rfingers 7.12502
+rthumb 17.9081 -65.1465
+lclavicle -4.17448e-015 -8.74653e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.35 -6.55006 12.9311
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.3877 3.69036 -10.1527
+ltibia 0
+lfoot 0 0
+ltoes 0
+96
+root 9.70105 11.7662 4.24978 18.5624 -1.43924 -0.198979
+lowerback -0.220286 0.489455 -2.32096
+upperback 2.25327 0.71866 -1.48762
+thorax 2.42614 0.327795 -0.209546
+lowerneck -6.03258 -0.512087 4.64186
+upperneck -17.4017 -0.296141 3.63371
+head -4.7521 -0.59683 0.43776
+rclavicle 3.57812e-015 -3.57812e-015
+rhumerus 62.9278 -0.106978 -54.6079
+rradius 19.7535
+rwrist 27.1653
+rhand -8.03562 -36.0693
+rfingers 7.12502
+rthumb 17.8746 -65.2679
+lclavicle 3.57812e-015 -3.57812e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3636 -6.62075 12.9979
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4318 3.65094 -10.1131
+ltibia 0
+lfoot 0 0
+ltoes 0
+97
+root 9.69978 11.7669 4.24945 18.5531 -1.39568 -0.205058
+lowerback -0.163239 0.478614 -2.26223
+upperback 2.2305 0.701235 -1.51219
+thorax 2.37173 0.321125 -0.26857
+lowerneck -5.21534 -0.666431 4.1303
+upperneck -17.798 -0.370745 4.07589
+head -5.05748 -0.640898 0.690921
+rclavicle 7.7526e-015 2.38542e-015
+rhumerus 62.9296 -0.147904 -54.8025
+rradius 19.6605
+rwrist 27.3519
+rhand -7.92625 -36.1133
+rfingers 7.12502
+rthumb 17.9798 -65.3022
+lclavicle 7.7526e-015 2.38542e-015
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.3371 -6.6673 13.0244
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.4182 3.60813 -10.0871
+ltibia 0
+lfoot 0 0
+ltoes 0
+98
+root 9.70008 11.768 4.2513 18.4752 -1.38059 -0.17491
+lowerback -0.0779627 0.475512 -2.2523
+upperback 2.22894 0.694408 -1.53666
+thorax 2.32263 0.318586 -0.300121
+lowerneck -8.26727 -0.744332 6.26441
+upperneck -15.3433 -1.11806 1.94007
+head -3.61559 -0.961359 -0.424445
+rclavicle 5.96354e-016 -1.78906e-014
+rhumerus 62.8903 -0.163341 -54.9538
+rradius 19.6502
+rwrist 27.4247
+rhand -7.86615 -36.0538
+rfingers 7.12502
+rthumb 18.0376 -65.2374
+lclavicle 5.96354e-016 -1.78906e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2457 -6.71263 12.9947
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.326 3.54716 -10.11
+ltibia 0
+lfoot 0 0
+ltoes 0
+99
+root 9.7009 11.7683 4.2506 18.4352 -1.39275 -0.144745
+lowerback -0.039523 0.482548 -2.27102
+upperback 2.24304 0.703257 -1.54806
+thorax 2.31538 0.322745 -0.301452
+lowerneck -4.89999 -0.567817 4.20567
+upperneck -18.6001 -0.170426 4.14206
+head -4.81159 -0.583297 0.592372
+rclavicle 4.96962e-015 -1.31198e-014
+rhumerus 62.8541 -0.139971 -54.8701
+rradius 19.7172
+rwrist 27.2761
+rhand -7.8564 -36.0708
+rfingers 7.12502
+rthumb 18.047 -65.2536
+lclavicle 4.96962e-015 -1.31198e-014
+lhumerus 0 0 0
+lradius 0
+lwrist 0
+lhand 0 0
+lfingers 0
+lthumb 0 0
+rfemur -66.2157 -6.73288 12.9539
+rtibia 0
+rfoot 0 0
+rtoes 0
+lfemur -69.2963 3.53167 -10.1515
+ltibia 0
+lfoot 0 0
+ltoes 0

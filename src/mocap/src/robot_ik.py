@@ -17,7 +17,7 @@ from weighted_moving_filter import WeightedMovingFilter
 
 
 
-class G1_29_ArmIK:
+class RobotIK:
     def __init__(self, Unit_Test = False, Visualization = False):
         np.set_printoptions(precision=5, suppress=True, linewidth=200)
 

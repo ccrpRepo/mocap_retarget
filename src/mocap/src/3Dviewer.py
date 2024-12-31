@@ -354,8 +354,8 @@ class Viewer:
 
 
 if __name__ == '__main__':
-  amc_path = '/home/crp/all_asfamc/subjects/86/86_14.amc'
-  urdf_path = "/home/crp/mocap_ws/src/bone_description/urdf/bone.urdf"
+  amc_path = '../all_asfamc/subjects/86/86_14.amc'
+  urdf_path = "../../bone_description/urdf/bone.urdf"
   motions = parse_amc(amc_path)
   v = Viewer(motions)
   v.run()

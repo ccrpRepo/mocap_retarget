@@ -9,30 +9,21 @@ import pinocchio as pin
 import tf
 
 def rotx(theta):
-    # 旋转角度（以弧度表示）
-    theta = np.radians(theta)  # 30度转化为弧度
-
-    # 绕X轴的旋转矩阵
+    theta = np.radians(theta) 
     Rx = np.array([[1, 0, 0],
                [0, np.cos(theta), -np.sin(theta)],
                [0, np.sin(theta), np.cos(theta)]])
     return Rx
     
 def roty(theta):
-    # 旋转角度（以弧度表示）
-    theta = np.radians(theta)  # 30度转化为弧度
-
-    # 绕X轴的旋转矩阵
+    theta = np.radians(theta) 
     Ry = np.array([[np.cos(theta), 0, np.sin(theta)],
                [0, 1, 0],
                [-np.sin(theta), 0, np.cos(theta)]])
     return Ry
     
 def rotz(theta):
-    # 旋转角度（以弧度表示）
-    theta = np.radians(theta)  # 30度转化为弧度
-
-    # 绕X轴的旋转矩阵
+    theta = np.radians(theta)
     Rz = np.array([[np.cos(theta), -np.sin(theta), 0],
                [np.sin(theta), np.cos(theta), 0],
                [0, 0, 1]])
@@ -84,14 +75,13 @@ class FramePoseSub:
 if __name__ == "__main__":
     rospy.init_node('g1_retarget', anonymous=True)
     framesub = FramePoseSub()
-    # framesub.pose_subscriber()
     framesub.joint_publisher()
     rate = rospy.Rate(1000)  # 1000 Hz
-    urdf_path = "/home/crp/mocap_ws/src/g1_description/urdf/g1.urdf" 
+    urdf_path = "../g1_description/urdf/g1.urdf" 
     listener = tf.TransformListener()
     
     
-    arm_ik = G1_29_ArmIK(Unit_Test = True, Visualization = True)
+    robot_ik = RobotIK(Unit_Test = True, Visualization = True)
     sol_q_last = np.zeros(35)
     sol_q_last[7] = -0.1
     sol_q_last[10] = 0.3
@@ -136,14 +126,14 @@ if __name__ == "__main__":
         rotMat = Rot.from_quat(quat)
         framesub.head_target.rotation = rotMat.as_matrix() @ rotz(-90) @ roty(-90)
         
-        sol_q = arm_ik.solve_ik(framesub.lhand_target.homogeneous, 
-                            framesub.rhand_target.homogeneous, 
-                            framesub.lfoot_target.homogeneous, 
-                            framesub.rfoot_target.homogeneous,
-                            framesub.root_target.homogeneous, 
-                            framesub.head_target.homogeneous,
-                            current_lr_arm_motor_q=sol_q_last
-                            )
+        sol_q = robot_ik.solve_ik(framesub.lhand_target.homogeneous, 
+                                framesub.rhand_target.homogeneous, 
+                                framesub.lfoot_target.homogeneous, 
+                                framesub.rfoot_target.homogeneous,
+                                framesub.root_target.homogeneous, 
+                                framesub.head_target.homogeneous,
+                                current_lr_arm_motor_q=sol_q_last
+                                )
         sol_q_last = sol_q
         
         
