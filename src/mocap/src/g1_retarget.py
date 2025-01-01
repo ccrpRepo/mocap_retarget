@@ -88,7 +88,7 @@ if __name__ == "__main__":
     framesub = FramePoseSub()
     framesub.joint_publisher()
     rate = rospy.Rate(1000)  # 1000 Hz
-    urdf_path = "../g1_description/urdf/g1.urdf" 
+    urdf_path = "../g1_description/urdf/g1_visual.urdf" 
     human_tf = tf.TransformListener()
     data = []
     timestamp = 0.0

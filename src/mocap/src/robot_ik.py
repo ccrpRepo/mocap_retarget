@@ -80,7 +80,7 @@ class RobotIK:
         # Get the hand joint ID and define the error function
         self.lhand_id = self.reduced_robot.model.getFrameId("left_wrist_yaw_link")
         self.rhand_id = self.reduced_robot.model.getFrameId("right_wrist_yaw_link")
-        self.root_id = self.reduced_robot.model.getFrameId("root_sphere")
+        self.root_id = self.reduced_robot.model.getFrameId("root_sphere") # pelvis
         self.head_id = self.reduced_robot.model.getFrameId("head_sphere")
         self.lfoot_id = self.reduced_robot.model.getFrameId("left_ankle_roll_link")
         self.rfoot_id = self.reduced_robot.model.getFrameId("right_ankle_roll_link")

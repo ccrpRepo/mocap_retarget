@@ -9,14 +9,14 @@
     <parent link="world"/>
     <child link="pelvis"/>
   </joint> -->
-  <link name="dummy_link">
+  <!-- <link name="dummy_link">
   </link>
 
   <joint name="dummy_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="dummy_link"/>
     <child link="pelvis"/>
-  </joint>
+  </joint> -->
 
 
   <link name="pelvis">

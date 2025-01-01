@@ -1,0 +1,17 @@
+
+<launch>
+    <arg name="model" />
+    <arg name="gui" default="False" />
+    <param name="robot_description" textfile="$(find g1_description)/urdf/g1_visual.urdf" />
+
+    <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" required="true"/> -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+      <param name="publish_frequency" value="1000"/>
+      <param name="use_tf_static"     value="true"/>
+  </node>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mocap)/config/replay.rviz"/>
+    <node name="replay_visualize" pkg="mocap" type="replay_vis.py" output="screen"/>
+    <node pkg="tf" type="static_transform_publisher" name="world"
+      args="0 0 0 0 0 0 map world 100" />
+
+</launch>
