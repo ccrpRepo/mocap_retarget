@@ -17,9 +17,10 @@ def validate_positions(positions):
     return positions
 
 class Replay:
-    def __init__(self, urdf=None, motions=None, fps=120):
+    def __init__(self, urdf=None, motions=None, fps=120, interpolation=True):
         ## init ros pubulisher
         rospy.init_node('rerun_node', anonymous=True)
+        self.interpolation = interpolation
         self.motions_path = motions_path
         self.fps = fps
         self.rate = rospy.Rate(self.fps)
@@ -62,7 +63,7 @@ class Replay:
         self.t = TransformStamped()
         self.t.header.frame_id = 'world'
         self.t.header.stamp = rospy.Time(0)
-        self.t.child_frame_id = 'pelvis'
+        self.t.child_frame_id = 'root_sphere'
         self.t.transform.translation.x = 0
         self.t.transform.translation.y = 0
         self.t.transform.translation.z = 0.5
@@ -84,14 +85,46 @@ class Replay:
                 self.motions_data.append(self.frame_data.copy())
         return 0
     
+    def interpolate_frames(self, last_frame, cur_frame, idx):
+        inter_num = cur_frame - last_frame - 1
+        inter_motions = []
+        signle_motion ={'frame': 0,
+                         'time' : 0.0,
+                         'rootjoint' : np.zeros(6),
+                         'joint' : np.array(29)
+                        }
+        time_dist = self.motions_data[idx]['time'] - self.motions_data[idx - 1]['time']
+        rootjoint_dist = self.motions_data[idx]['rootjoint'] - self.motions_data[idx - 1]['rootjoint']
+        joint_dist = self.motions_data[idx]['joint'] - self.motions_data[idx - 1]['joint']
+        unite_time = time_dist / (inter_num + 1)
+        unite_rootjoint = rootjoint_dist / (inter_num + 1)
+        unite_joint = joint_dist / (inter_num + 1)
+        for i in range(inter_num):
+            signle_motion['frame'] = self.motions_data[idx - 1]['frame'] + i + 1
+            signle_motion['time'] = self.motions_data[idx - 1]['time'] + unite_time * (i + 1)
+            signle_motion['rootjoint'] = self.motions_data[idx - 1]['rootjoint'] + unite_rootjoint * (i + 1)
+            signle_motion['joint'] = self.motions_data[idx - 1]['joint'] + unite_joint * (i + 1)
+            inter_motions.append(signle_motion.copy())
+        return inter_motions
+    
     def run(self):
         joint_state_msg = JointState()
         joint_state_msg.header = Header()
         joint_state_msg.name = self.joint_names 
         joint_state_msg.velocity = []              
         joint_state_msg.effort = []    
-                        
-        for motion in self.motions_data:
+        last_frame = 0
+        
+        if(self.interpolation):
+            for i, motion in enumerate(self.motions_data):
+                cur_frame = motion['frame']
+                if(i > 0):
+                    last_frame = self.motions_data[i-1]['frame']
+                inter_motions = []
+                if((cur_frame - last_frame) > 1):
+                    inter_motions = self.interpolate_frames(last_frame, cur_frame, i)
+        
+        for idx, motion in enumerate(self.motions_data):
             cur_frame = motion['frame']
             cur_time = motion['time']
             root_joint = np.array(motion['rootjoint'])
@@ -102,7 +135,7 @@ class Replay:
             angle = root_joint[3:6]
             # 转换为degree
             angle = angle * 180.0 / 3.1415926
-            Rotation_Matrix = eulerzyx2mat(angle)
+            Rotation_Matrix = eulerxyz2mat(angle)
             rotation = Rot.from_matrix(Rotation_Matrix)
             base_quaternion = rotation.as_quat()
             self.t.header.stamp = rospy.Time.now()
@@ -123,16 +156,21 @@ class Replay:
             self.joint_pub.publish(joint_state_msg)
             self.br.sendTransformMessage(self.t)
             
-            
+            print(f"frame: {cur_frame}  time stamp: {cur_time}")
             self.rate.sleep()
             
-        return 0
+        
         
 if __name__ == '__main__':
+    replay_fps = rospy.get_param('replay_fps', 120)
+    inter = rospy.get_param('interpolation', True)
     current_path = os.path.dirname(os.path.abspath(__file__))
-    urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1_visual.urdf')
+    urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1.urdf')
     print(urdf_path)
     motions_path = os.path.join(current_path, 'data', 'output.csv')
-    rerun = Replay(urdf=urdf_path, motions=motions_path, fps=120)
+    rerun = Replay(urdf=urdf_path, 
+                   motions=motions_path, 
+                   fps=replay_fps,
+                   interpolation=inter)
     rerun.parse_csv() 
     rerun.run()

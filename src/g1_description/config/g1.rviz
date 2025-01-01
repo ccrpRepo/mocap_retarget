@@ -72,10 +72,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        dummy_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         head_link:
           Alpha: 1
           Show Axes: false
@@ -257,7 +253,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: true
           Show Trail: false
-          Value: true
         torso_link:
           Alpha: 1
           Show Axes: false
@@ -283,7 +278,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: dummy_link
+    Fixed Frame: root_sphere
     Frame Rate: 30
   Name: root
   Tools:
@@ -323,9 +318,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.0303986556828022
+      Pitch: 0.2153986543416977
       Target Frame: <Fixed Frame>
-      Yaw: 0.38539931178092957
+      Yaw: 0.2703993618488312
     Saved: ~
 Window Geometry:
   Displays:

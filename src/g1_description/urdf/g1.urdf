@@ -7,14 +7,22 @@
   <!-- <link name="world"></link>
   <joint name="floating_base_joint" type="floating">
     <parent link="world"/>
-    <child link="dummy_link"/>
+    <child link="pelvis"/>
   </joint> -->
-  <link name="dummy_link">
+  <!-- <link name="dummy_link">
   </link>
 
   <joint name="dummy_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="dummy_link"/>
+    <child link="pelvis"/>
+  </joint> -->
+
+  <link name="root_sphere">
+  </link>
+  <joint name="root_sphere_joint" type="fixed">
+    <origin xyz="0 0 0.08" rpy="0 0 0"/>
+    <parent link="root_sphere"/>
     <child link="pelvis"/>
   </joint>
 
@@ -28,7 +36,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/pelvis.STL"/>
+        <mesh filename="package://g1_description/meshes/pelvis.STL"/>
       </geometry>
       <material name="dark">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -44,7 +52,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/pelvis_contour_link.STL"/>
+        <mesh filename="package://g1_description/meshes/pelvis_contour_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -53,30 +61,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/pelvis_contour_link.STL"/>
+        <mesh filename="package://g1_description/meshes/pelvis_contour_link.STL"/>
       </geometry>
     </collision>
   </link>
   <joint name="pelvis_contour_joint" type="fixed">
     <parent link="pelvis"/>
     <child link="pelvis_contour_link"/>
-  </joint>
-
-  <link name="root_sphere">
-    <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="0.035"/>
-        </geometry>
-      <material name="dark">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
-    </visual>
-  </link>
-  <joint name="root_sphere_joint" type="fixed">
-    <origin xyz="0 0 -0.08" rpy="0 0 0"/>
-    <parent link="pelvis"/>
-    <child link="root_sphere"/>
   </joint>
 
   <!-- Legs -->
@@ -89,7 +80,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_hip_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_hip_pitch_link.STL"/>
       </geometry>
       <material name="dark">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -98,7 +89,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_hip_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_hip_pitch_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -118,7 +109,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_hip_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_hip_roll_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -127,7 +118,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_hip_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_hip_roll_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -147,7 +138,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_hip_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_hip_yaw_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -156,7 +147,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_hip_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_hip_yaw_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -176,7 +167,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_knee_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_knee_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -185,7 +176,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_knee_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_knee_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -205,7 +196,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_ankle_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_ankle_pitch_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -214,7 +205,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_ankle_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_ankle_pitch_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -234,7 +225,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_ankle_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_ankle_roll_link.STL"/>
       </geometry>
       <material name="dark">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -243,7 +234,7 @@
      <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_ankle_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_ankle_roll_link.STL"/>
       </geometry>
     </collision>
     <!-- <collision>
@@ -287,7 +278,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_hip_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_hip_pitch_link.STL"/>
       </geometry>
       <material name="dark">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -296,7 +287,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_hip_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_hip_pitch_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -316,7 +307,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_hip_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_hip_roll_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -325,7 +316,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_hip_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_hip_roll_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -345,7 +336,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_hip_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_hip_yaw_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -354,7 +345,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_hip_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_hip_yaw_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -374,7 +365,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_knee_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_knee_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -383,7 +374,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_knee_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_knee_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -403,7 +394,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_ankle_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_ankle_pitch_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -412,7 +403,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_ankle_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_ankle_pitch_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -432,7 +423,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_ankle_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_ankle_roll_link.STL"/>
       </geometry>
       <material name="dark">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -441,7 +432,7 @@
      <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_ankle_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_ankle_roll_link.STL"/>
       </geometry>
     </collision>
     <!-- <collision>
@@ -487,7 +478,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/waist_yaw_link_rev_1_0.STL"/>
+        <mesh filename="package://g1_description/meshes/waist_yaw_link_rev_1_0.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -510,7 +501,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/waist_roll_link_rev_1_0.STL"/>
+        <mesh filename="package://g1_description/meshes/waist_roll_link_rev_1_0.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -533,7 +524,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/torso_link_rev_1_0.STL"/>
+        <mesh filename="package://g1_description/meshes/torso_link_rev_1_0.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -542,7 +533,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/torso_link_rev_1_0.STL"/>
+        <mesh filename="package://g1_description/meshes/torso_link_rev_1_0.STL"/>
       </geometry>
     </collision>
   </link>
@@ -569,7 +560,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/logo_link.STL"/>
+        <mesh filename="package://g1_description/meshes/logo_link.STL"/>
       </geometry>
       <material name="dark">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -578,7 +569,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/logo_link.STL"/>
+        <mesh filename="package://g1_description/meshes/logo_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -593,7 +584,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/head_link.STL"/>
+        <mesh filename="package://g1_description/meshes/head_link.STL"/>
       </geometry>
       <material name="dark">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -602,7 +593,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/head_link.STL"/>
+        <mesh filename="package://g1_description/meshes/head_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -624,7 +615,7 @@
     </visual>
   </link>
   <joint name="head_sphere_joint" type="fixed">
-    <origin xyz="0 0 0.20" rpy="0 0 0"/>
+    <origin xyz="0 0 0.32" rpy="0 0 0"/>
     <parent link="head_link"/>
     <child link="head_sphere"/>
   </joint>
@@ -671,7 +662,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_shoulder_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_shoulder_pitch_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -700,7 +691,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_shoulder_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_shoulder_roll_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -729,7 +720,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_shoulder_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_shoulder_yaw_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -738,7 +729,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_shoulder_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_shoulder_yaw_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -758,7 +749,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_elbow_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_elbow_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -767,7 +758,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_elbow_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_elbow_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -794,7 +785,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_wrist_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_wrist_roll_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -803,7 +794,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_wrist_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_wrist_roll_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -823,7 +814,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_wrist_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_wrist_pitch_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -832,7 +823,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_wrist_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_wrist_pitch_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -852,7 +843,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_wrist_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_wrist_yaw_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -861,7 +852,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_wrist_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/left_wrist_yaw_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -879,7 +870,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/left_rubber_hand.STL"/>
+        <mesh filename="package://g1_description/meshes/left_rubber_hand.STL"/>
       </geometry>
       
       <material name="white">
@@ -902,7 +893,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_shoulder_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_shoulder_pitch_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -931,7 +922,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_shoulder_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_shoulder_roll_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -960,7 +951,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_shoulder_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_shoulder_yaw_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -969,7 +960,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_shoulder_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_shoulder_yaw_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -989,7 +980,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_elbow_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_elbow_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -998,7 +989,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_elbow_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_elbow_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1025,7 +1016,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_wrist_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_wrist_roll_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -1034,7 +1025,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_wrist_roll_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_wrist_roll_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1054,7 +1045,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_wrist_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_wrist_pitch_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -1063,7 +1054,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_wrist_pitch_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_wrist_pitch_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1083,7 +1074,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_wrist_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_wrist_yaw_link.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
@@ -1092,7 +1083,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_wrist_yaw_link.STL"/>
+        <mesh filename="package://g1_description/meshes/right_wrist_yaw_link.STL"/>
       </geometry>
     </collision>
   </link>
@@ -1110,7 +1101,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="../meshes/right_rubber_hand.STL"/>
+        <mesh filename="package://g1_description/meshes/right_rubber_hand.STL"/>
       </geometry>
       <material name="white">
         <color rgba="0.7 0.7 0.7 1"/>
