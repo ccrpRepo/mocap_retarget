@@ -105,6 +105,8 @@ class Replay:
             signle_motion['rootjoint'] = self.motions_data[idx - 1]['rootjoint'] + unite_rootjoint * (i + 1)
             signle_motion['joint'] = self.motions_data[idx - 1]['joint'] + unite_joint * (i + 1)
             inter_motions.append(signle_motion.copy())
+        
+                
         return inter_motions
     
     def run(self):
@@ -116,17 +118,20 @@ class Replay:
         last_frame = 0
         
         if(self.interpolation):
+            after_inter_motion_data = self.motions_data.copy()
+            inter_sum = 0
             for i, motion in enumerate(self.motions_data):
                 cur_frame = motion['frame']
                 if(i > 0):
                     last_frame = self.motions_data[i-1]['frame']
-                inter_motions = []
-                if((cur_frame - last_frame) > 1):
-                    inter_motions = self.interpolate_frames(last_frame, cur_frame, i)
-                    num = cur_frame - last_frame -1
-                    self.motions_data[i:int(num)] = inter_motions
+                    inter_motions = []
+                    if((cur_frame - last_frame) > 1):
+                        inter_motions = self.interpolate_frames(last_frame, cur_frame, i)
+                        num = cur_frame - last_frame -1
+                        after_inter_motion_data[int(i + inter_sum):int(i + inter_sum)] = inter_motions
+                        inter_sum += num
         
-        for idx, motion in enumerate(self.motions_data):
+        for idx, motion in enumerate(after_inter_motion_data):
             cur_frame = motion['frame']
             cur_time = motion['time']
             root_joint = np.array(motion['rootjoint'])
@@ -175,4 +180,6 @@ if __name__ == '__main__':
                    fps=replay_fps,
                    interpolation=inter)
     rerun.parse_csv() 
+    rospy.sleep(3) # wait for rviz launch 
+    
     rerun.run()
