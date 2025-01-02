@@ -153,8 +153,8 @@ if __name__ == "__main__":
                                 )
         sol_q_last = sol_q
         
-        if(framesub.frame_num != last_frame):
-            if(framesub.frame_num > last_frame + 1):
+        if(framesub.frame_num > last_frame):
+            if(framesub.frame_num > (last_frame + 1)):
                 rospy.loginfo("fps is too high! skip %d frames at %d", framesub.frame_num - last_frame - 1, last_frame)
 
             time_sol_q = np.insert(sol_q, 0, timestamp)

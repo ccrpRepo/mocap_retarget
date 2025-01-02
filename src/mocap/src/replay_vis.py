@@ -94,12 +94,12 @@ class Replay:
                          'joint' : np.array(29)
                         }
         time_dist = self.motions_data[idx]['time'] - self.motions_data[idx - 1]['time']
-        rootjoint_dist = self.motions_data[idx]['rootjoint'] - self.motions_data[idx - 1]['rootjoint']
-        joint_dist = self.motions_data[idx]['joint'] - self.motions_data[idx - 1]['joint']
+        rootjoint_dist = np.array(self.motions_data[idx]['rootjoint']) - np.array(self.motions_data[idx - 1]['rootjoint'])
+        joint_dist = np.array(self.motions_data[idx]['joint']) - np.array(self.motions_data[idx - 1]['joint'])
         unite_time = time_dist / (inter_num + 1)
         unite_rootjoint = rootjoint_dist / (inter_num + 1)
         unite_joint = joint_dist / (inter_num + 1)
-        for i in range(inter_num):
+        for i in range(int(inter_num)):
             signle_motion['frame'] = self.motions_data[idx - 1]['frame'] + i + 1
             signle_motion['time'] = self.motions_data[idx - 1]['time'] + unite_time * (i + 1)
             signle_motion['rootjoint'] = self.motions_data[idx - 1]['rootjoint'] + unite_rootjoint * (i + 1)
@@ -123,6 +123,8 @@ class Replay:
                 inter_motions = []
                 if((cur_frame - last_frame) > 1):
                     inter_motions = self.interpolate_frames(last_frame, cur_frame, i)
+                    num = cur_frame - last_frame -1
+                    self.motions_data[i:int(num)] = inter_motions
         
         for idx, motion in enumerate(self.motions_data):
             cur_frame = motion['frame']
