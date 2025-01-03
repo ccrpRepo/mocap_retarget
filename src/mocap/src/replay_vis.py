@@ -167,7 +167,6 @@ class Replay:
             self.rate.sleep()
             
         
-        
 if __name__ == '__main__':
     replay_fps = rospy.get_param('replay_fps', 120)
     inter = rospy.get_param('interpolation', True)
@@ -175,11 +174,11 @@ if __name__ == '__main__':
     urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1.urdf')
     print(urdf_path)
     motions_path = os.path.join(current_path, 'data', 'output.csv')
-    rerun = Replay(urdf=urdf_path, 
-                   motions=motions_path, 
+    rerun = Replay(urdf=urdf_path,
+                   motions=motions_path,
                    fps=replay_fps,
                    interpolation=inter)
-    rerun.parse_csv() 
-    rospy.sleep(3) # wait for rviz launch 
+    rerun.parse_csv()
+    rospy.sleep(3) # wait for rviz launch
     
     rerun.run()

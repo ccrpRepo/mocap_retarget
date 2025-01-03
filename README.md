@@ -1,7 +1,9 @@
 # 项目简介
 
-这是一个用于人体动作捕捉数据重映射的开源项目，骨架模型和运动数据来源于[CMU开源数据集](https://www.google.com)  
-项目将骨架模型转换为urdf格式，方便使用ROS-tf以及pinocchio等工具进行开发，支持CMU开源数据集的86号人体运动数据  
+这是一个用于人体动作捕捉数据重映射的开源项目，骨架模型和运动数据来源于[CMU开源数据集](http://mocap.cs.cmu.edu/faqs.php)  
+项目将骨架模型转换为urdf格式，方便使用ROS-tf以及pinocchio等工具进行开发，支持CMU开源数据集的86号人体运动数据 
+
+视频教程及演示：[开源！人体运动捕捉数据可视化与重映射，支持宇树G1机器人](https://www.bilibili.com/video/BV1tC66YTEYh/?spm_id_from=333.1387.homepage.video_card.click&vd_source=713b35f59bdf42930757aea07a44e7cb)
   
 本项目参考宇树开源的[avp_teleoperate](https://github.com/unitreerobotics/avp_teleoperate)以及[AMCParser](https://github.com/CalciferZh/AMCParser)，环境的安装可以参考这两个项目，建议使用conda。目前仅支持G1机器人的重映射，但相同的方法迁移到其他机器人上也是不难的。  
 

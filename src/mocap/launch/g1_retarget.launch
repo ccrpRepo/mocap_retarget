@@ -15,7 +15,7 @@
       args="0 0 0 0 0 0 map world 100" />
     <node name="g1_retarget" pkg="mocap" type="g1_retarget.py" output="screen"/>
 
-    <param name="motion_fps" value="120" />
+    <param name="motion_fps" value="30" />
     <param name="amc_file" value="86_03.amc" />
     <param name="render" value="True" />
     <param name="OutputData" value="True" />
