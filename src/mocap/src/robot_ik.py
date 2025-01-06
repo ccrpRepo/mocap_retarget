@@ -315,13 +315,12 @@ if __name__ == "__main__":
     noise_amplitude_rotation = 0.01
     
     sol_q_last = np.zeros(35)
-    sol_q_last[3] = 1.0
-    sol_q_last[7] = -0.1
-    sol_q_last[10] = 0.3
-    sol_q_last[11] = -0.2
-    sol_q_last[13] = -0.1
-    sol_q_last[16] = 0.3
-    sol_q_last[17] = -0.2
+    sol_q_last[6] = -0.1
+    sol_q_last[9] = 0.3
+    sol_q_last[10] = -0.2
+    sol_q_last[12] = -0.1
+    sol_q_last[15] = 0.3
+    sol_q_last[16] = -0.2
     user_input = input("Please enter the start signal (enter 's' to start the subsequent program):\n")
     if user_input.lower() == 's':
         step = 0

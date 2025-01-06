@@ -95,12 +95,12 @@ if __name__ == "__main__":
     robot_ik = RobotIK(Visualization = render)
     last_frame = 0
     sol_q_last = np.zeros(35)
-    sol_q_last[7] = -0.1
-    sol_q_last[10] = 0.3
-    sol_q_last[11] = -0.2
-    sol_q_last[13] = -0.1
-    sol_q_last[16] = 0.3
-    sol_q_last[17] = -0.2
+    sol_q_last[6] = -0.1
+    sol_q_last[9] = 0.3
+    sol_q_last[10] = -0.2
+    sol_q_last[12] = -0.1
+    sol_q_last[15] = 0.3
+    sol_q_last[16] = -0.2
     start_time = rospy.Time.now().to_sec()
     rospy.sleep(1)
     while not rospy.is_shutdown():
