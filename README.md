@@ -7,6 +7,25 @@
   
 本项目参考宇树开源的[avp_teleoperate](https://github.com/unitreerobotics/avp_teleoperate)以及[AMCParser](https://github.com/CalciferZh/AMCParser)，环境的安装可以参考这两个项目，建议使用conda。目前仅支持G1机器人的重映射，但相同的方法迁移到其他机器人上也是不难的。  
 
+# 环境安装
+
+1. 创建conda虚拟环境
+    ```bash
+    conoda create -n myenv python=3.8
+    ```
+2. 安装依赖
+    ```bash
+    pip install numpy transforms3d matplotlib pygame meshcat
+    ```
+3. ROS + casadi + pinocchio
+    ```bash
+    conda install -c conda-forge pyyaml rospkg casadi
+    ```
+    ```bash
+    conda install pinocchio -c conda-forge
+    ```
+
+
 # 使用说明
 
 1. 可视化骨架模型运动数据 + 重映射 + 保存机器人运动数据, 
