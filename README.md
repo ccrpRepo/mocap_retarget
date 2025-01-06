@@ -31,7 +31,7 @@
 1. ROS编译  + source
     ```bash
     cd 到当前目录
-    catkin build
+    catkin build -DPYTHON_EXECUTABLE=/usr/bin/python3
     source ./devel/setup.bash 
     ```
 
