@@ -17,12 +17,12 @@
     ```bash
     pip install numpy transforms3d matplotlib pygame meshcat
     ```
-3. ROS + casadi + pinocchio
+3. ROS + casadi + pinocchio 确保pinocchio版本是3.1.0
     ```bash
     conda install -c conda-forge pyyaml rospkg casadi
     ```
     ```bash
-    conda install pinocchio -c conda-forge
+    conda install pinocchio=3.1.0 -c conda-forge
     ```
 
 
