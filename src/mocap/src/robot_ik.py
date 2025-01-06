@@ -32,9 +32,12 @@ class RobotIK:
         self.joint_model.addJoint(pin.JointModelRY())  # Pitch
         self.joint_model.addJoint(pin.JointModelRZ())  # Yaw
 
-        self.robot = pin.RobotWrapper.BuildFromURDF('/home/crp/mocap_ws/src/g1_description/urdf/g1.urdf',
+        current_path = os.path.dirname(os.path.abspath(__file__))
+        urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1.urdf')
+        urdf_dirs = os.path.join(current_path, '../../g1_description/urdf')
+        self.robot = pin.RobotWrapper.BuildFromURDF(urdf_path,
                                                     root_joint = self.joint_model,
-                                                    package_dirs = '/home/crp/mocap_ws/src/g1_description/urdf/') # for test
+                                                    package_dirs = urdf_dirs)
 
         self.mixed_jointsToLockIDs =[]
         self.reduced_robot = self.robot.buildReducedRobot(

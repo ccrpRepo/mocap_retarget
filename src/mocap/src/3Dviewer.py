@@ -12,6 +12,7 @@ import tf
 from scipy.spatial.transform import Rotation as Rot
 from std_msgs.msg import Int32
 from rotation import *
+import os
 
 
 class Viewer:
@@ -304,10 +305,9 @@ class Viewer:
 
 if __name__ == '__main__':
   fps = rospy.get_param('motion_fps', 12)
+  current_path = os.path.dirname(os.path.abspath(__file__))
   amcfile = rospy.get_param('amc_file', '86_01.amc')
-  amc_path = '../all_asfamc/subjects/86/'+ str(amcfile)
-  urdf_path = "../../bone_description/urdf/bone.urdf"
-  
+  amc_path = os.path.join(current_path, '../all_asfamc/subjects/86', amcfile)
   motions = parse_amc(amc_path)
   v = Viewer(motions, fps=fps)
   v.run()
