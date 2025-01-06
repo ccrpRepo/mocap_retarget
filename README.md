@@ -28,7 +28,15 @@
 
 # 使用说明
 
-1. 可视化骨架模型运动数据 + 重映射 + 保存机器人运动数据, 
+1. ROS编译  + source
+    ```bash
+    cd 到当前目录
+    catkin build
+    source ./devel/setup.bash 
+    ```
+
+
+2. 可视化骨架模型运动数据 + 重映射 + 保存机器人运动数据, 
     ```bash
     roslaunch mocap g1_retarget.launch
     ```
@@ -44,7 +52,7 @@
 
 
 
-2. 播放机器人重映射效果 + 插值处理
+3. 播放机器人重映射效果 + 插值处理
     ```bash
     roslaunch mocap g1_replay.launch
     ```
