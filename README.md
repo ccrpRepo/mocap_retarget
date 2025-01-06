@@ -11,7 +11,7 @@
 
 1. 创建conda虚拟环境
     ```bash
-    conoda create -n myenv python=3.8
+    conda create -n myenv python=3.8
     ```
 2. 安装依赖
     ```bash
