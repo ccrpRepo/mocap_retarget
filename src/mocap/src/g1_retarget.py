@@ -5,7 +5,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation as Rot
 from sensor_msgs.msg import JointState
 from robot_ik import *
-import pinocchio as pin
+# import pinocchio as pin
 import tf
 import csv
 import os
@@ -102,6 +102,7 @@ if __name__ == "__main__":
     sol_q_last[15] = 0.3
     sol_q_last[16] = -0.2
     start_time = rospy.Time.now().to_sec()
+    newest_frame = 1
     rospy.sleep(1)
     while not rospy.is_shutdown():
         
@@ -151,15 +152,20 @@ if __name__ == "__main__":
                                 framesub.head_target.homogeneous,
                                 current_lr_arm_motor_q=sol_q_last
                                 )
+        
         sol_q_last = sol_q
+        
+        if(framesub.frame_num >= newest_frame):
+            newest_frame = framesub.frame_num
         
         if(framesub.frame_num > last_frame):
             if(framesub.frame_num > (last_frame + 1)):
                 rospy.loginfo("fps is too high! skip %d frames at %d", framesub.frame_num - last_frame - 1, last_frame)
-
+        
             time_sol_q = np.insert(sol_q, 0, timestamp)
             frame_time_sol_q = np.insert(time_sol_q, 0, framesub.frame_num)
-            data.append(frame_time_sol_q)
+            if(framesub.frame_num >= newest_frame):
+                data.append(frame_time_sol_q)
             
         last_frame = framesub.frame_num
         rate.sleep()

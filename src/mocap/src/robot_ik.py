@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import casadi                                                                       
 import meshcat.geometry as mg
 import numpy as np
@@ -87,6 +87,10 @@ class RobotIK:
         self.head_id = self.reduced_robot.model.getFrameId("head_sphere")
         self.lfoot_id = self.reduced_robot.model.getFrameId("left_ankle_roll_link")
         self.rfoot_id = self.reduced_robot.model.getFrameId("right_ankle_roll_link")
+        self.lelbow_id = self.reduced_robot.model.getFrameId("left_elbow_link")
+        self.relbow_id = self.reduced_robot.model.getFrameId("right_elbow_link")
+        self.lelbow_coll_id = self.reduced_robot.model.getFrameId("left_elbow_cllision_link")
+        self.relbow_coll_id = self.reduced_robot.model.getFrameId("right_elbow_cllision_link")
 
         self.translational_error = casadi.Function(
             "translational_error",
@@ -115,6 +119,34 @@ class RobotIK:
                 )
             ],
         )
+        
+        self.left_elbow_collision_avoid = casadi.Function(
+            "left_elbow_collision_avoid",
+            [self.cq],
+            [
+                casadi.fmax(
+                    0.015 - 
+                    casadi.sumsqr(
+                    self.cdata.oMf[self.lelbow_id].translation - self.cdata.oMf[self.lelbow_coll_id].translation
+                    ),
+                    0
+                )
+            ],
+        )
+        
+        self.right_elbow_collision_avoid = casadi.Function(
+            "right_elbow_collision_avoid",
+            [self.cq],
+            [
+                casadi.fmax(
+                    0.015 - 
+                    casadi.sumsqr(
+                    self.cdata.oMf[self.relbow_id].translation - self.cdata.oMf[self.relbow_coll_id].translation
+                    ),
+                    0.0
+                )
+            ],
+        )
 
         # Defining the optimization problem
         self.opti = casadi.Opti()
@@ -130,6 +162,9 @@ class RobotIK:
         self.rotation_cost = casadi.sumsqr(self.rotational_error(self.var_q, self.param_tf_lhand, self.param_tf_rhand, self.param_tf_root, self.param_tf_lfoot, self.param_tf_rfoot,self.param_tf_head))
         self.regularization_cost = casadi.sumsqr(self.var_q)
         self.smooth_cost = casadi.sumsqr(self.var_q - self.var_q_last)
+        # self.collision_cost = self.left_elbow_collision_avoid(self.var_q) + self.right_elbow_collision_avoid(self.var_q)
+        
+        
 
         # Setting optimization constraints and goals
         self.opti.subject_to(self.opti.bounded(
@@ -137,13 +172,18 @@ class RobotIK:
             self.var_q,
             self.reduced_robot.model.upperPositionLimit)
         )
-        self.opti.minimize(50 * self.translational_cost + self.rotation_cost + 0.02 * self.regularization_cost + 0.1 * self.smooth_cost)
+        self.opti.minimize(50 * self.translational_cost 
+                           + 1.0 * self.rotation_cost 
+                           + 0.02 * self.regularization_cost 
+                           + 0.1 * self.smooth_cost 
+                        #    + 0.0 * self.collision_cost
+                           )
 
         opts = {
             'ipopt':{
                 'print_level':0,
-                'max_iter':50,
-                'tol':1e-3
+                'max_iter':20,
+                'tol':0.001
             },
             'print_time':False,# print or not
             'calc_lam_p':False 
@@ -229,12 +269,14 @@ class RobotIK:
         self.opti.set_value(self.param_tf_head, head)
         
         self.opti.set_value(self.var_q_last, self.init_data) # for smooth
+        
 
         try:
             sol = self.opti.solve()
             # sol = self.opti.solve_limited()
 
             sol_q = self.opti.value(self.var_q)
+            
             self.smooth_filter.add_data(sol_q)
             sol_q = self.smooth_filter.filtered_data
             # print(sol_q)
@@ -268,12 +310,12 @@ class RobotIK:
 
             # sol_tauff = pin.rnea(self.reduced_robot.model, self.reduced_robot.data, sol_q, v, np.zeros(self.reduced_robot.model.nv))
 
-            print(f"sol_q:{sol_q} \nmotorstate: \n{current_lr_arm_motor_q} \nleft_pose: \n{left_wrist} \nright_pose: \n{right_wrist}")
+            # print(f"sol_q:{sol_q} \nmotorstate: \n{current_lr_arm_motor_q} \nleft_pose: \n{left_wrist} \nright_pose: \n{right_wrist}")
             if self.Visualization:
                 self.vis.display(sol_q)  # for visualization
 
             # return sol_q, sol_tauff
-            return current_lr_arm_motor_q
+            return sol_q
 
 
 if __name__ == "__main__":

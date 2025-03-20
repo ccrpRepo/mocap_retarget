@@ -545,6 +545,40 @@
     <limit lower="-0.52" upper="0.52" effort="50" velocity="37"/>
   </joint>
 
+  <link name="left_elbow_cllision_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="red">
+        <color rgba="0.7 0.0 0.0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="left_elbow_cllision_joint" type="fixed">
+    <origin xyz="0 0.06 0.06" rpy="0 0 0"/>
+    <parent link="torso_link"/>
+    <child link="left_elbow_cllision_link"/>
+  </joint>
+
+  <link name="right_elbow_cllision_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="red">
+        <color rgba="0.7 0.0 0.0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="right_elbow_cllision_joint" type="fixed">
+    <origin xyz="0 -0.06 0.06" rpy="0 0 0"/>
+    <parent link="torso_link"/>
+    <child link="right_elbow_cllision_link"/>
+  </joint>
+
   <!-- LOGO -->
   <joint name="logo_joint" type="fixed">
     <origin xyz="0.0039635 0 -0.044" rpy="0 0 0"/>
@@ -601,6 +635,23 @@
     <origin xyz="0.0039635 0 -0.044" rpy="0 0 0"/>
     <parent link="torso_link"/>
     <child link="head_link"/>
+  </joint>
+
+  <link name="head_link_o">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.0 0.7 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="head_o_joint" type="fixed">
+    <origin xyz="0 0 0.42" rpy="0 0 0"/>
+    <parent link="torso_link"/>
+    <child link="head_link_o"/>
   </joint>
 
   <link name="head_sphere">
@@ -769,6 +820,24 @@
     <axis xyz="0 1 0"/>
     <limit lower="-1.0472" upper="2.0944" effort="25" velocity="37"/>
   </joint>
+
+  <link name="left_hand_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.0 0.7 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="left_hand_joint" type="fixed">
+    <origin xyz="0.25 0 0" rpy="0 0 0"/>
+    <parent link="left_elbow_link"/>
+    <child link="left_hand_link"/>
+  </joint>
+
   <joint name="left_wrist_roll_joint" type="revolute">
     <origin xyz="0.100 0.00188791 -0.010" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
@@ -1000,6 +1069,24 @@
     <axis xyz="0 1 0"/>
     <limit lower="-1.0472" upper="2.0944" effort="25" velocity="37"/>
   </joint>
+
+  <link name="right_hand_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.035"/>
+        </geometry>
+      <material name="blue">
+        <color rgba="0.0 0.0 0.7 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="right_hand_joint" type="fixed">
+    <origin xyz="0.25 0 0" rpy="0 0 0"/>
+    <parent link="right_elbow_link"/>
+    <child link="right_hand_link"/>
+  </joint>
+
   <joint name="right_wrist_roll_joint" type="revolute">
     <origin xyz="0.100 -0.00188791 -0.010" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
