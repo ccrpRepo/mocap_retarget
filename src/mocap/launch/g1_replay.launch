@@ -2,7 +2,7 @@
 <launch>
     
     <arg name="model" />
-    <arg name="rviz_visualize" default="false" />
+    <arg name="rviz_visualize" default="true" />
     <param name="robot_description" textfile="$(find g1_description)/urdf/g1.urdf" />
 
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
@@ -27,9 +27,9 @@
     <param name="wrist_motion" value="False" />
     <param name="extend_link" value="True" />
 
-    <param name="start_frame" value="1" />
-    <param name="end_frame" value="-1" />   <!-- 终止帧，-1为默认长度 -->
-    <param name="root_height_offset" value="-0.35"/>
+    <param name="start_frame" value="200" />
+    <param name="end_frame" value="430" />   <!-- 终止帧，-1为默认长度 -->
+    <param name="root_height_offset" value="-0.36"/>
     <param name="outputdata" value="True" />
 
     

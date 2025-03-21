@@ -5,8 +5,8 @@ import numpy as np
 import pinocchio as pin                             
 import time
 from pinocchio import casadi as cpin                
-from pinocchio.robot_wrapper import RobotWrapper    
-from pinocchio.visualize import MeshcatVisualizer   
+from pinocchio.robot_wrapper import RobotWrapper
+from pinocchio.visualize import MeshcatVisualizer
 import os
 import sys
 
@@ -163,8 +163,6 @@ class RobotIK:
         self.regularization_cost = casadi.sumsqr(self.var_q)
         self.smooth_cost = casadi.sumsqr(self.var_q - self.var_q_last)
         # self.collision_cost = self.left_elbow_collision_avoid(self.var_q) + self.right_elbow_collision_avoid(self.var_q)
-        
-        
 
         # Setting optimization constraints and goals
         self.opti.subject_to(self.opti.bounded(
@@ -173,17 +171,17 @@ class RobotIK:
             self.reduced_robot.model.upperPositionLimit)
         )
         self.opti.minimize(50 * self.translational_cost 
-                           + 1.0 * self.rotation_cost 
+                           + self.rotation_cost 
                            + 0.02 * self.regularization_cost 
-                           + 0.1 * self.smooth_cost 
-                        #    + 0.0 * self.collision_cost
+                           + 0.1 * self.smooth_cost
+                           #    + 0.0 * self.collision_cost
                            )
 
         opts = {
             'ipopt':{
                 'print_level':0,
-                'max_iter':20,
-                'tol':0.001
+                'max_iter':50,
+                'tol':1e-3
             },
             'print_time':False,# print or not
             'calc_lam_p':False 
@@ -269,14 +267,12 @@ class RobotIK:
         self.opti.set_value(self.param_tf_head, head)
         
         self.opti.set_value(self.var_q_last, self.init_data) # for smooth
-        
 
         try:
             sol = self.opti.solve()
             # sol = self.opti.solve_limited()
 
             sol_q = self.opti.value(self.var_q)
-            
             self.smooth_filter.add_data(sol_q)
             sol_q = self.smooth_filter.filtered_data
             # print(sol_q)
@@ -315,7 +311,7 @@ class RobotIK:
                 self.vis.display(sol_q)  # for visualization
 
             # return sol_q, sol_tauff
-            return sol_q
+            return current_lr_arm_motor_q
 
 
 if __name__ == "__main__":

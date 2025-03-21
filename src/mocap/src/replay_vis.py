@@ -34,7 +34,7 @@ class Replay:
                  wrist_motion=False,
                  extend_link=True,
                  start_frame=1,
-                 end_frame=-1,
+                 end_frame=None,
                  root_height_offset=0.0
                  ):
         ## init ros pubulisher
@@ -54,8 +54,10 @@ class Replay:
         self.root_height_offset = root_height_offset
         
         self.joint_model = pin.JointModelComposite()
+        # 添加 3 个平移自由度
         self.joint_model.addJoint(pin.JointModelTranslation())
 
+        # 添加 3 个旋转自由度 (roll, pitch, yaw)
         self.joint_model.addJoint(pin.JointModelRX())  # Roll
         self.joint_model.addJoint(pin.JointModelRY())  # Pitch
         self.joint_model.addJoint(pin.JointModelRZ())  # Yaw
@@ -109,7 +111,7 @@ class Replay:
         self.link_names += self.extend_link_names
         
         if(not wrist_motion):
-            self.link_names = [link for link in self.link_names if "wrist" not in link]
+            self.link_names = [link for link in self.link_names if "wrist" not in link] 
             
         
         self.joint_positions = []
@@ -181,10 +183,11 @@ class Replay:
             signle_motion['joint'] = self.motions_data[idx - 1]['joint'] + unite_joint * (i + 1)
             inter_motions.append(signle_motion.copy())
         
+                
         return inter_motions
     
     def output(self):
-        self.output_dict = {'fps': 120,
+        self.output_dict = {'fps': self.fps,
                             'dof_pos' : self.dof_pos,
                             'dof_vels' : self.dof_vels,
                             'global_translation_extend': self.global_translation_extend,
@@ -288,7 +291,7 @@ class Replay:
             self.t.transform.rotation.w = base_quaternion[3]
             
             # joint
-            self.joint_positions = np.array(motion['joint'])
+            self.joint_positions = motion['joint']
             
             # publish
             joint_state_msg.header.stamp = rospy.Time.now()  
@@ -313,18 +316,12 @@ class Replay:
             else:
                 self.dof_pos.append(np.concatenate([joint[:19], joint[23:27]]))
                 self.dof_vels.append(np.concatenate([joint_vel[:19], joint_vel[23:27]]))
-                q_vis[25:28] = 0
-                q_vis[32:35] = 0
-                qd_vis[25:28] = 0
-                qd_vis[32:35] = 0
-                self.joint_positions[19:22] = 0
-                self.joint_positions[26:29] = 0
                 
             for idx, link_name in enumerate(self.link_names):
                 link_id = self.reduced_robot.model.getFrameId(link_name)
                 pin.updateFramePlacement(self.reduced_robot.model, self.reduced_robot.data, link_id)
                 se3_pose = self.reduced_robot.data.oMf[link_id]
-                global_translation_extend_frame.append(se3_pose.translation)
+                global_translation_extend_frame.append(se3_pose.translation.tolist())
                 global_rotation_extend_frame.append(pin.Quaternion(se3_pose.rotation).coeffs()) # x y z w
                 
                 velocity = pin.getFrameVelocity(self.reduced_robot.model, self.reduced_robot.data, link_id)
@@ -369,6 +366,5 @@ if __name__ == '__main__':
     rospy.sleep(1) # wait for rviz launch
     
     rerun.run()
-    
     if(outputdata):
         rerun.output()
