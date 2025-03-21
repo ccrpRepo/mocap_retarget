@@ -316,6 +316,10 @@ class Replay:
             else:
                 self.dof_pos.append(np.concatenate([joint[:19], joint[23:27]]))
                 self.dof_vels.append(np.concatenate([joint_vel[:19], joint_vel[23:27]]))
+                q_vis[25:28] = 0
+                q_vis[32:35] = 0
+                qd_vis[25:28] = 0
+                qd_vis[32:35] = 0
                 
             for idx, link_name in enumerate(self.link_names):
                 link_id = self.reduced_robot.model.getFrameId(link_name)
