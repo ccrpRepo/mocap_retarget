@@ -110,12 +110,26 @@ class RobotIK:
             [self.cq, self.cTf_lhand, self.cTf_rhand, self.cTf_root, self.cTf_lfoot, self.cTf_rfoot, self.cTf_head],
             [
                 casadi.vertcat(
-                    cpin.log3(self.cdata.oMf[self.lhand_id].rotation @ self.cTf_lhand[:3,:3].T),
-                    cpin.log3(self.cdata.oMf[self.rhand_id].rotation @ self.cTf_rhand[:3,:3].T),
-                    cpin.log3(self.cdata.oMf[self.root_id].rotation @ self.cTf_root[:3,:3].T),
-                    cpin.log3(self.cdata.oMf[self.lfoot_id].rotation @ self.cTf_lfoot[:3,:3].T),
-                    cpin.log3(self.cdata.oMf[self.rfoot_id].rotation @ self.cTf_rfoot[:3,:3].T),
-                    cpin.log3(self.cdata.oMf[self.head_id].rotation @ self.cTf_head[:3,:3].T)
+                    # cpin.log3(self.cdata.oMf[self.lhand_id].rotation @ self.cTf_lhand[:3,:3].T),
+                    # cpin.log3(self.cdata.oMf[self.rhand_id].rotation @ self.cTf_rhand[:3,:3].T),
+                    # cpin.log3(self.cdata.oMf[self.root_id].rotation @ self.cTf_root[:3,:3].T),
+                    # cpin.log3(self.cdata.oMf[self.lfoot_id].rotation @ self.cTf_lfoot[:3,:3].T),
+                    # cpin.log3(self.cdata.oMf[self.rfoot_id].rotation @ self.cTf_rfoot[:3,:3].T),
+                    # cpin.log3(self.cdata.oMf[self.head_id].rotation @ self.cTf_head[:3,:3].T)
+                    
+                    # cpin.log3(self.cTf_lhand[:3,:3].T @ self.cdata.oMf[self.lhand_id].rotation),
+                    # cpin.log3(self.cTf_rhand[:3,:3].T @ self.cdata.oMf[self.rhand_id].rotation),
+                    # cpin.log3(self.cTf_root[:3,:3].T @ self.cdata.oMf[self.root_id].rotation),
+                    # cpin.log3(self.cTf_lfoot[:3,:3].T @ self.cdata.oMf[self.lfoot_id].rotation),
+                    # cpin.log3(self.cTf_rfoot[:3,:3].T @ self.cdata.oMf[self.rfoot_id].rotation),
+                    # cpin.log3(self.cTf_head[:3,:3].T @ self.cdata.oMf[self.head_id].rotation)
+                    
+                    cpin.log3(self.cTf_lhand[:3,:3] @ self.cdata.oMf[self.lhand_id].rotation.T),
+                    cpin.log3(self.cTf_rhand[:3,:3] @ self.cdata.oMf[self.rhand_id].rotation.T),
+                    cpin.log3(self.cTf_root[:3,:3] @ self.cdata.oMf[self.root_id].rotation.T),
+                    cpin.log3(self.cTf_lfoot[:3,:3] @ self.cdata.oMf[self.lfoot_id].rotation.T),
+                    cpin.log3(self.cTf_rfoot[:3,:3] @ self.cdata.oMf[self.rfoot_id].rotation.T),
+                    cpin.log3(self.cTf_head[:3,:3] @ self.cdata.oMf[self.head_id].rotation.T)
                 )
             ],
         )

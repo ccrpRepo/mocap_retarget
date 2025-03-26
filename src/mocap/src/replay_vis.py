@@ -35,12 +35,16 @@ class Replay:
                  extend_link=True,
                  start_frame=1,
                  end_frame=None,
-                 root_height_offset=0.0
+                 root_height_offset=0.0,
+                 add_default_motion=True,
+                 default_motion_frames=60
                  ):
         ## init ros pubulisher
         rospy.init_node('rerun_node', anonymous=True)
         self.interpolation = interpolation
         self.motions_path = motions_path
+        self.add_default_motion = add_default_motion
+        self.default_motion_frames = default_motion_frames
         self.fps = fps
         self.rate = rospy.Rate(self.fps)
         self.motions_data = []
@@ -207,6 +211,87 @@ class Replay:
             
         print("PKL FILE OUTPUT COMPLETE!")
         
+    def pose_reset(self):
+        first_motion = self.motions_data[0]
+        first_motion_angle = first_motion['rootjoint'][3:6]
+        # 转换为degree
+        first_motion_angle = first_motion_angle * 180.0 / 3.1415926
+        Rotation_Matrix = eulerxyz2mat(first_motion_angle)
+        baseXaxis_in_world_frame = Rotation_Matrix[:,0]
+        resetXaxis_in_world_frame = np.concatenate(baseXaxis_in_world_frame[:2], 0)
+        norm = np.linalg.norm(resetXaxis_in_world_frame)
+        resetXaxis_in_world_frame = resetXaxis_in_world_frame / norm
+        resetZaxis_in_world_frame = np.array([0,0,1])
+        resetYaxis_in_world_frame = np.cross(resetXaxis_in_world_frame, resetZaxis_in_world_frame)
+        world_R_reset = np.zeros(3,3)
+        world_R_reset[:,0] = resetXaxis_in_world_frame
+        world_R_reset[:,1] = resetYaxis_in_world_frame
+        world_R_reset[:,2] = resetZaxis_in_world_frame
+        
+        for idx, motion in enumerate(self.motions_data):
+            root_anglexyz = motion['rootjoint'][:3]
+            root_linearxyz = motion['rootjoint'][3:6]
+            root_anglexyz = root_anglexyz * 180.0 / 3.1415926
+            world_R_base = eulerxyz2mat(root_anglexyz)
+            reset_R_world = world_R_reset.T
+            reset_R_base =  reset_R_world @ world_R_base
+        
+        
+        
+        
+    def add_defalut_stand(self, duration_frame):
+        add_defalut_motions = []
+        signle_motion ={'frame': 0,
+                         'time' : 0.0,
+                         'rootjoint' : np.zeros(6),
+                         'joint' : np.array(29)
+                        }
+        start_index = -1
+        end_index = -1
+        
+        for i, motion in enumerate(self.motions_data):
+            if(motion['frame'] >= self.start_frame and start_index == -1):
+                start_index = i
+            if(motion['frame'] >= self.end_frame ):
+                end_index = i
+                break
+                
+            
+        first_motion = self.motions_data[start_index].copy()
+        signle_motion['frame'] = first_motion['frame']
+        signle_motion['time'] = first_motion['time']
+        signle_motion['rootjoint'] = first_motion['rootjoint']
+        signle_motion['rootjoint'][2] = 1.06
+        signle_motion['joint'] = np.array([-0.1,  0.0,  0.0,  0.3, -0.2, 0.0, 
+                                           -0.1,  0.0,  0.0,  0.3, -0.2, 0.0,
+                                           0.0, 0.0, 0.0, 
+                                           0.0, 0.0, 0.0, 0.0,
+                                           0.0, 0.0, 0.0, 0.0,
+                                           0.0, 0.0, 0.0, 
+                                           0.0, 0.0, 0.0])
+
+        add_defalut_motions.append(signle_motion)
+        for i, motion in enumerate(self.motions_data):
+            if(i>start_index):
+                motion['frame'] += duration_frame
+                motion['time'] += float(duration_frame / self.fps)
+                add_defalut_motions.append(motion)
+            if(i>end_index):
+                break
+
+        signle_motion_last = signle_motion.copy()
+        last_motion = self.motions_data[end_index].copy()
+        signle_motion_last['frame'] = last_motion['frame'] + duration_frame
+        signle_motion_last['time'] = last_motion['time'] + float(duration_frame / self.fps)
+        signle_motion_last['rootjoint'] = last_motion['rootjoint']
+        signle_motion_last['rootjoint'][2] = 1.06
+        add_defalut_motions.append(signle_motion_last)
+        self.end_frame += duration_frame * 2
+
+        return add_defalut_motions
+        
+        
+        
     
     def run(self):
         joint_state_msg = JointState()
@@ -215,6 +300,10 @@ class Replay:
         joint_state_msg.velocity = []              
         joint_state_msg.effort = []    
         last_frame = 0
+        
+        # add defalut stand to first motion frame pass
+        if(self.add_default_motion):
+            self.motions_data = self.add_defalut_stand(self.default_motion_frames)
         
         if(self.interpolation):
             after_inter_motion_data = self.motions_data.copy()
@@ -236,7 +325,9 @@ class Replay:
             self.end_frame = final_frame
         elif(self.end_frame > final_frame):
             self.end_frame = final_frame
-            
+        
+        
+        # add final motion frame to defalut stand pass 
         
         for idx, motion in enumerate(after_inter_motion_data):
             last_idx = max(idx - 1, 0)          
