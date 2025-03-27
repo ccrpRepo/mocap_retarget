@@ -325,7 +325,12 @@ class Replay:
             self.end_frame = final_frame
         elif(self.end_frame > final_frame):
             self.end_frame = final_frame
-        
+            
+            
+        time = 0.0
+        for idx, motion in enumerate(after_inter_motion_data):
+            motion['time'] = time
+            time += 1.0 / self.fps
         
         # add final motion frame to defalut stand pass 
         
