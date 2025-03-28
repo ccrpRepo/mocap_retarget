@@ -16,6 +16,7 @@ from pinocchio.visualize import MeshcatVisualizer
 import os
 import sys
 import pickle
+from scipy.linalg import logm
 
 parent2_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(parent2_dir)
@@ -37,7 +38,7 @@ class Replay:
                  end_frame=None,
                  root_height_offset=0.0,
                  add_default_motion=True,
-                 default_motion_frames=60
+                 default_motion_frames=120
                  ):
         ## init ros pubulisher
         rospy.init_node('rerun_node', anonymous=True)
@@ -175,15 +176,28 @@ class Replay:
                          'joint' : np.array(29)
                         }
         time_dist = self.motions_data[idx]['time'] - self.motions_data[idx - 1]['time']
-        rootjoint_dist = np.array(self.motions_data[idx]['rootjoint']) - np.array(self.motions_data[idx - 1]['rootjoint'])
+        rootjoint_lin_dist = np.array(self.motions_data[idx]['rootjoint'][:3]) - np.array(self.motions_data[idx - 1]['rootjoint'][:3])
+        euler_last = self.motions_data[idx - 1]['rootjoint'][3:6]
+        euler_cur = self.motions_data[idx]['rootjoint'][3:6]
+        R_last = eulerxyz2mat(np.degrees(euler_last))
+        R_cur = eulerxyz2mat(np.degrees(euler_cur))
+        d_R = logm(R_last.T @ R_cur)
+        d_theta = np.array([-d_R[1,2], d_R[0,2], d_R[1,0]])
+        unitre_d_theta = d_theta / (inter_num + 1)
+        
+        
         joint_dist = np.array(self.motions_data[idx]['joint']) - np.array(self.motions_data[idx - 1]['joint'])
         unite_time = time_dist / (inter_num + 1)
-        unite_rootjoint = rootjoint_dist / (inter_num + 1)
+        unite_rootjoint_lin = rootjoint_lin_dist / (inter_num + 1)
         unite_joint = joint_dist / (inter_num + 1)
         for i in range(int(inter_num)):
             signle_motion['frame'] = self.motions_data[idx - 1]['frame'] + i + 1
             signle_motion['time'] = self.motions_data[idx - 1]['time'] + unite_time * (i + 1)
-            signle_motion['rootjoint'] = self.motions_data[idx - 1]['rootjoint'] + unite_rootjoint * (i + 1)
+            signle_motion['rootjoint'][:3] = self.motions_data[idx - 1]['rootjoint'][:3] + unite_rootjoint_lin * (i + 1)
+            
+            R_inter = R_last @ eulerxyz2mat(unitre_d_theta * float(i))
+            signle_motion['rootjoint'][3:6] = mat2euler(R_inter)
+            
             signle_motion['joint'] = self.motions_data[idx - 1]['joint'] + unite_joint * (i + 1)
             inter_motions.append(signle_motion.copy())
         
@@ -211,30 +225,32 @@ class Replay:
             
         print("PKL FILE OUTPUT COMPLETE!")
         
-    def pose_reset(self):
-        first_motion = self.motions_data[0]
-        first_motion_angle = first_motion['rootjoint'][3:6]
+    def pose_reset(self, root_angle):
         # 转换为degree
-        first_motion_angle = first_motion_angle * 180.0 / 3.1415926
-        Rotation_Matrix = eulerxyz2mat(first_motion_angle)
-        baseXaxis_in_world_frame = Rotation_Matrix[:,0]
-        resetXaxis_in_world_frame = np.concatenate(baseXaxis_in_world_frame[:2], 0)
+        root_angle = root_angle * 180.0 / np.pi
+        Rotation_Matrix = eulerxyz2mat(root_angle)
+        naive_Yaxis = Rotation_Matrix[:,1]
+        resetXaxis_in_world_frame = np.zeros(3)
+        resetXaxis_in_world_frame[:2] = Rotation_Matrix[:2,0]
         norm = np.linalg.norm(resetXaxis_in_world_frame)
         resetXaxis_in_world_frame = resetXaxis_in_world_frame / norm
         resetZaxis_in_world_frame = np.array([0,0,1])
-        resetYaxis_in_world_frame = np.cross(resetXaxis_in_world_frame, resetZaxis_in_world_frame)
-        world_R_reset = np.zeros(3,3)
-        world_R_reset[:,0] = resetXaxis_in_world_frame
-        world_R_reset[:,1] = resetYaxis_in_world_frame
-        world_R_reset[:,2] = resetZaxis_in_world_frame
+        resetYaxis_in_world_frame = np.cross(resetZaxis_in_world_frame, resetXaxis_in_world_frame)
+        resetYaxis_in_world_frame = resetYaxis_in_world_frame / np.linalg.norm(resetYaxis_in_world_frame)
         
-        for idx, motion in enumerate(self.motions_data):
-            root_anglexyz = motion['rootjoint'][:3]
-            root_linearxyz = motion['rootjoint'][3:6]
-            root_anglexyz = root_anglexyz * 180.0 / 3.1415926
-            world_R_base = eulerxyz2mat(root_anglexyz)
-            reset_R_world = world_R_reset.T
-            reset_R_base =  reset_R_world @ world_R_base
+        negativ_Y = -resetYaxis_in_world_frame
+        dotproduce = resetYaxis_in_world_frame.dot(naive_Yaxis)
+        dotproduce_negative = negativ_Y.dot(naive_Yaxis)
+        if(dotproduce_negative > dotproduce):
+            resetYaxis_in_world_frame = negativ_Y
+        
+        R_reset = np.eye(3)
+        R_reset[:,0] = resetXaxis_in_world_frame
+        R_reset[:,1] = resetYaxis_in_world_frame
+        R_reset[:,2] = resetZaxis_in_world_frame
+        
+        
+        return mat2euler(R_reset)
         
         
         
@@ -261,6 +277,7 @@ class Replay:
         signle_motion['frame'] = first_motion['frame']
         signle_motion['time'] = first_motion['time']
         signle_motion['rootjoint'] = first_motion['rootjoint']
+        signle_motion['rootjoint'][3:6] = self.pose_reset(np.array(signle_motion['rootjoint'][3:6]))
         signle_motion['rootjoint'][2] = 1.06
         signle_motion['joint'] = np.array([-0.1,  0.0,  0.0,  0.3, -0.2, 0.0, 
                                            -0.1,  0.0,  0.0,  0.3, -0.2, 0.0,
@@ -284,6 +301,8 @@ class Replay:
         signle_motion_last['frame'] = last_motion['frame'] + duration_frame
         signle_motion_last['time'] = last_motion['time'] + float(duration_frame / self.fps)
         signle_motion_last['rootjoint'] = last_motion['rootjoint']
+        signle_motion_last['rootjoint'][3:6] = self.pose_reset(np.array(signle_motion_last['rootjoint'][3:6]))
+        
         signle_motion_last['rootjoint'][2] = 1.06
         add_defalut_motions.append(signle_motion_last)
         self.end_frame += duration_frame * 2
