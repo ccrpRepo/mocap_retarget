@@ -17,6 +17,7 @@ import os
 import sys
 import pickle
 from scipy.linalg import logm
+import copy
 
 parent2_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(parent2_dir)
@@ -52,8 +53,9 @@ class Replay:
         self.frame_data={'frame': 0,
                          'time' : 0.0,
                          'rootjoint' : np.zeros(6),
-                         'joint' : np.array(29)
+                         'joint' : np.zeros(29)
                         }
+        
         self.start_frame = start_frame
         self.end_frame = end_frame
         self.root_height_offset = root_height_offset
@@ -181,8 +183,10 @@ class Replay:
         euler_cur = self.motions_data[idx]['rootjoint'][3:6]
         R_last = eulerxyz2mat(np.degrees(euler_last))
         R_cur = eulerxyz2mat(np.degrees(euler_cur))
-        d_R = logm(R_last.T @ R_cur)
+        d_R = logm(R_cur @ R_last.T)
         d_theta = np.array([-d_R[1,2], d_R[0,2], d_R[1,0]])
+        norm = np.linalg.norm(d_theta)
+        d_theta_norm = d_theta / norm
         unitre_d_theta = d_theta / (inter_num + 1)
         
         
@@ -195,11 +199,11 @@ class Replay:
             signle_motion['time'] = self.motions_data[idx - 1]['time'] + unite_time * (i + 1)
             signle_motion['rootjoint'][:3] = self.motions_data[idx - 1]['rootjoint'][:3] + unite_rootjoint_lin * (i + 1)
             
-            R_inter = R_last @ eulerxyz2mat(unitre_d_theta * float(i))
+            R_inter = eulerxyz2mat(np.degrees(unitre_d_theta * float(i+1))) @ R_last
             signle_motion['rootjoint'][3:6] = mat2euler(R_inter)
             
             signle_motion['joint'] = self.motions_data[idx - 1]['joint'] + unite_joint * (i + 1)
-            inter_motions.append(signle_motion.copy())
+            inter_motions.append(copy.deepcopy(signle_motion))
         
                 
         return inter_motions
@@ -260,7 +264,7 @@ class Replay:
         signle_motion ={'frame': 0,
                          'time' : 0.0,
                          'rootjoint' : np.zeros(6),
-                         'joint' : np.array(29)
+                         'joint' : np.zeros(29)
                         }
         start_index = -1
         end_index = -1
@@ -287,28 +291,39 @@ class Replay:
                                            0.0, 0.0, 0.0, 
                                            0.0, 0.0, 0.0])
 
-        add_defalut_motions.append(signle_motion)
+        add_defalut_motions.append(signle_motion.copy())
         for i, motion in enumerate(self.motions_data):
+            if(i>end_index):
+                break
             if(i>start_index):
                 motion['frame'] += duration_frame
                 motion['time'] += float(duration_frame / self.fps)
-                add_defalut_motions.append(motion)
-            if(i>end_index):
-                break
+                add_defalut_motions.append(motion.copy())
+            
 
-        signle_motion_last = signle_motion.copy()
-        last_motion = self.motions_data[end_index].copy()
+        signle_motion_last ={'frame': 0,
+                         'time' : 0.0,
+                         'rootjoint' : np.zeros(6),
+                         'joint' : np.zeros(29)
+                        }
+        
+        last_motion = copy.deepcopy(self.motions_data[end_index])
         signle_motion_last['frame'] = last_motion['frame'] + duration_frame
         signle_motion_last['time'] = last_motion['time'] + float(duration_frame / self.fps)
         signle_motion_last['rootjoint'] = last_motion['rootjoint']
         signle_motion_last['rootjoint'][3:6] = self.pose_reset(np.array(signle_motion_last['rootjoint'][3:6]))
-        
         signle_motion_last['rootjoint'][2] = 1.06
+        signle_motion_last['joint'] = np.array([-0.1,  0.0,  0.0,  0.3, -0.2, 0.0, 
+                                           -0.1,  0.0,  0.0,  0.3, -0.2, 0.0,
+                                           0.0, 0.0, 0.0, 
+                                           0.0, 0.0, 0.0, 0.0,
+                                           0.0, 0.0, 0.0, 0.0,
+                                           0.0, 0.0, 0.0, 
+                                           0.0, 0.0, 0.0])
         add_defalut_motions.append(signle_motion_last)
         self.end_frame += duration_frame * 2
 
         return add_defalut_motions
-        
         
         
     

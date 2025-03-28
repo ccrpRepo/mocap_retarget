@@ -188,7 +188,7 @@ class RobotIK:
                            + self.rotation_cost 
                            + 0.02 * self.regularization_cost 
                            + 0.1 * self.smooth_cost
-                           #    + 0.0 * self.collision_cost
+                            # + 0.0 * self.collision_cost
                            )
 
         opts = {
@@ -244,7 +244,7 @@ class RobotIK:
                 )
     # If the robot arm is not the same size as your arm :)
     def scale_lengths(self, human_lhand_pose, human_rhand_pose, human_lfoot_pose, human_rfoot_pose, robot_root_pose, robot_head_pose,
-                      human_arm_length=0.784, robot_arm_length=0.50, human_leg_length=0.95, robot_leg_length=0.625):
+                      human_arm_length=0.784, robot_arm_length=0.50, human_leg_length=0.95, robot_leg_length=0.615):
         arm_scale_factor = robot_arm_length / human_arm_length
         robot_lhand_pose = human_lhand_pose.copy()
         robot_rhand_pose = human_rhand_pose.copy()
