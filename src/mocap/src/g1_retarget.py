@@ -62,6 +62,14 @@ class FramePoseSub:
             pin.Quaternion(1, 0, 0, 0),
             np.array([0, 0, 0]),
         )
+        self.lelbow_target = pin.SE3(
+            pin.Quaternion(1, 0, 0, 0),
+            np.array([0, 0, 0.25]),
+        )
+        self.relbow_target = pin.SE3(
+            pin.Quaternion(1, 0, 0, 0),
+            np.array([0, 0, 0.25]),
+        )
         self.g1_joint_names = ['left_hip_pitch_joint', 'left_hip_roll_joint', 'left_hip_yaw_joint', \
                     'left_knee_joint', 'left_ankle_pitch_joint', 'left_ankle_roll_joint', \
                     'right_hip_pitch_joint', 'right_hip_roll_joint', 'right_hip_yaw_joint', \
@@ -89,10 +97,11 @@ if __name__ == "__main__":
     framesub.joint_publisher()
     rate = rospy.Rate(1000)  # 1000 Hz
     urdf_path = "../g1_description/urdf/g1.urdf" 
+    fps = rospy.get_param('motion_fps', 12)
     human_tf = tf.TransformListener()
     data = []
     timestamp = 0.0
-    robot_ik = RobotIK(Visualization = render)
+    robot_ik = RobotIK(Visualization = render, fps=fps)
     last_frame = 0
     sol_q_last = np.zeros(35)
     sol_q_last[6] = -0.1
@@ -142,6 +151,18 @@ if __name__ == "__main__":
         rotMat = Rot.from_quat(quat)
         framesub.head_target.rotation = rotMat.as_matrix() @ rotz(-90) @ roty(-90)
         
+        (trans, rot) = human_tf.lookupTransform('/world', '/lradius', rospy.Time(0))
+        framesub.lelbow_target.translation = np.array([trans[0], trans[1], trans[2]])
+        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+        rotMat = Rot.from_quat(quat)
+        framesub.lelbow_target.rotation = rotMat.as_matrix() @ rotz(-90) @ rotx(180)
+        
+        (trans, rot) = human_tf.lookupTransform('/world', '/rradius', rospy.Time(0))
+        framesub.relbow_target.translation = np.array([trans[0], trans[1], trans[2]])
+        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+        rotMat = Rot.from_quat(quat)
+        framesub.relbow_target.rotation = rotMat.as_matrix() @ rotz(-90) @ rotx(180)
+        
         timestamp = rospy.Time.now().to_sec() - start_time
         
         sol_q = robot_ik.solve_ik(framesub.lhand_target.homogeneous,
@@ -150,6 +171,8 @@ if __name__ == "__main__":
                                 framesub.rfoot_target.homogeneous,
                                 framesub.root_target.homogeneous,
                                 framesub.head_target.homogeneous,
+                                framesub.lelbow_target.homogeneous,
+                                framesub.relbow_target.homogeneous,
                                 current_lr_arm_motor_q=sol_q_last
                                 )
         

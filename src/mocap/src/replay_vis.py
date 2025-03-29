@@ -27,6 +27,12 @@ def validate_positions(positions):
         raise ValueError("All elements in 'position' must be of float type.")
     return positions
 
+def safe_convert(value):
+    try:
+        return float(value)
+    except (ValueError, TypeError):
+        return value 
+
 class Replay:
     def __init__(self,
                  urdf=None,
@@ -39,7 +45,7 @@ class Replay:
                  end_frame=None,
                  root_height_offset=0.0,
                  add_default_motion=True,
-                 default_motion_frames=120
+                 default_motion_frames=50
                  ):
         ## init ros pubulisher
         rospy.init_node('rerun_node', anonymous=True)
@@ -70,7 +76,7 @@ class Replay:
         self.joint_model.addJoint(pin.JointModelRZ())  # Yaw
 
         current_path = os.path.dirname(os.path.abspath(__file__))
-        urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1.urdf')
+        urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1_test.urdf')
         urdf_dirs = os.path.join(current_path, '../../g1_description/urdf')
         self.robot = pin.RobotWrapper.BuildFromURDF(urdf_path,
                                                     root_joint = self.joint_model,
@@ -161,7 +167,7 @@ class Replay:
             csv_reader = csv.reader(file)
             header = next(csv_reader)  
             for row in csv_reader:
-                row = [float(item) if isinstance(item, str) and float(item) else item for item in row]
+                row = [safe_convert(item) for item in row]
                 self.frame_data['frame'] = row[0]
                 self.frame_data['time'] = row[1]
                 self.frame_data['rootjoint'] = row[2:8]
@@ -275,9 +281,13 @@ class Replay:
             if(motion['frame'] >= self.end_frame ):
                 end_index = i
                 break
+            
+        if(end_index == -1 or start_index == -1):
+            while(True):
+                print("start_end frame error!!!!")
                 
             
-        first_motion = self.motions_data[start_index].copy()
+        first_motion = copy.deepcopy(self.motions_data[start_index])
         signle_motion['frame'] = first_motion['frame']
         signle_motion['time'] = first_motion['time']
         signle_motion['rootjoint'] = first_motion['rootjoint']
@@ -298,7 +308,7 @@ class Replay:
             if(i>start_index):
                 motion['frame'] += duration_frame
                 motion['time'] += float(duration_frame / self.fps)
-                add_defalut_motions.append(motion.copy())
+                add_defalut_motions.append(copy.deepcopy(motion))
             
 
         signle_motion_last ={'frame': 0,

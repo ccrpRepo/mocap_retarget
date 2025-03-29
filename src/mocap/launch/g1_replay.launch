@@ -27,8 +27,8 @@
     <param name="wrist_motion" value="False" />
     <param name="extend_link" value="True" />
 
-    <param name="start_frame" value="1180" />
-    <param name="end_frame" value="1350" />   <!-- 终止帧，-1为默认长度 -->
+    <param name="start_frame" value="3946" />
+    <param name="end_frame" value="4568" />   <!-- 终止帧，-1为默认长度 -->
     <param name="root_height_offset" value="-0.345"/>
     <param name="outputdata" value="True" />
 
