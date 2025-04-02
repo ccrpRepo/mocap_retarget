@@ -86,7 +86,7 @@ class RobotIK:
         # Get the hand joint ID and define the error function
         self.lhand_id = self.reduced_robot.model.getFrameId("left_wrist_yaw_link")
         self.rhand_id = self.reduced_robot.model.getFrameId("right_wrist_yaw_link")
-        self.root_id = self.reduced_robot.model.getFrameId("root_sphere") # pelvis
+        self.root_id = self.reduced_robot.model.getFrameId("pelvis") # root_sphere
         self.head_id = self.reduced_robot.model.getFrameId("head_sphere")
         self.lfoot_id = self.reduced_robot.model.getFrameId("left_ankle_roll_link")
         self.rfoot_id = self.reduced_robot.model.getFrameId("right_ankle_roll_link")
@@ -116,8 +116,8 @@ class RobotIK:
             [
                 casadi.vertcat(
                     
-                    # cpin.log3(self.cTf_lhand[:3,:3] @ self.cdata.oMf[self.lhand_id].rotation.T),
-                    # cpin.log3(self.cTf_rhand[:3,:3] @ self.cdata.oMf[self.rhand_id].rotation.T),
+                    cpin.log3(self.cTf_lhand[:3,:3] @ self.cdata.oMf[self.lhand_id].rotation.T),
+                    cpin.log3(self.cTf_rhand[:3,:3] @ self.cdata.oMf[self.rhand_id].rotation.T),
                     cpin.log3(self.cTf_root[:3,:3] @ self.cdata.oMf[self.root_id].rotation.T),
                     cpin.log3(self.cTf_lfoot[:3,:3] @ self.cdata.oMf[self.lfoot_id].rotation.T),
                     cpin.log3(self.cTf_rfoot[:3,:3] @ self.cdata.oMf[self.rfoot_id].rotation.T),
@@ -244,8 +244,11 @@ class RobotIK:
                       robot_root_pose, 
                       robot_head_pose, 
                       human_lelbow_pose, human_relbow_pose,
-                      human_arm_length=0.784, robot_arm_length=0.50, human_leg_length=0.95, robot_leg_length=0.615):
+                      human_arm_length=0.784, robot_arm_length=0.50,
+                      human_leg_length=0.95, robot_leg_length=0.65,
+                      human_elbow_length=0.784, robot_elbow_length=0.5):
         arm_scale_factor = robot_arm_length / human_arm_length
+        elbow_scale_factor = robot_elbow_length / human_elbow_length
         robot_lhand_pose = human_lhand_pose.copy()
         robot_rhand_pose = human_rhand_pose.copy()
         robot_lhand_pose[:3, 3] = robot_head_pose[:3, 3] + arm_scale_factor * (robot_lhand_pose[:3, 3] - robot_head_pose[:3, 3])
@@ -253,8 +256,8 @@ class RobotIK:
         
         robot_lelbow_pose = human_lelbow_pose.copy()
         robot_relbow_pose = human_relbow_pose.copy()
-        robot_lelbow_pose[:3, 3] = robot_head_pose[:3, 3] + arm_scale_factor * (robot_lelbow_pose[:3, 3] - robot_head_pose[:3, 3])
-        robot_relbow_pose[:3, 3] = robot_head_pose[:3, 3] + arm_scale_factor * (robot_relbow_pose[:3, 3] - robot_head_pose[:3, 3])
+        robot_lelbow_pose[:3, 3] = robot_head_pose[:3, 3] + elbow_scale_factor * (robot_lelbow_pose[:3, 3] - robot_head_pose[:3, 3])
+        robot_relbow_pose[:3, 3] = robot_head_pose[:3, 3] + elbow_scale_factor * (robot_relbow_pose[:3, 3] - robot_head_pose[:3, 3])
         
         # avoid elbow collsion 
         diff_norm_lelbow = np.linalg.norm(self.reduced_robot.data.oMf[self.lelbow_coll_id].translation - robot_lelbow_pose[:3, 3]) 
@@ -276,7 +279,7 @@ class RobotIK:
         robot_rfoot_pose[:3, 3] = robot_root_pose[:3, 3] + leg_scale_factor * (robot_rfoot_pose[:3, 3] - robot_root_pose[:3, 3])
         
         # avoid foot collsion
-        foot_clearence_min = 0.2
+        foot_clearence_min = 0.15
         diff_norm_foot = np.linalg.norm(robot_lfoot_pose[:3, 3] - robot_rfoot_pose[:3, 3]) 
         lfoot_apart_direction = robot_lfoot_pose[:3, 3] - robot_rfoot_pose[:3, 3]
         lfoot_norm_apart_direction = lfoot_apart_direction / np.linalg.norm(lfoot_apart_direction)
@@ -285,8 +288,9 @@ class RobotIK:
         vel_lfoot = np.linalg.norm(pin.getFrameVelocity(self.reduced_robot.model, self.reduced_robot.data, self.lfoot_id).linear)
         vel_rfoot = np.linalg.norm(pin.getFrameVelocity(self.reduced_robot.model, self.reduced_robot.data, self.rfoot_id).linear)
         
-        if((vel_lfoot + vel_rfoot) > 0.02):
+        if(vel_lfoot > 0.55):
             robot_lfoot_pose[:3, 3] += lfoot_norm_apart_direction * max(0.0, (foot_clearence_min - diff_norm_foot) *(vel_lfoot)/(vel_lfoot + vel_rfoot))
+        if(vel_rfoot > 0.55):    
             robot_rfoot_pose[:3, 3] += rfoot_norm_apart_direction * max(0.0, (foot_clearence_min - diff_norm_foot) *(vel_rfoot)/(vel_lfoot + vel_rfoot))
         
         return robot_lhand_pose, robot_rhand_pose, robot_lfoot_pose, robot_rfoot_pose, robot_lelbow_pose, robot_relbow_pose

@@ -45,7 +45,7 @@ class Replay:
                  end_frame=None,
                  root_height_offset=0.0,
                  add_default_motion=True,
-                 default_motion_frames=50
+                 default_motion_frames=30
                  ):
         ## init ros pubulisher
         rospy.init_node('rerun_node', anonymous=True)
@@ -137,7 +137,7 @@ class Replay:
         self.t = TransformStamped()
         self.t.header.frame_id = 'world'
         self.t.header.stamp = rospy.Time(0)
-        self.t.child_frame_id = 'root_sphere'
+        self.t.child_frame_id = 'pelvis'
         self.t.transform.translation.x = 0
         self.t.transform.translation.y = 0
         self.t.transform.translation.z = 0.5
@@ -191,8 +191,8 @@ class Replay:
         R_cur = eulerxyz2mat(np.degrees(euler_cur))
         d_R = logm(R_cur @ R_last.T)
         d_theta = np.array([-d_R[1,2], d_R[0,2], d_R[1,0]])
-        norm = np.linalg.norm(d_theta)
-        d_theta_norm = d_theta / norm
+        # norm = np.linalg.norm(d_theta)
+        # d_theta_norm = d_theta / norm
         unitre_d_theta = d_theta / (inter_num + 1)
         
         
@@ -407,11 +407,20 @@ class Replay:
             last_joint = np.array(last_motion['joint'])
             next_joint = np.array(next_motion['joint'])
             
-            root_joint_vel = (next_root_joint - last_root_joint) / (next_time - last_time)
+            euler_last = last_root_joint[3:6]
+            euler_next = next_root_joint[3:6]
+            R_last = eulerxyz2mat(np.degrees(euler_last))
+            R_next = eulerxyz2mat(np.degrees(euler_next))
+            d_R = logm(R_next @ R_last.T)
+            d_theta = np.array([-d_R[1,2], d_R[0,2], d_R[1,0]])
+            omega = d_theta / (next_time - last_time)
+            
+            root_joint_lin_vel = (next_root_joint[:3] - last_root_joint[:3]) / (next_time - last_time)
+            root_joint_ang_vel = omega
             joint_vel = (next_joint - last_joint) / (next_time - last_time)
             
             q_vis = np.concatenate([root_joint,joint])
-            qd_vis = np.concatenate([root_joint_vel,joint_vel])
+            qd_vis = np.concatenate([root_joint_lin_vel, root_joint_ang_vel, joint_vel])
             
             # root
             base_pos = root_joint[:3]

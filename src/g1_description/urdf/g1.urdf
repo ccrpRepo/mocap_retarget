@@ -17,14 +17,15 @@
     <parent link="dummy_link"/>
     <child link="pelvis"/>
   </joint> -->
-
+  
+<!-- 
   <link name="root_sphere">
   </link>
   <joint name="root_sphere_joint" type="fixed">
     <origin xyz="0 0 0.08" rpy="0 0 0"/>
     <parent link="root_sphere"/>
     <child link="pelvis"/>
-  </joint>
+  </joint> -->
 
 
   <link name="pelvis">

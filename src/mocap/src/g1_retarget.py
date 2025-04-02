@@ -149,7 +149,7 @@ if __name__ == "__main__":
         framesub.head_target.translation = np.array([trans[0], trans[1], trans[2]])
         quat = np.array([rot[0], rot[1], rot[2], rot[3]])
         rotMat = Rot.from_quat(quat)
-        framesub.head_target.rotation = rotMat.as_matrix() @ rotz(-90) @ roty(-90)
+        framesub.head_target.rotation = rotMat.as_matrix() @ rotz(-90) @ roty(-90) @ roty(20)
         
         (trans, rot) = human_tf.lookupTransform('/world', '/lradius', rospy.Time(0))
         framesub.lelbow_target.translation = np.array([trans[0], trans[1], trans[2]])
