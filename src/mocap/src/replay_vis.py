@@ -76,7 +76,7 @@ class Replay:
         self.joint_model.addJoint(pin.JointModelRZ())  # Yaw
 
         current_path = os.path.dirname(os.path.abspath(__file__))
-        urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1_test.urdf')
+        urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1.urdf')
         urdf_dirs = os.path.join(current_path, '../../g1_description/urdf')
         self.robot = pin.RobotWrapper.BuildFromURDF(urdf_path,
                                                     root_joint = self.joint_model,
