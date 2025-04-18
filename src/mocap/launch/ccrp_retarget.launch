@@ -1,0 +1,28 @@
+
+<launch>
+    <arg name="model" />
+    <arg name="gui" default="False" />
+    <param name="robot_description" textfile="$(find ccrp_description)/urdf/ccrp_skeleton.urdf" />
+
+    
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+      <param name="publish_frequency" value="1000"/>
+      <param name="use_tf_static"     value="true"/>
+  </node>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mocap)/config/mocap.rviz"/>
+    <node name="ccrp_retarget" pkg="mocap" type="ccrp_retarget.py" output="screen"/>
+    <node pkg="tf" type="static_transform_publisher" name="world"
+      args="0 0 0 0 0 0 map world 100" />
+    <node name="g1_retarget" pkg="mocap" type="g1_retarget.py" output="screen"/>
+
+    <param name="motion_fps" value="30" />
+    <param name="csv_file" value="walk.csv" />
+    <param name="render" value="True" />
+    <param name="OutputData" value="True" />
+    <param name="use_ccrp_data" value="True" />
+
+    <param name="human_arm_length" value="0.704" />
+    <param name="human_leg_length" value="0.850" />
+    <param name="human_elbow_length" value="0.4" />
+
+</launch>

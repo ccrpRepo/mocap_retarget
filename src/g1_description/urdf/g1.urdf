@@ -17,7 +17,7 @@
     <parent link="dummy_link"/>
     <child link="pelvis"/>
   </joint> -->
-  
+
 <!-- 
   <link name="root_sphere">
   </link>
@@ -553,7 +553,7 @@
           <sphere radius="0.035"/>
         </geometry>
       <material name="red">
-        <color rgba="0.7 0.0 0.0 1"/>
+        <color rgba="0.7 0.0 0.0 0"/>
       </material>
     </visual>
   </link>
@@ -570,7 +570,7 @@
           <sphere radius="0.035"/>
         </geometry>
       <material name="red">
-        <color rgba="0.7 0.0 0.0 1"/>
+        <color rgba="0.7 0.0 0.0 0"/>
       </material>
     </visual>
   </link>
@@ -645,7 +645,7 @@
           <sphere radius="0.035"/>
         </geometry>
       <material name="blue">
-        <color rgba="0.0 0.0 0.7 1"/>
+        <color rgba="0.0 0.0 0.7 0"/>
       </material>
     </visual>
   </link>
@@ -829,7 +829,7 @@
           <sphere radius="0.035"/>
         </geometry>
       <material name="blue">
-        <color rgba="0.0 0.0 0.7 1"/>
+        <color rgba="0.0 0.0 0.7 0"/>
       </material>
     </visual>
   </link>
@@ -1078,7 +1078,7 @@
           <sphere radius="0.035"/>
         </geometry>
       <material name="blue">
-        <color rgba="0.0 0.0 0.7 1"/>
+        <color rgba="0.0 0.0 0.7 0"/>
       </material>
     </visual>
   </link>

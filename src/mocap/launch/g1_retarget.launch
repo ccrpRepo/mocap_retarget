@@ -16,8 +16,13 @@
     <node name="g1_retarget" pkg="mocap" type="g1_retarget.py" output="screen"/>
 
     <param name="motion_fps" value="30" />
-    <param name="amc_file" value="86_06.amc" />
+    <param name="amc_file" value="86_05.amc" />
     <param name="render" value="True" />
     <param name="OutputData" value="True" />
+    <param name="use_ccrp_data" value="False" />
+
+    <param name="human_arm_length" value="0.704" />
+    <param name="human_leg_length" value="0.850" />
+    <param name="human_elbow_length" value="0.4" />
 
 </launch>

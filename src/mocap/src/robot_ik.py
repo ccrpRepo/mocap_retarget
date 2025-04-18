@@ -18,9 +18,15 @@ from weighted_moving_filter import WeightedMovingFilter
 
 
 class RobotIK:
-    def __init__(self, Visualization = False, fps=120):
+    def __init__(self, Visualization = False, fps=120,
+                            human_arm_length = 0.704,
+                            human_leg_length = 0.850,
+                            human_elbow_length = 0.4):
+        
         np.set_printoptions(precision=5, suppress=True, linewidth=200)
-
+        self.human_arm_length=human_arm_length
+        self.human_leg_length=human_leg_length
+        self.human_elbow_length=human_elbow_length
         self.Visualization = Visualization
         self.fps = fps
         self.joint_model = pin.JointModelComposite()
@@ -244,11 +250,11 @@ class RobotIK:
                       robot_root_pose, 
                       robot_head_pose, 
                       human_lelbow_pose, human_relbow_pose,
-                      human_arm_length=0.784, robot_arm_length=0.50,
-                      human_leg_length=0.95, robot_leg_length=0.65,
-                      human_elbow_length=0.784, robot_elbow_length=0.5):
-        arm_scale_factor = robot_arm_length / human_arm_length
-        elbow_scale_factor = robot_elbow_length / human_elbow_length
+                       robot_arm_length=0.60,
+                      robot_leg_length=0.625,
+                       robot_elbow_length=0.3):
+        arm_scale_factor = robot_arm_length / self.human_arm_length
+        elbow_scale_factor = robot_elbow_length / self.human_elbow_length
         robot_lhand_pose = human_lhand_pose.copy()
         robot_rhand_pose = human_rhand_pose.copy()
         robot_lhand_pose[:3, 3] = robot_head_pose[:3, 3] + arm_scale_factor * (robot_lhand_pose[:3, 3] - robot_head_pose[:3, 3])
@@ -256,10 +262,11 @@ class RobotIK:
         
         robot_lelbow_pose = human_lelbow_pose.copy()
         robot_relbow_pose = human_relbow_pose.copy()
+        
         robot_lelbow_pose[:3, 3] = robot_head_pose[:3, 3] + elbow_scale_factor * (robot_lelbow_pose[:3, 3] - robot_head_pose[:3, 3])
         robot_relbow_pose[:3, 3] = robot_head_pose[:3, 3] + elbow_scale_factor * (robot_relbow_pose[:3, 3] - robot_head_pose[:3, 3])
         
-        # avoid elbow collsion 
+        # avoid elbow collsion
         diff_norm_lelbow = np.linalg.norm(self.reduced_robot.data.oMf[self.lelbow_coll_id].translation - robot_lelbow_pose[:3, 3]) 
         apart_direction = robot_lelbow_pose[:3, 3] - self.reduced_robot.data.oMf[self.lelbow_coll_id].translation
         norm_apart_direction = apart_direction / np.linalg.norm(apart_direction)
@@ -272,7 +279,7 @@ class RobotIK:
         robot_relbow_pose[:3, 3] += norm_apart_direction * max(0.0, (0.12 - diff_norm_relbow))
         diff_norm_relbow = np.linalg.norm(self.reduced_robot.data.oMf[self.relbow_coll_id].translation - robot_relbow_pose[:3, 3])
         
-        leg_scale_factor = robot_leg_length / human_leg_length
+        leg_scale_factor = robot_leg_length / self.human_leg_length
         robot_lfoot_pose = human_lfoot_pose.copy()
         robot_rfoot_pose = human_rfoot_pose.copy()
         robot_lfoot_pose[:3, 3] = robot_root_pose[:3, 3] + leg_scale_factor * (robot_lfoot_pose[:3, 3] - robot_root_pose[:3, 3])

@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 import numpy as np
+from scipy.spatial.transform import Rotation as Rot
 
 rr_R_root = np.zeros((3,3))
 rr_R_root[1,0] = 1
 rr_R_root[2,1] = 1
 rr_R_root[0,2] = 1
 root_R_rr = np.linalg.inv(rr_R_root)
+
+rr_R_hips = np.zeros((3,3))
+rr_R_hips[1,0] = 1
+rr_R_hips[2,1] = 1
+rr_R_hips[0,2] = 1
+hips_R_rr = np.linalg.inv(rr_R_hips)
 
 def rotx(theta):
     # 旋转角度（以弧度表示）
@@ -106,3 +113,29 @@ def mat2euler_zyx(R):
     # print(f"Theta_z (rotation about Z-axis): {theta_z_deg} degrees")
     
     return np.array([theta_x,theta_y,theta_z])
+
+if __name__ == '__main__':
+    R1 = rotx(-12) @ roty(-88) @rotz(0)
+    R2 = rotx(168) @ roty(-88) @rotz(180)
+    e1 = mat2euler(R1)
+    e2 = mat2euler(R2)
+    euler_xyz1 = mat2euler(R1)
+    euler_xyz2 = mat2euler(R2)
+    print("euler", euler_xyz2 / np.pi * 180.0)
+    R3 = rotx(euler_xyz1[0]/ np.pi * 180.0) @ roty(euler_xyz1[1]/ np.pi * 180.0) @rotz(euler_xyz1[2]/ np.pi * 180.0)
+    print(R1 - R2)
+    print(e1)
+    print(e2)
+    newmat_1 = eulerxyz2mat(e1 * 180.0 / np.pi)
+    newmat_2 = eulerxyz2mat(e2 * 180.0 / np.pi)
+    print(newmat_1)
+    print(newmat_2)
+    
+    mat1 = Rot.from_quat(np.array([-0.041597,	-0.917272,	-0.099532,	0.383374]))
+    e1 = mat2euler(mat1.as_matrix())
+    mat2 = Rot.from_quat(np.array([0.040883,	0.920141,	0.099948,	-0.376404]))
+    e2 = mat2euler(mat2.as_matrix())
+    # print(e1)
+    # print(e2)
+    
+    

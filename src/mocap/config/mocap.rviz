@@ -8,11 +8,17 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Links1
-        - /RobotModel1/Links1/rhand1
-        - /RobotModel1/Links1/rradius1
+        - /RobotModel1/Links1/chest_link1
+        - /RobotModel1/Links1/hips1
+        - /RobotModel1/Links1/left_foot_end_link1
+        - /RobotModel1/Links1/left_fore_arm_link1
+        - /RobotModel1/Links1/left_hand_link1
+        - /RobotModel1/Links1/right_foot_end_link1
+        - /RobotModel1/Links1/right_fore_arm_link1
+        - /RobotModel1/Links1/right_hand_link1
         - /Axes1
-      Splitter Ratio: 0.5
-    Tree Height: 1098
+      Splitter Ratio: 0.6375839114189148
+    Tree Height: 363
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -57,7 +63,7 @@ Visualization Manager:
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
       Value: true
-    - Alpha: 1
+    - Alpha: 0.699999988079071
       Class: rviz/RobotModel
       Collision Enabled: false
       Enabled: true
@@ -67,424 +73,346 @@ Visualization Manager:
         Expand Link Details: true
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        head:
+        chest_1:
           Alpha: 1
           Show Axes: false
+          Show Trail: false
+          Value: true
+        chest_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        chest_link:
+          Alpha: 1
+          Show Axes: true
           Show Trail: false
           Value: true
         head_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
         head_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        head_sphere:
+        head_end_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        headtop:
+        head_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lclavicle:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        lclavicle_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lfemur:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        lfemur_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lfemur_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lfingers:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        lfingers_sphere:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        lfingers_top:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        lfoot:
+        hips:
           Alpha: 1
           Show Axes: true
           Show Trail: false
           Value: true
-        lfoot_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lfoot_sphere:
+        left_arm_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lhand:
+        left_arm_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_arm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lhand_1:
+        left_chest2shouder_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        lhand_sphere:
+          Value: true
+        left_foot_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_foot_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_foot_end_link:
           Alpha: 1
           Show Axes: true
           Show Trail: false
           Value: true
-        lhip:
+        left_foot_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lhip_sphere:
+        left_fore_arm_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lhumerus:
+        left_fore_arm_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        lhumerus_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lhumerus_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lhumerus_sphere:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        lowerback:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        lowerback_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lowerback_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lowerneck:
+        left_fore_arm_link:
           Alpha: 1
           Show Axes: true
           Show Trail: false
           Value: true
-        lowerneck_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lowerneck_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        lowerneck_sphere:
+        left_hand_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lradius:
+        left_hand_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_link:
           Alpha: 1
           Show Axes: true
           Show Trail: false
           Value: true
-        lradius_sphere:
+        left_hips2up_leg_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lthumb:
+        left_leg_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lthumb_1:
+        left_leg_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        lthumbtop:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ltiaba:
+        left_leg_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ltibia_sphere:
+        left_shouder_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ltoe:
+        left_shouder_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_shouder_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ltoe_top:
+        left_toe_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        ltoes_sphere:
+        left_toe_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_toe_end_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lwrist:
+        left_toe_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        lwrist_sphere:
+        left_up_leg_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rclavicle:
+        left_up_leg_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_up_leg_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rclavicle_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rfemur:
+        neck_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rfemur_1:
+        neck_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rfemur_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rfingers:
+        neck_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rfingers_sphere:
+        right_arm_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rfingers_top:
+        right_arm_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_arm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rfoot:
+        right_chest2shouder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_foot_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_foot_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_foot_end_link:
           Alpha: 1
           Show Axes: true
           Show Trail: false
           Value: true
-        rfoot_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rfoot_sphere:
+        right_foot_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rhand:
+        right_fore_arm_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_fore_arm_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_fore_arm_link:
           Alpha: 1
           Show Axes: true
           Show Trail: false
           Value: true
-        rhand_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rhand_sphere:
+        right_hand_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rhip:
+        right_hand_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        rhip_sphere:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rhumerus:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rhumerus_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rhumerus_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rhumerus_sphere:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        root:
+        right_hand_link:
           Alpha: 1
           Show Axes: true
           Show Trail: false
           Value: true
-        rradius:
-          Alpha: 1
-          Show Axes: true
-          Show Trail: false
-          Value: true
-        rradius_sphere:
+        right_hips2up_leg_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rthumb:
+        right_leg_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rthumb_1:
+        right_leg_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rthumb_sphere:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rthumb_top:
+        right_leg_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rtiaba:
+        right_shouder_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rtiaba_sphere:
+        right_shouder_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_shouder_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rtoe:
+        right_toe_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rtoe_top:
+        right_toe_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_toe_end_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rtoes_sphere:
+        right_toe_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rwrist:
+        right_up_leg_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rwrist_sphere:
+        right_up_leg_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_up_leg_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        thorax:
+        spine1_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        thorax_1:
+        spine1_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        thorax_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        thorax_sphere:
+        spine1_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        upperback:
+        spine2_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        upperback_1:
+        spine2_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        upperback_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        upperback_sphere:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        upperneck:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        upperneck_1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        upperneck_2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        upperneck_sphere:
+        spine2_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -532,7 +460,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4
+      Distance: 7.154138565063477
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -540,25 +468,25 @@ Visualization Manager:
         Value: false
       Field of View: 0.800000011920929
       Focal Point:
-        X: 0
-        Y: 0
-        Z: -0.6000000238418579
+        X: 1.1725486516952515
+        Y: 2.1389331817626953
+        Z: 1.0557054281234741
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.29500001668930054
+      Pitch: 0.16500020027160645
       Target Frame: head_sphere
-      Yaw: 5.018157005310059
+      Yaw: 4.738149642944336
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: true
-  Height: 1395
+  Height: 1403
   Hide Left Dock: true
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd000000040000000000000156000004d5fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003d000004d5000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c0000026100000001000001aa000004ddfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000004dd000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005350000003efc0100000002fb0000000800540069006d0065010000000000000535000003bc00fffffffb0000000800540069006d0065010000000000000450000000000000000000000535000004d500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001c1000004ddfc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003d000004dd000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c0000026100000001000001aa000004ddfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000004dd000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005000000003efc0100000002fb0000000800540069006d0065010000000000000500000003bc00fffffffb0000000800540069006d0065010000000000000450000000000000000000000500000004dd00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -567,6 +495,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
-  Width: 1333
+  Width: 1280
   X: 0
   Y: 0

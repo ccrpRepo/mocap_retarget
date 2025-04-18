@@ -45,7 +45,7 @@ class Replay:
                  end_frame=None,
                  root_height_offset=0.0,
                  add_default_motion=True,
-                 default_motion_frames=30
+                 default_motion_frames=40
                  ):
         ## init ros pubulisher
         rospy.init_node('rerun_node', anonymous=True)
@@ -54,6 +54,7 @@ class Replay:
         self.add_default_motion = add_default_motion
         self.default_motion_frames = default_motion_frames
         self.fps = fps
+        self.extend_link = extend_link
         self.rate = rospy.Rate(self.fps)
         self.motions_data = []
         self.frame_data={'frame': 0,
@@ -121,7 +122,8 @@ class Replay:
         
         self.extend_link_names = ['left_hand_link', 'right_hand_link', 'head_link_o']
         
-        self.link_names += self.extend_link_names
+        if(self.extend_link):
+            self.link_names += self.extend_link_names
         
         if(not wrist_motion):
             self.link_names = [link for link in self.link_names if "wrist" not in link] 
@@ -500,6 +502,8 @@ if __name__ == '__main__':
     end_frame = rospy.get_param('end_frame', -1)
     root_height_offset = rospy.get_param('root_height_offset', 0.0)
     outputdata = rospy.get_param('outputdata', True)
+    add_default_motion = rospy.get_param('add_default_motion', True)
+    default_motion_frames = rospy.get_param('default_motion_frames', 60)
     
     current_path = os.path.dirname(os.path.abspath(__file__))
     urdf_path = os.path.join(current_path, '../../g1_description/urdf', 'g1.urdf')
@@ -513,7 +517,9 @@ if __name__ == '__main__':
                    extend_link=extend_link,
                    start_frame=start_frame,
                    end_frame=end_frame,
-                   root_height_offset=root_height_offset
+                   root_height_offset=root_height_offset,
+                   add_default_motion = add_default_motion,
+                   default_motion_frames = default_motion_frames
                    )
     rerun.parse_csv()
     rospy.sleep(1) # wait for rviz launch

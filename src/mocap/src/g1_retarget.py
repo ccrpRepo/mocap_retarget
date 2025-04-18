@@ -92,16 +92,24 @@ class FramePoseSub:
 if __name__ == "__main__":
     render = rospy.get_param('render', True)
     outputdata = rospy.get_param('OutputData', True)
+    use_ccrp_data = rospy.get_param('use_ccrp_data', True)
+    human_arm_length = rospy.get_param('human_arm_length', 0.704)
+    human_leg_length = rospy.get_param('human_leg_length', 0.850)
+    human_elbow_length = rospy.get_param('human_elbow_length', 0.4)
     
     framesub = FramePoseSub()
     framesub.joint_publisher()
     rate = rospy.Rate(1000)  # 1000 Hz
     urdf_path = "../g1_description/urdf/g1.urdf" 
-    fps = rospy.get_param('motion_fps', 12)
+    fps = rospy.get_param('motion_fps', 120)
     human_tf = tf.TransformListener()
     data = []
     timestamp = 0.0
-    robot_ik = RobotIK(Visualization = render, fps=fps)
+    
+    robot_ik = RobotIK(Visualization = render, fps=fps,
+                       human_arm_length = human_arm_length,
+                        human_leg_length = human_leg_length,
+                        human_elbow_length = human_elbow_length)
     last_frame = 0
     sol_q_last = np.zeros(35)
     sol_q_last[6] = -0.1
@@ -115,53 +123,103 @@ if __name__ == "__main__":
     rospy.sleep(1)
     while not rospy.is_shutdown():
         
-        (trans, rot) = human_tf.lookupTransform('/world', '/lhand', rospy.Time(0))
-        framesub.lhand_target.translation = np.array([trans[0], trans[1], trans[2]])
-        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
-        rotMat = Rot.from_quat(quat)
-        framesub.lhand_target.rotation = rotMat.as_matrix() @ rotx(90) @ roty(-90)
-        
-        (trans, rot) = human_tf.lookupTransform('/world', '/rhand', rospy.Time(0))
-        framesub.rhand_target.translation = np.array([trans[0], trans[1], trans[2]])
-        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
-        rotMat = Rot.from_quat(quat)
-        framesub.rhand_target.rotation = rotMat.as_matrix() @ rotx(-90) @ roty(90)
-        
-        (trans, rot) = human_tf.lookupTransform('/world', '/lfoot', rospy.Time(0))
-        framesub.lfoot_target.translation = np.array([trans[0], trans[1], trans[2]])
-        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
-        rotMat = Rot.from_quat(quat)
-        framesub.lfoot_target.rotation = rotMat.as_matrix() @ rotz(-90)
-        
-        (trans, rot) = human_tf.lookupTransform('/world', '/rfoot', rospy.Time(0))
-        framesub.rfoot_target.translation = np.array([trans[0], trans[1], trans[2]])
-        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
-        rotMat = Rot.from_quat(quat)
-        framesub.rfoot_target.rotation = rotMat.as_matrix() @ rotz(-90)
-        
-        (trans, rot) = human_tf.lookupTransform('/world', '/root', rospy.Time(0))
-        framesub.root_target.translation = np.array([trans[0], trans[1], trans[2]])
-        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
-        rotMat = Rot.from_quat(quat)
-        framesub.root_target.rotation = rotMat.as_matrix() @ roty(-12)
-        
-        (trans, rot) = human_tf.lookupTransform('/world', '/lowerneck', rospy.Time(0))
-        framesub.head_target.translation = np.array([trans[0], trans[1], trans[2]])
-        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
-        rotMat = Rot.from_quat(quat)
-        framesub.head_target.rotation = rotMat.as_matrix() @ rotz(-90) @ roty(-90) @ roty(20)
-        
-        (trans, rot) = human_tf.lookupTransform('/world', '/lradius', rospy.Time(0))
-        framesub.lelbow_target.translation = np.array([trans[0], trans[1], trans[2]])
-        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
-        rotMat = Rot.from_quat(quat)
-        framesub.lelbow_target.rotation = rotMat.as_matrix() @ rotz(-90) @ rotx(180)
-        
-        (trans, rot) = human_tf.lookupTransform('/world', '/rradius', rospy.Time(0))
-        framesub.relbow_target.translation = np.array([trans[0], trans[1], trans[2]])
-        quat = np.array([rot[0], rot[1], rot[2], rot[3]])
-        rotMat = Rot.from_quat(quat)
-        framesub.relbow_target.rotation = rotMat.as_matrix() @ rotz(-90) @ rotx(180)
+        if(not use_ccrp_data):
+            (trans, rot) = human_tf.lookupTransform('/world', '/lhand', rospy.Time(0))
+            framesub.lhand_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.lhand_target.rotation = rotMat.as_matrix() @ rotx(90) @ roty(-90)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/rhand', rospy.Time(0))
+            framesub.rhand_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.rhand_target.rotation = rotMat.as_matrix() @ rotx(-90) @ roty(90)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/lfoot', rospy.Time(0))
+            framesub.lfoot_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.lfoot_target.rotation = rotMat.as_matrix() @ rotz(-90)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/rfoot', rospy.Time(0))
+            framesub.rfoot_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.rfoot_target.rotation = rotMat.as_matrix() @ rotz(-90)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/root', rospy.Time(0))
+            framesub.root_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.root_target.rotation = rotMat.as_matrix() @ roty(-12)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/lowerneck', rospy.Time(0))
+            framesub.head_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.head_target.rotation = rotMat.as_matrix() @ rotz(-90) @ roty(-90) @ roty(15)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/lradius', rospy.Time(0))
+            framesub.lelbow_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.lelbow_target.rotation = rotMat.as_matrix() @ rotz(-90) @ rotx(180)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/rradius', rospy.Time(0))
+            framesub.relbow_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.relbow_target.rotation = rotMat.as_matrix() @ rotz(-90) @ rotx(180)
+            
+        else:
+            (trans, rot) = human_tf.lookupTransform('/world', '/left_hand_link', rospy.Time(0))
+            framesub.lhand_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.lhand_target.rotation = rotMat.as_matrix() @ rotx(90) @ roty(90)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/right_hand_link', rospy.Time(0))
+            framesub.rhand_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.rhand_target.rotation = rotMat.as_matrix() @ rotx(-90) @ roty(90)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/left_foot_end_link', rospy.Time(0))
+            framesub.lfoot_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.lfoot_target.rotation = rotMat.as_matrix()
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/right_foot_end_link', rospy.Time(0))
+            framesub.rfoot_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.rfoot_target.rotation = rotMat.as_matrix()
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/spine2_link', rospy.Time(0))
+            framesub.root_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.root_target.rotation = rotMat.as_matrix() #
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/neck_link', rospy.Time(0))
+            framesub.head_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]]) 
+            rotMat = Rot.from_quat(quat)
+            framesub.head_target.rotation = rotMat.as_matrix() @ roty(-12)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/left_fore_arm_link', rospy.Time(0))
+            framesub.lelbow_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.lelbow_target.rotation = rotMat.as_matrix() @ rotx(90)
+            
+            (trans, rot) = human_tf.lookupTransform('/world', '/right_fore_arm_link', rospy.Time(0))
+            framesub.relbow_target.translation = np.array([trans[0], trans[1], trans[2]])
+            quat = np.array([rot[0], rot[1], rot[2], rot[3]])
+            rotMat = Rot.from_quat(quat)
+            framesub.relbow_target.rotation = rotMat.as_matrix() @ rotx(-90)
         
         timestamp = rospy.Time.now().to_sec() - start_time
         

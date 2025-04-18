@@ -1,0 +1,1256 @@
+<robot name="ccrp_skeleton">
+  <mujoco>
+    <compiler meshdir="meshes" discardvisual="false"/>
+  </mujoco>
+
+  <!-- <link name= "ww">
+  </link> -->
+
+  <link name="hips">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.035"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="left_hips2up_leg_link">
+    <visual>
+      <origin xyz="0 0.04685 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.0937"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="left_hips2up_leg_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="hips"/>
+    <child link="left_hips2up_leg_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="right_hips2up_leg_link">
+    <visual>
+      <origin xyz="0 -0.04685 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.0937"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="right_hips2up_leg_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="hips"/>
+    <child link="right_hips2up_leg_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+
+  <!-- ###################### Left  Leg ########################### -->
+  
+  
+
+  <link name="left_up_leg_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="left_up_leg_2">
+  </link>
+  <link name="left_up_leg_link">
+    <visual>
+      <origin xyz="0.0 0.0 -0.227" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.454"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_up_leg_joint_x" type="revolute">
+    <origin xyz="0 0.0937 0" rpy="0 0  0"/>
+    <parent link="hips"/>
+    <child link="left_up_leg_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_up_leg_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="left_up_leg_1"/>
+    <child link="left_up_leg_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_up_leg_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="left_up_leg_2"/>
+    <child link="left_up_leg_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="left_leg_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="left_leg_2">
+  </link>
+
+  <link name="left_leg_link">
+    <visual>
+      <origin xyz="0.0 0.0 -0.183" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.366"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_leg_joint_x" type="revolute">
+    <origin xyz="0 0 -0.454" rpy="0 0  0"/>
+    <parent link="left_up_leg_link"/>
+    <child link="left_leg_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_leg_joint_y" type="revolute">
+    <origin xyz="0 0 0.0" rpy="0 0  0"/>
+    <parent link="left_leg_1"/>
+    <child link="left_leg_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_leg_joint_z" type="revolute">
+    <origin xyz="0 0 0.0" rpy="0 0  0"/>
+    <parent link="left_leg_2"/>
+    <child link="left_leg_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="left_foot_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name ="left_foot_2">
+  </link>
+  <link name="left_foot_link">
+    <visual>
+      <origin xyz="0.0625 0.0 -0.027" rpy="0.0 1.9785810654722864 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.13616534067081829"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_foot_joint_x" type="revolute">
+    <origin xyz="0 0 -0.366" rpy="0 0 0"/>
+    <parent link="left_leg_link"/>
+    <child link="left_foot_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_foot_joint_y" type="revolute">
+    <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    <parent link="left_foot_1"/>
+    <child link="left_foot_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_foot_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="left_foot_2"/>
+    <child link="left_foot_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+
+  <link name="left_toe_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name ="left_toe_2">
+  </link>
+  <link name="left_toe_link">
+    <visual>
+      <origin xyz="0.04 0.0 0.0" rpy="0.0 1.5708 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.08"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_toe_joint_x" type="revolute">
+    <origin xyz="0.125 0 -0.054" rpy="0 0 0"/>
+    <parent link="left_foot_link"/>
+    <child link="left_toe_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_toe_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="left_toe_1"/>
+    <child link="left_toe_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_toe_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="left_toe_2"/>
+    <child link="left_toe_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="left_toe_end_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.025"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_toe_end_joint" type="fixed">
+    <origin xyz="0.08 0.0 0.0" rpy="0 0 0"/>
+    <parent link="left_toe_link"/>
+    <child link="left_toe_end_link"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="left_foot_end_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="left_foot_end_joint" type="fixed">
+    <origin xyz="0.0 0.0 -0.054" rpy="0 0 0"/>
+    <parent link="left_foot_link"/>
+    <child link="left_foot_end_link"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ###################### Right  Leg ########################### -->
+  <link name="right_up_leg_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="right_up_leg_2">
+  </link>
+  <link name="right_up_leg_link">
+    <visual>
+      <origin xyz="0.0 0.0 -0.227" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.454"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_up_leg_joint_x" type="revolute">
+    <origin xyz="0 -0.0937 0" rpy="0 0  0"/>
+    <parent link="hips"/>
+    <child link="right_up_leg_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_up_leg_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_up_leg_1"/>
+    <child link="right_up_leg_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_up_leg_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_up_leg_2"/>
+    <child link="right_up_leg_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="right_leg_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_leg_2">
+  </link>
+  <link name="right_leg_link">
+    <visual>
+      <origin xyz="0.0 0.0 -0.183" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.366"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_leg_joint_x" type="revolute">
+    <origin xyz="0 0 -0.454" rpy="0 0  0"/>
+    <parent link="right_up_leg_link"/>
+    <child link="right_leg_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <joint name="right_leg_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_leg_1"/>
+    <child link="right_leg_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <joint name="right_leg_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_leg_2"/>
+    <child link="right_leg_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="right_foot_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name="right_foot_2">
+  </link>
+  <link name="right_foot_link">
+    <visual>
+      <origin xyz="0.0625 0.0 -0.027" rpy="0.0 1.9785810654722864 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.13616534067081829"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_foot_joint_x" type="revolute">
+    <origin xyz="0 0 -0.366" rpy="0 0 0"/>
+    <parent link="right_leg_link"/>
+    <child link="right_foot_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <joint name="right_foot_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="right_foot_1"/>
+    <child link="right_foot_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <joint name="right_foot_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="right_foot_2"/>
+    <child link="right_foot_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="right_toe_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <link name ="right_toe_2">
+  </link>
+  <link name="right_toe_link">
+    <visual>
+      <origin xyz="0.04 0.0 0.0" rpy="0.0 1.5708 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.08"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_toe_joint_x" type="revolute">
+    <origin xyz="0.125 0 -0.054" rpy="0 0 0"/>
+    <parent link="right_foot_link"/>
+    <child link="right_toe_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_toe_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="right_toe_1"/>
+    <child link="right_toe_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_toe_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="right_toe_2"/>
+    <child link="right_toe_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="right_toe_end_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.025"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_toe_end_joint" type="fixed">
+    <origin xyz="0.08 0.0 0.0" rpy="0 0 0"/>
+    <parent link="right_toe_link"/>
+    <child link="right_toe_end_link"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="right_foot_end_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="right_foot_end_joint" type="fixed">
+    <origin xyz="0.0 0.0 -0.054" rpy="0 0 0"/>
+    <parent link="right_foot_link"/>
+    <child link="right_foot_end_link"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ################## Upper Body ################## -->
+
+  <!-- ~~~~~~~~~~~~~~~~~~ Spine1 Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="spine1_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="spine1_2">
+  </link>
+  <link name="spine1_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.052" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.104"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="spine1_joint_x" type="revolute">
+    <origin xyz="0 0.0 0.0562" rpy="0 0  0"/>
+    <parent link="hips"/>
+    <child link="spine1_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="spine1_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="spine1_1"/>
+    <child link="spine1_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="spine1_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="spine1_2"/>
+    <child link="spine1_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ Spine2 Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="spine2_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="spine2_2">
+  </link>
+  <link name="spine2_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.0552" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.111"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="spine2_joint_x" type="revolute">
+    <origin xyz="0.0 0.0 0.104" rpy="0 0  0"/>
+    <parent link="spine1_link"/>
+    <child link="spine2_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="spine2_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="spine2_1"/>
+    <child link="spine2_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="spine2_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="spine2_2"/>
+    <child link="spine2_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <!-- ~~~~~~~~~~~~~~~~~~ Chesk Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="chest_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="chest_2">
+  </link>
+  <link name="chest_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.0935" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.187"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="chest_joint_x" type="revolute">
+    <origin xyz="0.0 0.0 0.111" rpy="0 0  0"/>
+    <parent link="spine2_link"/>
+    <child link="chest_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="chest_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="chest_1"/>
+    <child link="chest_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="chest_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="chest_2"/>
+    <child link="chest_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ Neck Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="neck_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="neck_2">
+  </link>
+  <link name="neck_link">
+    <visual>
+      <origin xyz="0.009 0.0 0.065" rpy="0.0 0.13758673647034986 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.13124"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="neck_joint_x" type="revolute">
+    <origin xyz="0.0 0.0 0.187" rpy="0 0  0"/>
+    <parent link="chest_link"/>
+    <child link="neck_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="neck_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="neck_1"/>
+    <child link="neck_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="neck_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="neck_2"/>
+    <child link="neck_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ Head Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="head_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="head_2">
+  </link>
+  <link name="head_link">
+    <visual>
+      <origin xyz="0.0 0.0 0.05" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.1"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="head_joint_x" type="revolute">
+    <origin xyz="0.018 0.0 0.130" rpy="0 0  0"/>
+    <parent link="neck_link"/>
+    <child link="head_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="head_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="head_1"/>
+    <child link="head_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="head_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="head_2"/>
+    <child link="head_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="head_end_link">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="head_end_joint" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0  0"/>
+    <parent link="head_link"/>
+    <child link="head_end_link"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ left shouder Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="left_chest2shouder_link">
+    <visual>
+      <origin xyz="0.0 0.01445 0.0585" rpy="-0.24216120227848806 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.12051643041510979"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="left_chest2shouder_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="chest_link"/>
+    <child link="left_chest2shouder_link"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+
+
+  <link name="left_shouder_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="left_shouder_2">
+  </link>
+  <link name="left_shouder_link">
+    <visual>
+      <origin xyz="0.0 0.066 0" rpy="1.5708 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.132"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_shouder_joint_x" type="revolute">
+    <origin xyz="0.0 0.0289 0.117" rpy="0 0  0"/>
+    <parent link="chest_link"/>
+    <child link="left_shouder_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_shouder_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="left_shouder_1"/>
+    <child link="left_shouder_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_shouder_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="left_shouder_2"/>
+    <child link="left_shouder_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ left arm Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="left_arm_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="left_arm_2">
+  </link>
+  <link name="left_arm_link">
+    <visual>
+      <origin xyz="0.0 0.131 0.0" rpy="1.5708 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.262"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_arm_joint_x" type="revolute">
+    <origin xyz="0.0 0.132 0.0" rpy="0 0 0 "/>
+    <parent link="left_shouder_link"/>
+    <child link="left_arm_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_arm_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="left_arm_1"/>
+    <child link="left_arm_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_arm_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="left_arm_2"/>
+    <child link="left_arm_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ left fore_arm Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="left_fore_arm_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="left_fore_arm_2">
+  </link>
+  <link name="left_fore_arm_link">
+    <visual>
+      <origin xyz="0.0 0.122 0.0" rpy="1.5708 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.244"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_fore_arm_joint_x" type="revolute">
+    <origin xyz="0.0 0.262 0.0" rpy="0 0 0 "/>
+    <parent link="left_arm_link"/>
+    <child link="left_fore_arm_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <joint name="left_fore_arm_joint_y" type="revolute">
+    <origin xyz="0.0 0 0.0" rpy="0 0 0 "/>
+    <parent link="left_fore_arm_1"/>
+    <child link="left_fore_arm_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <joint name="left_fore_arm_joint_z" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0 "/>
+    <parent link="left_fore_arm_2"/>
+    <child link="left_fore_arm_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ left hand Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="left_hand_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="left_hand_2">
+  </link>
+  <link name="left_hand_link">
+    <visual>
+      <origin xyz="0.0 0.06 0.0" rpy="0 0.0 0.0"/>
+      <geometry>
+        <box size="0.1 0.12 0.01"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_hand_joint_x" type="revolute">
+    <origin xyz="0.0 0.244 0.0" rpy="0 0 0 "/>
+    <parent link="left_fore_arm_link"/>
+    <child link="left_hand_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_hand_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="left_hand_1"/>
+    <child link="left_hand_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="left_hand_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="left_hand_2"/>
+    <child link="left_hand_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+
+  <!-- ################## Right Arm ###################### -->
+  <!-- ~~~~~~~~~~~~~~~~~~ Right shouder Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="right_chest2shouder_link">
+    <visual>
+      <origin xyz="0.0 -0.01445 0.0585" rpy="0.24216120227848806 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.12051643041510979"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="right_chest2shouder_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="chest_link"/>
+    <child link="right_chest2shouder_link"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <link name="right_shouder_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="right_shouder_2">
+  </link>
+  <link name="right_shouder_link">
+    <visual>
+      <origin xyz="0.0 -0.066 0" rpy="-1.5708 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.132"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_shouder_joint_z" type="revolute">
+    <origin xyz="0.0 -0.0289 0.117" rpy="0 0  0"/>
+    <parent link="chest_link"/>
+    <child link="right_shouder_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_shouder_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_shouder_1"/>
+    <child link="right_shouder_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_shouder_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_shouder_2"/>
+    <child link="right_shouder_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ right arm Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="right_arm_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="right_arm_2">
+  </link>
+  <link name="right_arm_link">
+    <visual>
+      <origin xyz="0.0 -0.131 0.0" rpy="-1.5708 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.262"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_arm_joint_x" type="revolute">
+    <origin xyz="0.0 -0.132 0.0" rpy="0 0 0 "/>
+    <parent link="right_shouder_link"/>
+    <child link="right_arm_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_arm_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_arm_1"/>
+    <child link="right_arm_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_arm_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_arm_2"/>
+    <child link="right_arm_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ right fore_arm Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="right_fore_arm_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="right_fore_arm_2">
+  </link>
+  <link name="right_fore_arm_link">
+    <visual>
+      <origin xyz="0.0 -0.122 0.0" rpy="-1.5708 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.01" length="0.244"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_fore_arm_joint_x" type="revolute">
+    <origin xyz="0.0 -0.262 0.0" rpy="0 0 0 "/>
+    <parent link="right_arm_link"/>
+    <child link="right_fore_arm_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <joint name="right_fore_arm_joint_y" type="revolute">
+    <origin xyz="0.0 0 0.0" rpy="0 0 0 "/>
+    <parent link="right_fore_arm_1"/>
+    <child link="right_fore_arm_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+  <joint name="right_fore_arm_joint_z" type="revolute">
+    <origin xyz="0.0 0 0.0" rpy="0 0 0 "/>
+    <parent link="right_fore_arm_2"/>
+    <child link="right_fore_arm_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <!-- ~~~~~~~~~~~~~~~~~~ right hand Link ~~~~~~~~~~~~~~~~~~ -->
+  <link name="right_hand_1">
+    <visual>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="right_hand_2">
+  </link>
+  <link name="right_hand_link">
+    <visual>
+      <origin xyz="0.0 -0.06 0.0" rpy="0 0.0 0.0"/>
+      <geometry>
+        <box size="0.1 0.12 0.01"/>
+      </geometry>
+      <material name="dark">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="right_hand_joint_x" type="revolute">
+    <origin xyz="0.0 -0.244 0.0" rpy="0 0 0 "/>
+    <parent link="right_fore_arm_link"/>
+    <child link="right_hand_1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_hand_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_hand_1"/>
+    <child link="right_hand_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+  <joint name="right_hand_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0  0"/>
+    <parent link="right_hand_2"/>
+    <child link="right_hand_link"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.79252444" upper="2.34906556" effort="88" velocity="32"/>
+  </joint>
+
+</robot>
