@@ -28,7 +28,7 @@
     <param name="extend_link" value="True" />
 
     <param name="start_frame" value="1" /> 
-    <param name="end_frame" value="950" />   <!-- 终止帧，-1为默认长度 -->
+    <param name="end_frame" value="460" />   <!-- 终止帧，-1为默认长度 -->
     <param name="root_height_offset" value="-0.275"/>
     <param name="outputdata" value="True" />
     <param name="add_default_motion" value="True" />

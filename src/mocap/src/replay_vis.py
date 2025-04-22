@@ -479,7 +479,7 @@ class Replay:
                 global_translation_extend_frame.append(se3_pose.translation.tolist())
                 global_rotation_extend_frame.append(pin.Quaternion(se3_pose.rotation).coeffs()) # x y z w
                 
-                velocity = pin.getFrameVelocity(self.reduced_robot.model, self.reduced_robot.data, link_id)
+                velocity = pin.getFrameVelocity(self.reduced_robot.model, self.reduced_robot.data, link_id, pin.ReferenceFrame.WORLD)
                 global_velocity_extend_frame.append(velocity.linear)
                 global_angular_velocity_extend_frame.append(velocity.angular)
                 

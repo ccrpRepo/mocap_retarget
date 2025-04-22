@@ -16,7 +16,7 @@
     <node name="g1_retarget" pkg="mocap" type="g1_retarget.py" output="screen"/>
 
     <param name="motion_fps" value="30" />
-    <param name="csv_file" value="walk.csv" />
+    <param name="csv_file" value="knee.csv" />
     <param name="render" value="True" />
     <param name="OutputData" value="True" />
     <param name="use_ccrp_data" value="True" />
